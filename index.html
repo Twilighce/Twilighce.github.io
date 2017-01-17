@@ -248,6 +248,172 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/17/Python-2/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Itachi">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Twilighce">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Twilighce" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/01/17/Python-2/" itemprop="url">
+                  Python_2
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-17T19:29:29+08:00">
+                2017-01-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/study-notes/" itemprop="url" rel="index">
+                    <span itemprop="name">study notes</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="&#x5FAA;&#x73AF;"><a href="#&#x5FAA;&#x73AF;" class="headerlink" title="&#x5FAA;&#x73AF;"></a><strong>&#x5FAA;&#x73AF;</strong></h2><h3 id="1&#x3001;for&#x5FAA;&#x73AF;"><a href="#1&#x3001;for&#x5FAA;&#x73AF;" class="headerlink" title="1&#x3001;for&#x5FAA;&#x73AF;"></a><strong>1&#x3001;for&#x5FAA;&#x73AF;</strong></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> &#x5143;&#x7D20; <span class="keyword">in</span> &#x5E8F;&#x5217;: </div><div class="line">    statement</div></pre></td></tr></table></figure>
+<p>eg:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> a <span class="keyword">in</span> [<span class="number">3</span>, <span class="number">4.4</span>, <span class="string">&apos;life&apos;</span>]:</div><div class="line">    <span class="keyword">print</span> a</div></pre></td></tr></table></figure>
+<p>Python&#x51FD;&#x6570;range()&#xFF1A;&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;&#x8868;&#xFF0C;&#x5143;&#x7D20;&#x90FD;&#x662F;&#x6574;&#x6570;&#xFF0C;&#x4ECE;0&#x5F00;&#x59CB;&#xFF0C;&#x4E0B;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x6BD4;&#x524D;&#x4E00;&#x4E2A;&#x5927;1&#xFF0C; &#x76F4;&#x5230;&#x51FD;&#x6570;&#x4E2D;&#x6240;&#x5199;&#x7684;&#x4E0A;&#x9650; &#xFF08;&#x4E0D;&#x5305;&#x62EC;&#x8BE5;&#x4E0A;&#x9650;&#x672C;&#x8EAB;&#xFF09;&#x3002;</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">idx = range(<span class="number">5</span>)</div><div class="line"><span class="keyword">print</span> idx   </div><div class="line"><span class="comment">#idx&#x662F;[0,1,2,3,4]</span></div></pre></td></tr></table></figure>
+<p>eg:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> a <span class="keyword">in</span> range(<span class="number">10</span>):</div><div class="line">    <span class="keyword">print</span> a**<span class="number">2</span></div></pre></td></tr></table></figure>
+<h3 id="2&#x3001;while&#x5FAA;&#x73AF;"><a href="#2&#x3001;while&#x5FAA;&#x73AF;" class="headerlink" title="2&#x3001;while&#x5FAA;&#x73AF;"></a><strong>2&#x3001;while&#x5FAA;&#x73AF;</strong></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">i = <span class="number">0</span></div><div class="line"><span class="keyword">while</span> i &lt; <span class="number">10</span>:</div><div class="line">    <span class="keyword">print</span> i</div><div class="line">    i = i + <span class="number">1</span></div></pre></td></tr></table></figure>
+<h3 id="3&#x3001;&#x4E2D;&#x65AD;&#x5FAA;&#x73AF;"><a href="#3&#x3001;&#x4E2D;&#x65AD;&#x5FAA;&#x73AF;" class="headerlink" title="3&#x3001;&#x4E2D;&#x65AD;&#x5FAA;&#x73AF;"></a><strong>3&#x3001;&#x4E2D;&#x65AD;&#x5FAA;&#x73AF;</strong></h3><ul>
+<li><p>continue &#x5728;&#x5FAA;&#x73AF;&#x7684;&#x67D0;&#x4E00;&#x6B21;&#x6267;&#x884C;&#x4E2D;&#xFF0C;&#x9047;&#x5230;continue&#xFF0C;&#x5219;&#x8DF3;&#x8FC7;&#x8FD9;&#x4E00;&#x6B21;&#x6267;&#x884C;&#xFF0C;&#x8FDB;&#x5165;&#x4E0B;&#x4E00;&#x6B21;&#xFF1B;</p>
+</li>
+<li><p>break &#x505C;&#x6B62;&#x6267;&#x884C;&#x6574;&#x4E2A;&#x5FAA;&#x73AF;</p>
+</li>
+</ul>
+<p>eg:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>):</div><div class="line">    <span class="keyword">if</span> i == <span class="number">2</span>:</div><div class="line">        <span class="keyword">continue</span></div><div class="line">    <span class="keyword">print</span> i</div><div class="line"><span class="comment">#&#x5F53;&#x5FAA;&#x73AF;&#x6267;&#x884C;&#x5230; i = 2 &#x7684;&#x65F6;&#x5019;&#xFF0C;if &#x6761;&#x4EF6;&#x6210;&#x7ACB;&#xFF0C;&#x89E6;&#x53D1;continue, &#x8DF3;&#x8FC7;&#x672C;&#x6B21;&#x6267;&#x884C;(&#x4E0D;&#x6267;&#x884C;print)&#xFF0C;&#x7EE7;&#x7EED;&#x8FDB;&#x884C;&#x4E0B;&#x4E00;&#x6B21;&#x6267;&#x884C;(i = 3)&#x3002;</span></div><div class="line">```    </div><div class="line"></div><div class="line">eg:</div><div class="line"></div><div class="line">```Python</div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>)</div><div class="line">    <span class="keyword">if</span> i ==<span class="number">2</span>:</div><div class="line">        <span class="keyword">break</span></div><div class="line">    <span class="keyword">print</span> i</div><div class="line"><span class="comment">#&#x5F53;&#x5FAA;&#x73AF;&#x6267;&#x884C;&#x5230;i = 2&#x7684;&#x65F6;&#x5019;&#xFF0C;if&#x6761;&#x4EF6;&#x6210;&#x7ACB;&#xFF0C;&#x89E6;&#x53D1;break, &#x6574;&#x4E2A;&#x5FAA;&#x73AF;&#x505C;&#x6B62;&#x3002;</span></div></pre></td></tr></table></figure>
+<h2 id="&#x51FD;&#x6570;"><a href="#&#x51FD;&#x6570;" class="headerlink" title="&#x51FD;&#x6570;"></a><strong>&#x51FD;&#x6570;</strong></h2><h3 id="1&#x3001;&#x5B9A;&#x4E49;"><a href="#1&#x3001;&#x5B9A;&#x4E49;" class="headerlink" title="1&#x3001;&#x5B9A;&#x4E49;"></a><strong>1&#x3001;&#x5B9A;&#x4E49;</strong></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">square_sum</span><span class="params">(a,b)</span>:</span></div><div class="line">    c = a**<span class="number">2</span> + b**<span class="number">2</span></div><div class="line">    <span class="keyword">return</span> c</div></pre></td></tr></table></figure>
+<h3 id="2&#x3001;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x548C;&#x53C2;&#x6570;&#x4F20;&#x9012;"><a href="#2&#x3001;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x548C;&#x53C2;&#x6570;&#x4F20;&#x9012;" class="headerlink" title="2&#x3001;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x548C;&#x53C2;&#x6570;&#x4F20;&#x9012;"></a><strong>2&#x3001;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x548C;&#x53C2;&#x6570;&#x4F20;&#x9012;</strong></h3><p>eg:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">a = <span class="number">1</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">change_integer</span><span class="params">(a)</span>:</span></div><div class="line">    a = a + <span class="number">1</span></div><div class="line">    <span class="keyword">return</span> a</div><div class="line"></div><div class="line"><span class="keyword">print</span> change_integer(a)      <span class="comment">#a = 2</span></div><div class="line"><span class="keyword">print</span> a      <span class="comment">#a = 1&#x3002;&#x5C06;&#x4E00;&#x4E2A;&#x6574;&#x6570;&#x53D8;&#x91CF;&#x4F20;&#x9012;&#x7ED9;&#x51FD;&#x6570;&#xFF0C;&#x51FD;&#x6570;&#x5BF9;&#x5B83;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#xFF0C;&#x4F46;&#x539F;&#x6574;&#x6570;&#x53D8;&#x91CF;a&#x4E0D;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x3002;</span></div></pre></td></tr></table></figure>
+<p>eg:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">b = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">change_list</span><span class="params">(b)</span>:</span></div><div class="line">    b[<span class="number">0</span>] = b[<span class="number">0</span>] +<span class="number">1</span></div><div class="line">    <span class="keyword">return</span> b</div><div class="line"></div><div class="line"><span class="keyword">print</span> change_list(b)   <span class="comment"># &#x6539;&#x53D8;&#x540E;</span></div><div class="line"><span class="keyword">print</span> b  <span class="comment"># b = [2,2,3]&#x3002;&#x5C06;&#x4E00;&#x4E2A;&#x8868;&#x4F20;&#x9012;&#x7ED9;&#x51FD;&#x6570;&#xFF0C;&#x51FD;&#x6570;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#xFF0C;&#x539F;&#x6765;&#x7684;&#x8868;b&#x53D1;&#x751F;&#x53D8;&#x5316;</span></div><div class="line">```   </div><div class="line"></div><div class="line">- **&#x503C;&#x4F20;&#x9012;**&#xFF1A;&#x5BF9;&#x4E8E;&#x57FA;&#x672C;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x7684;&#x53D8;&#x91CF;&#xFF0C;&#x53D8;&#x91CF;&#x4F20;&#x9012;&#x7ED9;&#x51FD;&#x6570;&#x540E;&#xFF0C;&#x51FD;&#x6570;&#x4F1A;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#x590D;&#x5236;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x53D8;&#x91CF;&#xFF0C;&#x4ECE;&#x800C;&#x4E0D;&#x5F71;&#x54CD;&#x539F;&#x6765;&#x7684;&#x53D8;&#x91CF;&#x3002;</div><div class="line">- **&#x6307;&#x9488;&#x4F20;&#x9012;**&#xFF1A;&#x5BF9;&#x4E8E;&#x8868;&#x6765;&#x8BF4;&#xFF0C;&#x8868;&#x4F20;&#x9012;&#x7ED9;&#x51FD;&#x6570;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x6307;&#x9488;&#xFF0C;&#x6307;&#x9488;&#x6307;&#x5411;&#x5E8F;&#x5217;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x5728;&#x51FD;&#x6570;&#x4E2D;&#x5BF9;&#x8868;&#x7684;&#x64CD;&#x4F5C;&#x5C06;&#x5728;&#x539F;&#x6709;&#x5185;&#x5B58;&#x4E2D;&#x8FDB;&#x884C;&#xFF0C;&#x4ECE;&#x800C;&#x5F71;&#x54CD;&#x539F;&#x6709;&#x53D8;&#x91CF;&#x3002;  </div><div class="line"></div><div class="line"><span class="comment">## **OOP**</span></div><div class="line"></div><div class="line"><span class="comment">### **1&#x3001;&#x7C7B;**</span></div><div class="line"></div><div class="line">```Python</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Bird</span><span class="params">(object)</span>:</span></div><div class="line">    have_feather = <span class="keyword">True</span></div><div class="line">    way_of_reproduction = <span class="string">&apos;egg&apos;</span></div><div class="line"></div><div class="line">summer = Bird()  </div><div class="line"><span class="keyword">print</span> summer.way_of_reproduction</div></pre></td></tr></table></figure>
+<h3 id="2&#x3001;&#x52A8;&#x4F5C;"><a href="#2&#x3001;&#x52A8;&#x4F5C;" class="headerlink" title="2&#x3001;&#x52A8;&#x4F5C;"></a><strong>2&#x3001;&#x52A8;&#x4F5C;</strong></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Bird</span><span class="params">(object)</span>:</span></div><div class="line">    have_feather = <span class="keyword">True</span></div><div class="line">    way_of_reproduction = <span class="string">&apos;egg&apos;</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">move</span><span class="params">(self, dx, dy)</span>:</span></div><div class="line">        position = [<span class="number">0.0</span>]</div><div class="line">        position[<span class="number">0</span>] = position[<span class="number">0</span>] + dx  </div><div class="line">        position[<span class="number">1</span>] = position[<span class="number">1</span>] + dy</div><div class="line">        <span class="keyword">return</span> position</div><div class="line"></div><div class="line">summer = Bird()</div><div class="line"><span class="keyword">print</span> <span class="string">&apos;after move:&apos;</span>, summer.move(<span class="number">5</span>,<span class="number">8</span>)</div></pre></td></tr></table></figure>
+<h3 id="3&#x3001;&#x5B50;&#x7C7B;"><a href="#3&#x3001;&#x5B50;&#x7C7B;" class="headerlink" title="3&#x3001;&#x5B50;&#x7C7B;"></a><strong>3&#x3001;&#x5B50;&#x7C7B;</strong></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Chicken</span><span class="params">(Bird)</span>:</span> <span class="comment">#Chicken&#x7EE7;&#x627F;&#x81EA;Bird</span></div><div class="line">    way_of_move = <span class="string">&apos;walk&apos;</span></div><div class="line">    possible_in_KFC = <span class="keyword">True</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Oriole</span><span class="params">(Bird)</span>:</span></div><div class="line">    way_of_move = <span class="string">&apos;fly&apos;</span></div><div class="line">    possible_in_KFC = <span class="keyword">False</span></div><div class="line"></div><div class="line">summer = Chicken()</div><div class="line"><span class="keyword">print</span> summer.have_feather</div><div class="line"><span class="keyword">print</span> summer.move(<span class="number">5</span>,<span class="number">8</span>)</div></pre></td></tr></table></figure>
+<h3 id="4&#x3001;&#x8C03;&#x7528;&#x7C7B;&#x7684;&#x5176;&#x4ED6;&#x4FE1;&#x606F;"><a href="#4&#x3001;&#x8C03;&#x7528;&#x7C7B;&#x7684;&#x5176;&#x4ED6;&#x4FE1;&#x606F;" class="headerlink" title="4&#x3001;&#x8C03;&#x7528;&#x7C7B;&#x7684;&#x5176;&#x4ED6;&#x4FE1;&#x606F;"></a><strong>4&#x3001;&#x8C03;&#x7528;&#x7C7B;&#x7684;&#x5176;&#x4ED6;&#x4FE1;&#x606F;</strong></h3><p><strong>&#x5728;&#x5B9A;&#x4E49;&#x65B9;&#x6CD5;&#x65F6;&#xFF0C;&#x5FC5;&#x987B;&#x6709;self&#x8FD9;&#x4E00;&#x53C2;&#x6570;&#x3002;</strong><br>&#x8FD9;&#x4E2A;&#x53C2;&#x6570;&#x8868;&#x793A;&#x67D0;&#x4E2A;&#x5BF9;&#x8C61;&#x3002;&#x5BF9;&#x8C61;&#x62E5;&#x6709;&#x7C7B;&#x7684;&#x6240;&#x6709;&#x6027;&#x8D28;(self&#x76F8;&#x5F53;&#x4E8E;java&#x4E2D;&#x7684;this)&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;self&#xFF0C;&#x8C03;&#x7528;&#x7C7B;&#x5C5E;&#x6027;&#x3002;</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Human</span><span class="params">(object)</span>:</span></div><div class="line">    laugh = <span class="string">&apos;hahahaha&apos;</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">show_laugh</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">print</span> self.laugh    <span class="comment">#&#x8C03;&#x7528;laugh&#x5C5E;&#x6027;</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">laugh_100th</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">100</span>):</div><div class="line">            self.show_laugh   <span class="comment">#&#x5728;&#x65B9;&#x6CD5;laugh_100th()&#x4E2D;&#x8C03;&#x7528;show_laugh()</span></div><div class="line"></div><div class="line">li_lei = Human()</div><div class="line">li_lei.laugh_100th()</div><div class="line">```   </div><div class="line"></div><div class="line"><span class="comment">### **5&#x3001;_init_()&#x65B9;&#x6CD5;**</span></div><div class="line"></div><div class="line">&#x5982;&#x679C;&#x4F60;&#x5728;&#x7C7B;&#x4E2D;&#x5B9A;&#x4E49;&#x4E86;__init__() &#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#x65F6;&#xFF0C;Python&#x4F1A;**&#x81EA;&#x52A8;&#x8C03;&#x7528;**&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x3002;&#x8FD9;&#x4E2A;&#x8FC7;&#x7A0B;&#x4E5F;&#x53EB;**&#x521D;&#x59CB;&#x5316;**&#x3002;</div><div class="line"></div><div class="line">```Python</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">happyBird</span><span class="params">(Bird)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">_init_</span><span class="params">(self, more_words)</span>:</span></div><div class="line">        <span class="keyword">print</span> <span class="string">&apos;We are happy birds&apos;</span>, more_words     </div><div class="line"></div><div class="line">summer = happyBird(<span class="string">&apos;Happy,Happy!&apos;</span>)</div><div class="line"><span class="comment">#&#x6253;&#x5370;&#x51FA;We are happy birds.Happy,Happy!</span></div></pre></td></tr></table></figure>
+<h3 id="6&#x3001;&#x5BF9;&#x8C61;&#x7684;&#x6027;&#x8D28;"><a href="#6&#x3001;&#x5BF9;&#x8C61;&#x7684;&#x6027;&#x8D28;" class="headerlink" title="6&#x3001;&#x5BF9;&#x8C61;&#x7684;&#x6027;&#x8D28;"></a><strong>6&#x3001;&#x5BF9;&#x8C61;&#x7684;&#x6027;&#x8D28;</strong></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Human</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">_init_</span><span class="params">(self, input_gender)</span>:</span></div><div class="line">        self.gender = input_gender</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">printGender</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">print</span> self.gender</div><div class="line"></div><div class="line">li_lei = Human(<span class="string">&apos;male&apos;</span>) <span class="comment">#&#x521D;&#x59CB;&#x5316;&#xFF0C;li_lei&#x62E5;&#x6709;&#x4E86;&#x5BF9;&#x8C61;&#x6027;&#x8D28;gender&#x3002;gender&#x4E0D;&#x662F;&#x4E00;&#x4E2A;&#x7C7B;&#x5C5E;&#x6027;&#x3002;</span></div><div class="line"><span class="keyword">print</span> li_lei.gender</div><div class="line">li_lei.printGender()</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/17/Python-1/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1613,164 +1779,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/26/Tree/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Itachi">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Twilighce">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="Twilighce" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/12/26/Tree/" itemprop="url">
-                  Tree
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-26T19:07:57+08:00">
-                2016-12-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/course-notes/" itemprop="url" rel="index">
-                    <span itemprop="name">course notes</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="&#x4E00;&#x3001;&#x4E8C;&#x53C9;&#x641C;&#x7D22;&#x6811;"><a href="#&#x4E00;&#x3001;&#x4E8C;&#x53C9;&#x641C;&#x7D22;&#x6811;" class="headerlink" title="&#x4E00;&#x3001;&#x4E8C;&#x53C9;&#x641C;&#x7D22;&#x6811;"></a><strong>&#x4E00;&#x3001;&#x4E8C;&#x53C9;&#x641C;&#x7D22;&#x6811;</strong></h2><ul>
-<li>x&#x662F;&#x4E00;&#x9897;&#x6709;n&#x4E2A;&#x7ED3;&#x70B9;&#x7684;&#x4E8C;&#x53C9;&#x641C;&#x7D22;&#x6811;&#x7684;&#x6839;&#xFF0C;<strong>&#x904D;&#x5386;</strong>&#xFF1A;&#x398;(n)</li>
-<li>&#x9AD8;&#x5EA6;&#x4E3A;h&#x7684;&#x4E8C;&#x53C9;&#x641C;&#x7D22;&#x6811;&#xFF0C;<strong>&#x67E5;&#x627E;&#x3001;&#x6700;&#x5927;/&#x6700;&#x5C0F;&#x5173;&#x952E;&#x5B57;&#x5143;&#x7D20;&#x3001;&#x524D;&#x9A71;/&#x540E;&#x7EE7;</strong>&#xFF1A;O(h)</li>
-<li>&#x9AD8;&#x5EA6;&#x4E3A;h&#x7684;&#x4E8C;&#x53C9;&#x641C;&#x7D22;&#x6811;&#xFF0C;<strong>&#x63D2;&#x5165;&#x3001;&#x5220;&#x9664;</strong>&#xFF1A;O(h)</li>
-<li>&#x4E00;&#x9897;&#x6709;n&#x4E2A;&#x4E0D;&#x540C;&#x5173;&#x952E;&#x5B57;&#x7684;<strong>&#x968F;&#x673A;&#x6784;&#x5EFA;</strong>&#x4E8C;&#x53C9;&#x641C;&#x7D22;&#x6811;&#x7684;<strong>&#x671F;&#x671B;&#x9AD8;&#x5EA6;</strong>&#xFF1A;O(lgn)</li>
-</ul>
-<hr>
-<h2 id="&#x4E8C;&#x3001;&#x7EA2;&#x9ED1;&#x6811;"><a href="#&#x4E8C;&#x3001;&#x7EA2;&#x9ED1;&#x6811;" class="headerlink" title="&#x4E8C;&#x3001;&#x7EA2;&#x9ED1;&#x6811;"></a><strong>&#x4E8C;&#x3001;&#x7EA2;&#x9ED1;&#x6811;</strong></h2><h3 id="&#x6027;&#x8D28;"><a href="#&#x6027;&#x8D28;" class="headerlink" title="&#x6027;&#x8D28;"></a>&#x6027;&#x8D28;</h3><ol>
-<li>&#x6BCF;&#x4E2A;&#x7ED3;&#x70B9;&#x662F;&#x7EA2;&#x8272;&#x7684;&#xFF0C;&#x6216;&#x8005;&#x9ED1;&#x8272;&#x7684;&#x3002;</li>
-<li>&#x6839;&#x8282;&#x70B9;&#x662F;&#x9ED1;&#x8272;&#x7684;&#x3002;</li>
-<li>&#x6BCF;&#x4E2A;&#x53F6;&#x8282;&#x70B9;&#xFF08;NIL&#xFF09;&#x662F;&#x9ED1;&#x8272;&#x7684;&#x3002;</li>
-<li>&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x7ED3;&#x70B9;&#x662F;&#x7EA2;&#x8272;&#x7684;&#xFF0C;&#x5219;&#x5B83;&#x7684;&#x4E24;&#x4E2A;&#x5B50;&#x7ED3;&#x70B9;&#x90FD;&#x662F;&#x9ED1;&#x8272;&#x7684;&#x3002;</li>
-<li>&#x5BF9;&#x6BCF;&#x4E2A;&#x7ED3;&#x70B9;&#xFF0C;&#x4ECE;&#x8BE5;&#x7ED3;&#x70B9;&#x5230;&#x5176;&#x540E;&#x4EE3;&#x6240;&#x6709;&#x53F6;&#x7ED3;&#x70B9;&#x7684;&#x7B80;&#x5355;&#x8DEF;&#x5F84;&#x4E0A;&#xFF0C;&#x5747;&#x5305;&#x542B;&#x76F8;&#x540C;&#x6570;&#x76EE;&#x7684;&#x9ED1;&#x8272;&#x7ED3;&#x70B9;&#x3002;</li>
-</ol>
-          <!--noindex-->
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/12/26/Tree/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1818,7 +1826,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
