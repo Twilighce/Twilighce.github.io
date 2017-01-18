@@ -248,6 +248,215 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/18/Python-4/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Itachi">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Twilighce">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Twilighce" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/01/18/Python-4/" itemprop="url">
+                  Python_4
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-18T14:44:45+08:00">
+                2017-01-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/study-notes/" itemprop="url" rel="index">
+                    <span itemprop="name">study notes</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="&#x5FAA;&#x73AF;&#x8BBE;&#x8BA1;"><a href="#&#x5FAA;&#x73AF;&#x8BBE;&#x8BA1;" class="headerlink" title="&#x5FAA;&#x73AF;&#x8BBE;&#x8BA1;"></a><strong>&#x5FAA;&#x73AF;&#x8BBE;&#x8BA1;</strong></h2><h3 id="1&#x3001;range"><a href="#1&#x3001;range" class="headerlink" title="1&#x3001;range()"></a><strong>1&#x3001;range()</strong></h3><p>&#x5229;&#x7528;enumerate()&#x51FD;&#x6570;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x6BCF;&#x6B21;&#x5FAA;&#x73AF;&#x4E2D;&#x540C;&#x65F6;&#x5F97;&#x5230;&#x4E0B;&#x6807;&#x548C;&#x5143;&#x7D20;&#xFF1A;</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">S = <span class="string">&apos;abcdefrhijk&apos;</span></div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, len(S), <span class="number">2</span>):</div><div class="line">    <span class="keyword">print</span> S[i]</div></pre></td></tr></table></figure>
+<p>&#x5728;range&#x51FD;&#x6570;&#x4E2D;&#xFF0C;&#x5B9A;&#x4E49;&#x4E86;&#x4E0A;&#x9650;&#x3001;&#x4E0B;&#x9650;&#x3001;&#x548C;&#x6BCF;&#x6B21;&#x5FAA;&#x73AF;&#x7684;&#x6B65;&#x957F;</p>
+<h3 id="2&#x3001;enumerate"><a href="#2&#x3001;enumerate" class="headerlink" title="2&#x3001;enumerate()"></a><strong>2&#x3001;enumerate()</strong></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">S = <span class="string">&apos;abcdefghijk&apos;</span></div><div class="line"><span class="keyword">for</span> (index,char) <span class="keyword">in</span> enumerate(S):</div><div class="line">    <span class="keyword">print</span> index</div><div class="line">    <span class="keyword">print</span> char</div></pre></td></tr></table></figure>
+<p>enumerate()&#x5728;&#x6BCF;&#x6B21;&#x5FAA;&#x73AF;&#x4E2D;&#xFF0C;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x5305;&#x542B;&#x4E24;&#x4E2A;&#x5143;&#x7D20;&#x7684;&#x5B9A;&#x503C;&#x8868;(tuple)&#xFF0C;&#x4E24;&#x4E2A;&#x5143;&#x7D20;&#x5206;&#x522B;&#x8D4B;&#x4E88;index&#x548C;char&#x3002;</p>
+<h3 id="3&#x3001;zip"><a href="#3&#x3001;zip" class="headerlink" title="3&#x3001;zip()"></a><strong>3&#x3001;zip()</strong></h3><p>&#x5982;&#x679C;&#x6709;&#x591A;&#x4E2A;&#x7B49;&#x957F;&#x7684;&#x5E8F;&#x5217;&#xFF0C;&#x60F3;&#x8981;&#x6BCF;&#x6B21;&#x5FAA;&#x73AF;&#x65F6;&#x4ECE;&#x5404;&#x4E2A;&#x5E8F;&#x5217;&#x5206;&#x522B;&#x53D6;&#x51FA;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x53EF;&#x4EE5;&#x5229;&#x7528;zip()&#x5B9E;&#x73B0;&#xFF1A;</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">ta = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</div><div class="line">tb = [<span class="number">9</span>,<span class="number">8</span>,<span class="number">7</span>]</div><div class="line">tc = [<span class="string">&apos;a&apos;</span>,<span class="string">&apos;b&apos;</span>,<span class="string">&apos;c&apos;</span>]</div><div class="line"><span class="keyword">for</span>  (a,b,c) <span class="keyword">in</span> zip(ta, tb, tc):</div><div class="line">    <span class="keyword">print</span> (a,b,c)</div></pre></td></tr></table></figure>
+<p>zip()&#x51FD;&#x6570;&#x7684;&#x529F;&#x80FD;&#xFF1A;&#x4ECE;&#x591A;&#x4E2A;&#x5217;&#x8868;&#x4E2D;&#xFF0C;&#x4F9D;&#x6B21;&#x5404;&#x53D6;&#x51FA;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x3002;&#x6BCF;&#x6B21;&#x53D6;&#x51FA;&#x7684;(&#x6765;&#x81EA;&#x4E0D;&#x540C;&#x5217;&#x8868;&#x7684;)&#x5143;&#x7D20;&#x5408;&#x6210;&#x4E00;&#x4E2A;&#x5143;&#x7EC4;&#xFF0C;&#x5408;&#x5E76;&#x6210;&#x7684;&#x5143;&#x7EC4;&#x653E;&#x5165;zip()&#x8FD4;&#x56DE;&#x7684;&#x5217;&#x8868;&#x4E2D;&#x3002;<br>zip()&#x51FD;&#x6570;&#x8D77;&#x5230;&#x4E86;&#x805A;&#x5408;&#x5217;&#x8868;&#x7684;&#x529F;&#x80FD;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5206;&#x89E3;&#x805A;&#x5408;&#x540E;&#x7684;&#x5217;&#x8868;&#xFF1A;</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">ta = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</div><div class="line">tb = [<span class="number">9</span>,<span class="number">8</span>,<span class="number">7</span>]</div><div class="line"></div><div class="line"><span class="comment">#&#x805A;&#x5408;</span></div><div class="line">zipped = zip(ta,tb)</div><div class="line">print(zipped)</div><div class="line"></div><div class="line"><span class="comment">#&#x5206;&#x89E3;&#x805A;&#x5408;</span></div><div class="line">na,nb = zip(*zipped)</div><div class="line">print(na,nb)</div></pre></td></tr></table></figure>
+<h2 id="&#x5FAA;&#x73AF;&#x5BF9;&#x8C61;"><a href="#&#x5FAA;&#x73AF;&#x5BF9;&#x8C61;" class="headerlink" title="&#x5FAA;&#x73AF;&#x5BF9;&#x8C61;"></a><strong>&#x5FAA;&#x73AF;&#x5BF9;&#x8C61;</strong></h2><h3 id="1&#x3001;&#x4EC0;&#x4E48;&#x662F;&#x5FAA;&#x73AF;&#x5BF9;&#x8C61;"><a href="#1&#x3001;&#x4EC0;&#x4E48;&#x662F;&#x5FAA;&#x73AF;&#x5BF9;&#x8C61;" class="headerlink" title="1&#x3001;&#x4EC0;&#x4E48;&#x662F;&#x5FAA;&#x73AF;&#x5BF9;&#x8C61;"></a><strong>1&#x3001;&#x4EC0;&#x4E48;&#x662F;&#x5FAA;&#x73AF;&#x5BF9;&#x8C61;</strong></h3><p>&#x5FAA;&#x73AF;&#x5BF9;&#x8C61;&#x5305;&#x542B;&#x4E00;&#x4E2A;next()&#x65B9;&#x6CD5;&#xFF0C;&#x76EE;&#x7684;&#x662F;&#x8FDB;&#x884C;&#x5230;&#x4E0B;&#x4E00;&#x4E2A;&#x7ED3;&#x679C;&#x3002;&#x5728;&#x7ED3;&#x675F;&#x4E00;&#x7CFB;&#x5217;&#x7ED3;&#x679C;&#x4E4B;&#x540E;&#xFF0C;&#x4E3E;&#x51FA;StopIteration&#x9519;&#x8BEF;&#x3002;</p>
+<p>&#x5F53;&#x4E00;&#x4E2A;&#x5FAA;&#x73AF;&#xFF08;&#x6BD4;&#x5982;for&#xFF09;&#x8C03;&#x7528;&#x5FAA;&#x73AF;&#x5BF9;&#x8C61;&#x65F6;&#xFF0C;&#x5C31;&#x4F1A;&#x5728;&#x6BCF;&#x6B21;&#x5FAA;&#x73AF;&#x65F6;&#x8C03;&#x7528;next()&#xFF0C;&#x76F4;&#x5230;&#x51FA;&#x73B0;StopIteration&#xFF0C;&#x5C31;&#x76F4;&#x5230;&#x5FAA;&#x73AF;&#x5DF2;&#x7ECF;&#x7ED3;&#x675F;&#xFF0C;&#x505C;&#x6B62;&#x8C03;&#x7528;next()&#x3002;</p>
+<p>&#x5047;&#x8BBE;&#x6211;&#x4EEC;&#x6709;&#x4E00;&#x4E2A;test.txt&#x7684;&#x6587;&#x4EF6;:</p>
+<blockquote>
+<p>1234<br>abcd<br>efg</p>
+</blockquote>
+<p>&#x8FD0;&#x884C;&#x4E00;&#x4E0B;Python&#xFF1A;</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">f = open(<span class="string">&apos;text.txt&apos;</span>)</div><div class="line">f.next()</div><div class="line">f.next</div><div class="line"><span class="meta">... </span> <span class="comment">#&#x4E0D;&#x65AD;&#x8F93;&#x5165;f.next()&#xFF0C;&#x76F4;&#x5230;&#x6700;&#x540E;&#x51FA;&#x73B0;StopIteration</span></div></pre></td></tr></table></figure>
+<p>open()&#x8FD4;&#x56DE;&#x7684;&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x4E00;&#x4E2A;&#x5FAA;&#x73AF;&#x5BF9;&#x8C61;&#xFF0C;&#x5305;&#x542B;&#x6709;next()&#x65B9;&#x6CD5;&#x3002;&#x800C;&#x8BE5;next()&#x65B9;&#x6CD5;&#x6BCF;&#x6B21;&#x8FD4;&#x56DE;&#x7684;&#x5C31;&#x662F;&#x65B0;&#x7684;&#x4E00;&#x884C;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x5230;&#x8FBE;&#x6587;&#x4EF6;&#x7ED3;&#x5C3E;&#x65F6;&#x4E3E;&#x51FA;StopIteration&#x3002;&#x8FD9;&#x6837;&#xFF0C;&#x6211;&#x4EEC;&#x76F8;&#x5F53;&#x4E8E;&#x624B;&#x5DE5;&#x8FDB;&#x884C;&#x4E86;&#x5FAA;&#x73AF;&#x3002;</p>
+<p>&#x81EA;&#x52A8;&#x8FDB;&#x884C;&#x7684;&#x8BDD;&#xFF0C;&#x5C31;&#x662F;&#xFF1A;</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> line <span class="keyword">in</span> open(<span class="string">&apos;test.txt&apos;</span>):</div><div class="line">    <span class="keyword">print</span> line</div></pre></td></tr></table></figure>
+<p>&#x5728;&#x8FD9;&#x91CC;&#xFF0C;for&#x7ED3;&#x6784;&#x81EA;&#x52A8;&#x8C03;&#x7528;next()&#x65B9;&#x6CD5;&#xFF0C;&#x5C06;&#x8BE5;&#x65B9;&#x6CD5;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x8D4B;&#x4E88;&#x7ED9;line&#x3002;&#x5FAA;&#x73AF;&#x76F4;&#x5230;&#x51FA;&#x73B0;StopIteration&#x7684;&#x65F6;&#x5019;&#x7ED3;&#x675F;&#x3002;</p>
+<p><strong>&#x76F8;&#x5BF9;&#x4E8E;&#x5E8F;&#x5217;&#xFF0C;&#x7528;&#x5FAA;&#x73AF;&#x5BF9;&#x8C61;&#x7684;&#x597D;&#x5904;&#x5728;&#x4E8E;</strong>&#xFF1A;&#x4E0D;&#x7528;&#x5728;&#x5FAA;&#x73AF;&#x8FD8;&#x6CA1;&#x6709;&#x5F00;&#x59CB;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5C31;&#x751F;&#x6210;&#x597D;&#x8981;&#x4F7F;&#x7528;&#x7684;&#x5143;&#x7D20;&#x3002;&#x6240;&#x4F7F;&#x7528;&#x7684;&#x5143;&#x7D20;&#x53EF;&#x4EE5;&#x5728;&#x5FAA;&#x73AF;&#x8FC7;&#x7A0B;&#x4E2D;&#x9010;&#x6B21;&#x751F;&#x6210;&#x3002;&#x8FD9;&#x6837;&#xFF0C;&#x8282;&#x7701;&#x4E86;&#x7A7A;&#x95F4;&#xFF0C;&#x63D0;&#x9AD8;&#x4E86;&#x6548;&#x7387;&#xFF0C;&#x7F16;&#x7A0B;&#x66F4;&#x7075;&#x6D3B;&#x3002;</p>
+<h3 id="2&#x3001;&#x8FED;&#x4EE3;&#x5668;"><a href="#2&#x3001;&#x8FED;&#x4EE3;&#x5668;" class="headerlink" title="2&#x3001;&#x8FED;&#x4EE3;&#x5668;"></a><strong>2&#x3001;&#x8FED;&#x4EE3;&#x5668;</strong></h3><p>&#x4ECE;&#x6280;&#x672F;&#x4E0A;&#x6765;&#x8BF4;&#xFF0C;&#x5FAA;&#x73AF;&#x5BF9;&#x8C61;&#x548C;for&#x5FAA;&#x73AF;&#x8C03;&#x7528;&#x4E4B;&#x95F4;&#x8FD8;&#x6709;&#x4E00;&#x4E2A;&#x4E2D;&#x95F4;&#x5C42;&#xFF0C;&#x5C31;&#x662F;&#x8981;&#x5C06;&#x5FAA;&#x73AF;&#x5BF9;&#x8C61;&#x8F6C;&#x6362;&#x6210;&#x8FED;&#x4EE3;&#x5668;(iterator)&#x3002;&#x8FD9;&#x4E00;&#x8F6C;&#x6362;&#x662F;&#x901A;&#x8FC7;&#x4F7F;&#x7528;iter()&#x51FD;&#x6570;&#x5B9E;&#x73B0;&#x7684;&#x3002;</p>
+<p>&#x4F46;&#x4ECE;&#x903B;&#x8F91;&#x5C42;&#x9762;&#x4E0A;&#xFF0C;&#x5E38;&#x5E38;&#x53EF;&#x4EE5;&#x5FFD;&#x7565;&#x8FD9;&#x4E00;&#x5C42;&#xFF0C;&#x6240;&#x4EE5;&#x5FAA;&#x73AF;&#x5BF9;&#x8C61;&#x548C;&#x8FED;&#x4EE3;&#x5668;&#x5E38;&#x5E38;&#x76F8;&#x4E92;&#x6307;&#x4EE3;&#x5BF9;&#x65B9;&#x3002;</p>
+<h3 id="3&#x3001;&#x751F;&#x6210;&#x5668;"><a href="#3&#x3001;&#x751F;&#x6210;&#x5668;" class="headerlink" title="3&#x3001;&#x751F;&#x6210;&#x5668;"></a><strong>3&#x3001;&#x751F;&#x6210;&#x5668;</strong></h3><p>&#x751F;&#x6210;&#x5668;(generator)&#x7684;&#x4E3B;&#x8981;&#x76EE;&#x7684;&#x662F;<strong>&#x6784;&#x6210;&#x4E00;&#x4E2A;&#x7528;&#x6237;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x5FAA;&#x73AF;&#x5BF9;&#x8C61;</strong>&#x3002;</p>
+<p>&#x751F;&#x6210;&#x5668;&#x7684;<strong>&#x7F16;&#x5199;&#x65B9;&#x6CD5;&#x548C;&#x51FD;&#x6570;&#x5B9A;&#x4E49;&#x7C7B;&#x4F3C;&#xFF0C;&#x53EA;&#x662F;&#x5728;return&#x7684;&#x5730;&#x65B9;&#x6539;&#x4E3A;yield</strong>&#x3002;&#x751F;&#x6210;&#x5668;&#x4E2D;&#x53EF;&#x4EE5;&#x6709;&#x591A;&#x4E2A;yield&#x3002;&#x5F53;&#x751F;&#x6210;&#x5668;&#x9047;&#x5230;&#x4E00;&#x4E2A;yield&#x65F6;&#xFF0C;&#x4F1A;&#x6682;&#x505C;&#x8FD0;&#x884C;&#x751F;&#x6210;&#x5668;&#xFF0C;&#x8FD4;&#x56DE;yield&#x540E;&#x9762;&#x7684;&#x503C;&#x3002;&#x5F53;&#x518D;&#x6B21;&#x8C03;&#x7528;&#x751F;&#x6210;&#x5668;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4F1A;&#x4ECE;&#x521A;&#x624D;&#x6682;&#x505C;&#x7684;&#x5730;&#x65B9;&#x7EE7;&#x7EED;&#x8FD0;&#x884C;&#xFF0C;&#x76F4;&#x5230;&#x4E0B;&#x4E00;&#x4E2A;yield&#x3002;&#x751F;&#x6210;&#x5668;&#x81EA;&#x8EAB;&#x53C8;&#x6784;&#x6210;&#x4E00;&#x4E2A;&#x5FAA;&#x73AF;&#x5668;&#xFF0C;&#x6BCF;&#x6B21;&#x5FAA;&#x73AF;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;yield&#x8FD4;&#x56DE;&#x7684;&#x503C;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x662F;&#x4E00;&#x4E2A;&#x751F;&#x6210;&#x5668;:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">gen</span><span class="params">()</span>:</span></div><div class="line">    a = <span class="number">100</span></div><div class="line">    <span class="keyword">yield</span> a</div><div class="line">    a = a*<span class="number">8</span></div><div class="line">    <span class="keyword">yield</span> a</div><div class="line">    <span class="keyword">yield</span> <span class="number">1000</span></div></pre></td></tr></table></figure>
+<p>&#x8BE5;&#x751F;&#x6210;&#x5668;&#x5171;&#x6709;&#x4E09;&#x4E2A;yield&#xFF0C; &#x5982;&#x679C;&#x7528;&#x4F5C;&#x5FAA;&#x73AF;&#x5668;&#x65F6;&#xFF0C;&#x4F1A;&#x8FDB;&#x884C;&#x4E09;&#x6B21;&#x5FAA;&#x73AF;&#xFF1A;</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> gen():</div><div class="line">    <span class="keyword">print</span> i</div></pre></td></tr></table></figure>
+<p>&#x518D;&#x8003;&#x8651;&#x5982;&#x4E0B;&#x4E00;&#x4E2A;&#x751F;&#x6210;&#x5668;:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">gen</span><span class="params">()</span>:</span></div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">4</span>):</div><div class="line">        <span class="keyword">yield</span> i</div></pre></td></tr></table></figure>
+<p>&#x53C8;&#x53EF;&#x4EE5;&#x5199;&#x6210;&#x751F;&#x6210;&#x5668;&#x8868;&#x8FBE;&#x5F0F;(Generator Expression):</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">G = (x <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">4</span>))</div></pre></td></tr></table></figure>
+<h3 id="4&#x3001;&#x8868;&#x63A8;&#x5BFC;"><a href="#4&#x3001;&#x8868;&#x63A8;&#x5BFC;" class="headerlink" title="4&#x3001;&#x8868;&#x63A8;&#x5BFC;"></a><strong>4&#x3001;&#x8868;&#x63A8;&#x5BFC;</strong></h3><p>&#x666E;&#x901A;&#x751F;&#x6210;&#x8868;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">L = []</div><div class="line"><span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">10</span>):</div><div class="line">    L.append(x**<span class="number">2</span>)</div></pre></td></tr></table></figure>
+<p>&#x8868;&#x63A8;&#x5BFC;&#x65B9;&#x5F0F;&#xFF1A;</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">L = [x**<span class="number">2</span> <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">10</span>)]</div></pre></td></tr></table></figure>
+<p>&#x4E0E;&#x751F;&#x6210;&#x5668;&#x8868;&#x8FBE;&#x5F0F;&#x7C7B;&#x4F3C;&#xFF0C;&#x53EA;&#x4E0D;&#x8FC7;&#x7528;&#x7684;&#x662F;&#x4E2D;&#x62EC;&#x53F7;</p>
+<h2 id="&#x51FD;&#x6570;&#x5BF9;&#x8C61;"><a href="#&#x51FD;&#x6570;&#x5BF9;&#x8C61;" class="headerlink" title="&#x51FD;&#x6570;&#x5BF9;&#x8C61;"></a><strong>&#x51FD;&#x6570;&#x5BF9;&#x8C61;</strong></h2><h3 id="1&#x3001;lambda&#x51FD;&#x6570;"><a href="#1&#x3001;lambda&#x51FD;&#x6570;" class="headerlink" title="1&#x3001;lambda&#x51FD;&#x6570;"></a><strong>1&#x3001;lambda&#x51FD;&#x6570;</strong></h3><p>&#x666E;&#x901A;&#x5B9A;&#x4E49;&#x51FD;&#x6570;&#x65B9;&#x5F0F;&#xFF1A;</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">def func(x, y)</div><div class="line">    return x + y</div></pre></td></tr></table></figure>
+<p>&#x7528;lambda&#x51FD;&#x6570;&#x7684;&#x8BED;&#x6CD5;&#x5B9A;&#x4E49;&#x51FD;&#x6570;&#xFF1A;</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">func = <span class="keyword">lambda</span> x,y: x + y</div><div class="line"><span class="keyword">print</span> func(<span class="number">3.4</span>)</div></pre></td></tr></table></figure>
+<h3 id="2&#x3001;&#x51FD;&#x6570;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x4F20;&#x9012;"><a href="#2&#x3001;&#x51FD;&#x6570;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x4F20;&#x9012;" class="headerlink" title="2&#x3001;&#x51FD;&#x6570;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x4F20;&#x9012;"></a><strong>2&#x3001;&#x51FD;&#x6570;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x4F20;&#x9012;</strong></h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">def test(f, a, b)</div><div class="line">    print &apos;test&apos;</div><div class="line">    print f(a,b)</div><div class="line"></div><div class="line">test(func, 3, 5)</div></pre></td></tr></table></figure>
+<p>&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E0A;&#x9762;&#x7684;test&#x51FD;&#x6570;&#xFF0C;&#x5E26;&#x5165;&#x4E0D;&#x540C;&#x7684;&#x51FD;&#x6570;&#x53C2;&#x6570;:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">test((<span class="keyword">lambda</span> x,y: x**<span class="number">2</span> +y), <span class="number">6</span>, <span class="number">9</span>)</div></pre></td></tr></table></figure>
+<h3 id="3&#x3001;map-&#x51FD;&#x6570;"><a href="#3&#x3001;map-&#x51FD;&#x6570;" class="headerlink" title="3&#x3001;map()&#x51FD;&#x6570;"></a><strong>3&#x3001;map()&#x51FD;&#x6570;</strong></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">re = map((<span class="keyword">lambda</span> x: x+<span class="number">3</span>),[<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">6</span>])</div></pre></td></tr></table></figure>
+<p>map()&#x7684;&#x529F;&#x80FD;&#x662F;&#x5C06;&#x51FD;&#x6570;&#x5BF9;&#x8C61;&#x4F9D;&#x6B21;&#x4F5C;&#x7528;&#x4E8E;&#x8868;&#x7684;&#x6BCF;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x6BCF;&#x6B21;&#x4F5C;&#x7528;&#x7684;&#x7ED3;&#x679C;&#x50A8;&#x5B58;&#x4E8E;&#x8FD4;&#x56DE;&#x7684;&#x8868;re&#x4E2D;&#x3002;<br>map&#x901A;&#x8FC7;&#x8BFB;&#x5165;&#x7684;&#x51FD;&#x6570;(&#x8FD9;&#x91CC;&#x662F;lambda&#x51FD;&#x6570;)&#x6765;&#x64CD;&#x4F5C;&#x6570;&#x636E;&#xFF08;&#x8FD9;&#x91CC;&#x201C;&#x6570;&#x636E;&#x201D;&#x662F;&#x8868;&#x4E2D;&#x7684;&#x6BCF;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x201C;&#x64CD;&#x4F5C;&#x201D;&#x662F;&#x5BF9;&#x6BCF;&#x4E2A;&#x6570;&#x636E;&#x52A0;3&#xFF09;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x7684;&#x51FD;&#x6570;&#x5BF9;&#x8C61;&#x6709;&#x591A;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x53EF;&#x4F7F;&#x7528;&#x4E0B;&#x9762;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x5411;map()&#x4F20;&#x9012;&#x51FD;&#x6570;&#x53C2;&#x6570;&#x7684;&#x591A;&#x4E2A;&#x53C2;&#x6570;&#xFF1A;</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">re = map((<span class="keyword">lambda</span> x,y: x+y),[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">6</span>,<span class="number">7</span>,<span class="number">9</span>])</div><div class="line"><span class="comment">#map()&#x5C06;&#x6BCF;&#x6B21;&#x4ECE;&#x4E24;&#x4E2A;&#x8868;&#x4E2D;&#x5206;&#x522B;&#x53D6;&#x51FA;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x5E26;&#x5165;lambda&#x6240;&#x5B9A;&#x4E49;&#x7684;&#x51FD;&#x6570;&#x3002;</span></div></pre></td></tr></table></figure>
+<h3 id="4&#x3001;filter-&#x51FD;&#x6570;"><a href="#4&#x3001;filter-&#x51FD;&#x6570;" class="headerlink" title="4&#x3001;filter()&#x51FD;&#x6570;"></a><strong>4&#x3001;filter()&#x51FD;&#x6570;</strong></h3><p>&#x5B83;&#x4E5F;&#x662F;&#x5C06;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x7684;&#x51FD;&#x6570;&#x5BF9;&#x8C61;&#x4F5C;&#x7528;&#x4E8E;&#x591A;&#x4E2A;&#x5143;&#x7D20;&#x3002;<strong>&#x5982;&#x679C;&#x51FD;&#x6570;&#x5BF9;&#x8C61;&#x8FD4;&#x56DE;&#x7684;&#x662F;True&#xFF0C;&#x5219;&#x8BE5;&#x6B21;&#x7684;&#x5143;&#x7D20;&#x88AB;&#x50A8;&#x5B58;&#x4E8E;&#x8FD4;&#x56DE;&#x7684;&#x8868;&#x4E2D;</strong>&#x3002; filter&#x901A;&#x8FC7;&#x8BFB;&#x5165;&#x7684;&#x51FD;&#x6570;&#x6765;<strong>&#x7B5B;&#x9009;</strong>&#x6570;&#x636E;&#x3002;</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(a)</span>:</span></div><div class="line">    <span class="keyword">if</span> a &gt; <span class="number">100</span>:</div><div class="line">        <span class="keyword">return</span> <span class="keyword">True</span></div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        <span class="keyword">return</span> <span class="keyword">False</span></div><div class="line"></div><div class="line"><span class="keyword">print</span> filter(func,[<span class="number">10</span>,<span class="number">56</span>,<span class="number">101</span>,<span class="number">500</span>])</div></pre></td></tr></table></figure>
+<h3 id="5&#x3001;reduce-&#x51FD;&#x6570;"><a href="#5&#x3001;reduce-&#x51FD;&#x6570;" class="headerlink" title="5&#x3001;reduce()&#x51FD;&#x6570;"></a><strong>5&#x3001;reduce()&#x51FD;&#x6570;</strong></h3><p>reduce&#x51FD;&#x6570;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x4E5F;&#x662F;&#x51FD;&#x6570;&#xFF0C;&#x4F46;&#x6709;&#x4E00;&#x4E2A;&#x8981;&#x6C42;&#xFF0C;&#x5C31;&#x662F;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x81EA;&#x8EAB;&#x80FD;&#x63A5;&#x6536;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#x3002;reduce&#x53EF;&#x4EE5;&#x7D2F;&#x8FDB;&#x5730;&#x5C06;&#x51FD;&#x6570;&#x4F5C;&#x7528;&#x4E8E;&#x5404;&#x4E2A;&#x53C2;&#x6570;&#xFF1A;</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">print</span> reduce((<span class="keyword">lambda</span> x,y: x+y),[<span class="number">1</span>,<span class="number">2</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">9</span>])</div><div class="line"><span class="comment">#&#x76F8;&#x5F53;&#x4E8E;(((1+2)+5)+7)+9</span></div></pre></td></tr></table></figure>
+<p>reduce&#x5C06;&#x8868;&#x4E2D;&#x7684;&#x524D;&#x4E24;&#x4E2A;&#x5143;&#x7D20;(1&#x548C;2)&#x4F20;&#x9012;&#x7ED9;lambda&#x51FD;&#x6570;&#xFF0C;&#x5F97;&#x5230;3&#x3002;&#x8BE5;&#x8FD4;&#x56DE;&#x503C;(3)&#x5C06;&#x4F5C;&#x4E3A;lambda&#x51FD;&#x6570;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x800C;&#x8868;&#x4E2D;&#x7684;&#x4E0B;&#x4E00;&#x4E2A;&#x5143;&#x7D20;(5)&#x4F5C;&#x4E3A;lambda&#x51FD;&#x6570;&#x7684;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x8FDB;&#x884C;&#x4E0B;&#x4E00;&#x6B21;&#x7684;&#x5BF9;lambda&#x51FD;&#x6570;&#x7684;&#x8C03;&#x7528;&#xFF0C;&#x5F97;&#x5230;8&#x3002;&#x4F9D;&#x6B21;&#x8C03;&#x7528;lambda&#x51FD;&#x6570;&#xFF0C;&#x6BCF;&#x6B21;lambda&#x51FD;&#x6570;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x4E0A;&#x4E00;&#x6B21;&#x8FD0;&#x7B97;&#x7ED3;&#x679C;&#xFF0C;&#x800C;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x4E3A;&#x8868;&#x4E2D;&#x7684;&#x4E0B;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x76F4;&#x5230;&#x8868;&#x4E2D;&#x6CA1;&#x6709;&#x5269;&#x4F59;&#x5143;&#x7D20;&#x3002;</p>
+<h2 id="&#x9519;&#x8BEF;&#x5904;&#x7406;"><a href="#&#x9519;&#x8BEF;&#x5904;&#x7406;" class="headerlink" title="&#x9519;&#x8BEF;&#x5904;&#x7406;"></a><strong>&#x9519;&#x8BEF;&#x5904;&#x7406;</strong></h2><h3 id="1&#x3001;&#x5F02;&#x5E38;&#x5904;&#x7406;"><a href="#1&#x3001;&#x5F02;&#x5E38;&#x5904;&#x7406;" class="headerlink" title="1&#x3001;&#x5F02;&#x5E38;&#x5904;&#x7406;"></a><strong>1&#x3001;&#x5F02;&#x5E38;&#x5904;&#x7406;</strong></h3><p>eg:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">re = iter(range(<span class="number">5</span>))</div><div class="line"></div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">100</span>):</div><div class="line">    <span class="keyword">print</span> re.next()</div><div class="line"></div><div class="line"><span class="keyword">print</span> <span class="string">&apos;HaHa&apos;</span></div></pre></td></tr></table></figure>
+<p>&#x5F02;&#x5E38;&#x5904;&#x7406;&#xFF1A;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">re = iter(range(5))</div><div class="line"></div><div class="line">try:</div><div class="line">    for i in range(100):</div><div class="line">        print re.next()</div><div class="line">except StopIteration:</div><div class="line">    print &apos;Here is the end&apos;, i</div><div class="line"></div><div class="line">print &apos;HaHa&apos;</div></pre></td></tr></table></figure>
+<p>&#x8BED;&#x6CD5;&#x7ED3;&#x6784;&#x5982;&#x4E0B;&#xFF1A;</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">try</span>:</div><div class="line">    ...</div><div class="line"><span class="keyword">except</span> exception1:</div><div class="line">    ...</div><div class="line"><span class="keyword">except</span> exception2:</div><div class="line">    ...</div><div class="line"><span class="keyword">except</span>:</div><div class="line">    ...</div><div class="line"><span class="keyword">else</span>:</div><div class="line">    ...</div><div class="line"><span class="keyword">finally</span>:</div><div class="line">    ...</div></pre></td></tr></table></figure>
+<p>&#x6D41;&#x7A0B;&#x5982;&#x4E0B;:</p>
+<ul>
+<li><p>try-&gt;&#x5F02;&#x5E38;-&gt;except-&gt;finally</p>
+</li>
+<li><p>try-&gt;&#x65E0;&#x5F02;&#x5E38;-&gt;else-&gt;finally</p>
+</li>
+</ul>
+<h3 id="2&#x3001;&#x629B;&#x51FA;&#x5F02;&#x5E38;"><a href="#2&#x3001;&#x629B;&#x51FA;&#x5F02;&#x5E38;" class="headerlink" title="2&#x3001;&#x629B;&#x51FA;&#x5F02;&#x5E38;"></a><strong>2&#x3001;&#x629B;&#x51FA;&#x5F02;&#x5E38;</strong></h3><h2 id="&#x52A8;&#x6001;&#x7C7B;&#x578B;"><a href="#&#x52A8;&#x6001;&#x7C7B;&#x578B;" class="headerlink" title="&#x52A8;&#x6001;&#x7C7B;&#x578B;"></a><strong>&#x52A8;&#x6001;&#x7C7B;&#x578B;</strong></h2><h3 id="1&#x3001;&#x52A8;&#x6001;&#x7C7B;&#x578B;"><a href="#1&#x3001;&#x52A8;&#x6001;&#x7C7B;&#x578B;" class="headerlink" title="1&#x3001;&#x52A8;&#x6001;&#x7C7B;&#x578B;"></a><strong>1&#x3001;&#x52A8;&#x6001;&#x7C7B;&#x578B;</strong></h3><h3 id="2&#x3001;&#x4ECE;&#x52A8;&#x6001;&#x7C7B;&#x578B;&#x770B;&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;&#x4F20;&#x9012;"><a href="#2&#x3001;&#x4ECE;&#x52A8;&#x6001;&#x7C7B;&#x578B;&#x770B;&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;&#x4F20;&#x9012;" class="headerlink" title="2&#x3001;&#x4ECE;&#x52A8;&#x6001;&#x7C7B;&#x578B;&#x770B;&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;&#x4F20;&#x9012;"></a><strong>2&#x3001;&#x4ECE;&#x52A8;&#x6001;&#x7C7B;&#x578B;&#x770B;&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;&#x4F20;&#x9012;</strong></h3>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/17/Python-3/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1588,162 +1797,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/30/CSRF-XSS/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Itachi">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Twilighce">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="Twilighce" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/12/30/CSRF-XSS/" itemprop="url">
-                  CSRF-XSS
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-30T22:58:40+08:00">
-                2016-12-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/course-notes/" itemprop="url" rel="index">
-                    <span itemprop="name">course notes</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="XSS"><a href="#XSS" class="headerlink" title="XSS"></a><strong>XSS</strong></h1><h3 id="What-is-XSS"><a href="#What-is-XSS" class="headerlink" title="What  is  XSS ?"></a><strong>What  is  XSS ?</strong></h3><ul>
-<li><p>Cross-Site Scripting&#xFF1B;</p>
-</li>
-<li><p>injects client-side executable code into web applications.   </p>
-</li>
-</ul>
-<h3 id="The-three-conditions-for-XSS"><a href="#The-three-conditions-for-XSS" class="headerlink" title="The three conditions for XSS :"></a><strong>The three conditions for XSS :</strong></h3><ul>
-<li><p>A Web application accepts user input;</p>
-</li>
-<li><p>The input is used to create dynamic content;</p>
-</li>
-<li><p>The input is insufficiently validated.</p></li></ul>
-          <!--noindex-->
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/12/30/CSRF-XSS/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1791,7 +1844,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
