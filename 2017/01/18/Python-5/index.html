@@ -1,0 +1,758 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Python," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="&amp;#x7279;&amp;#x6B8A;&amp;#x65B9;&amp;#x6CD5;&amp;#x4E0E;&amp;#x591A;&amp;#x8303;&amp;#x5F0F;Python&amp;#x7684;&amp;#x591A;&amp;#x8303;&amp;#x5F0F;&amp;#x4F9D;&amp;#x8D56;&amp;#x4E8E;Python&amp;#x5BF9;&amp;#x8C61;&amp;#x4E2D;&amp;#x7684;&amp;#x7279;&amp;#x6B8A;&amp;#x65B9;&amp;#x6CD5;(spe">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python_5">
+<meta property="og:url" content="http://yoursite.com/2017/01/18/Python-5/index.html">
+<meta property="og:site_name" content="Twilighce">
+<meta property="og:description" content="&amp;#x7279;&amp;#x6B8A;&amp;#x65B9;&amp;#x6CD5;&amp;#x4E0E;&amp;#x591A;&amp;#x8303;&amp;#x5F0F;Python&amp;#x7684;&amp;#x591A;&amp;#x8303;&amp;#x5F0F;&amp;#x4F9D;&amp;#x8D56;&amp;#x4E8E;Python&amp;#x5BF9;&amp;#x8C61;&amp;#x4E2D;&amp;#x7684;&amp;#x7279;&amp;#x6B8A;&amp;#x65B9;&amp;#x6CD5;(spe">
+<meta property="og:updated_time" content="2017-01-18T12:36:03.311Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python_5">
+<meta name="twitter:description" content="&amp;#x7279;&amp;#x6B8A;&amp;#x65B9;&amp;#x6CD5;&amp;#x4E0E;&amp;#x591A;&amp;#x8303;&amp;#x5F0F;Python&amp;#x7684;&amp;#x591A;&amp;#x8303;&amp;#x5F0F;&amp;#x4F9D;&amp;#x8D56;&amp;#x4E8E;Python&amp;#x5BF9;&amp;#x8C61;&amp;#x4E2D;&amp;#x7684;&amp;#x7279;&amp;#x6B8A;&amp;#x65B9;&amp;#x6CD5;(spe">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/01/18/Python-5/"/>
+
+
+
+
+
+  <title> Python_5 | Twilighce </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Twilighce</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <p class="site-subtitle"></p>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/18/Python-5/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Itachi">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Twilighce">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Twilighce" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Python_5
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-18T20:35:04+08:00">
+                2017-01-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/study-notes/" itemprop="url" rel="index">
+                    <span itemprop="name">study notes</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="&#x7279;&#x6B8A;&#x65B9;&#x6CD5;&#x4E0E;&#x591A;&#x8303;&#x5F0F;"><a href="#&#x7279;&#x6B8A;&#x65B9;&#x6CD5;&#x4E0E;&#x591A;&#x8303;&#x5F0F;" class="headerlink" title="&#x7279;&#x6B8A;&#x65B9;&#x6CD5;&#x4E0E;&#x591A;&#x8303;&#x5F0F;"></a><strong>&#x7279;&#x6B8A;&#x65B9;&#x6CD5;&#x4E0E;&#x591A;&#x8303;&#x5F0F;</strong></h2><p>Python&#x7684;&#x591A;&#x8303;&#x5F0F;&#x4F9D;&#x8D56;&#x4E8E;Python&#x5BF9;&#x8C61;&#x4E2D;&#x7684;&#x7279;&#x6B8A;&#x65B9;&#x6CD5;(special method)&#x3002;<br>&#x7279;&#x6B8A;&#x65B9;&#x6CD5;&#xFF1A;&#x540D;&#x5B57;&#x524D;&#x540E;&#x5404;&#x6709;&#x4E24;&#x4E2A;&#x4E0B;&#x5212;&#x7EBF;&#xFF0C;&#x5B9A;&#x4E49;&#x4E86;&#x8BB8;&#x591A;Python &#x8BED;&#x6CD5;&#x548C;&#x8868;&#x8FBE;&#x65B9;&#x5F0F;&#x3002;</p>
+<a id="more"></a>
+<h3 id="1&#x3001;&#x8FD0;&#x7B97;&#x7B26;"><a href="#1&#x3001;&#x8FD0;&#x7B97;&#x7B26;" class="headerlink" title="1&#x3001;&#x8FD0;&#x7B97;&#x7B26;"></a><strong>1&#x3001;&#x8FD0;&#x7B97;&#x7B26;</strong></h3><p>eg&#xFF1A;</p>
+<blockquote>
+<p>&#x2018;abc&#x2019; + &#x2018;xyz&#x2019;               # &#x8FDE;&#x63A5;&#x5B57;&#x7B26;&#x4E32;</p>
+</blockquote>
+<p>&#x5B9E;&#x9645;&#x6267;&#x884C;&#x4E86;&#x5982;&#x4E0B;&#x64CD;&#x4F5C;&#xFF1A;</p>
+<blockquote>
+<p>&#x2018;abc&#x2019;.<strong>add</strong>(&#x2018;xyz&#x2019;)</p>
+</blockquote>
+<h3 id="2&#x3001;&#x5185;&#x7F6E;&#x51FD;&#x6570;"><a href="#2&#x3001;&#x5185;&#x7F6E;&#x51FD;&#x6570;" class="headerlink" title="2&#x3001;&#x5185;&#x7F6E;&#x51FD;&#x6570;"></a><strong>2&#x3001;&#x5185;&#x7F6E;&#x51FD;&#x6570;</strong></h3><p>eg&#xFF1A;</p>
+<blockquote>
+<p>len([1,2,3])      # &#x8FD4;&#x56DE;&#x8868;&#x4E2D;&#x5143;&#x7D20;&#x7684;&#x603B;&#x6570;</p>
+</blockquote>
+<p>&#x5B9E;&#x9645;&#x4E0A;&#x505A;&#x7684;&#x662F;&#xFF1A;</p>
+<blockquote>
+<p>[1,2,3].<strong>len</strong>()</p>
+</blockquote>
+<h3 id="3&#x3001;&#x8868;&#xFF08;list&#xFF09;&#x5143;&#x7D20;&#x5F15;&#x7528;"><a href="#3&#x3001;&#x8868;&#xFF08;list&#xFF09;&#x5143;&#x7D20;&#x5F15;&#x7528;" class="headerlink" title="3&#x3001;&#x8868;&#xFF08;list&#xFF09;&#x5143;&#x7D20;&#x5F15;&#x7528;"></a><strong>3&#x3001;&#x8868;&#xFF08;list&#xFF09;&#x5143;&#x7D20;&#x5F15;&#x7528;</strong></h3><p>eg&#xFF1A;</p>
+<p>&#x5E38;&#x89C1;&#x7684;&#x8868;&#x5143;&#x7D20;&#x5F15;&#x7528;&#x65B9;&#x5F0F;&#xFF1A;</p>
+<blockquote>
+<p>li = [1, 2, 3, 4, 5, 6]<br>print(li[3])  </p>
+</blockquote>
+<p>&#x5B9E;&#x9645;&#x4E0A;</p>
+<blockquote>
+<p>li = [1, 2, 3, 4, 5, 6]<br>print(li.<strong>getitem</strong>(3))  </p>
+</blockquote>
+<h3 id="4&#x3001;&#x51FD;&#x6570;"><a href="#4&#x3001;&#x51FD;&#x6570;" class="headerlink" title="4&#x3001;&#x51FD;&#x6570;"></a><strong>4&#x3001;&#x51FD;&#x6570;</strong></h3><p>&#x4EFB;&#x4F55;&#x4E00;&#x4E2A;&#x6709;<strong>call</strong>()&#x7279;&#x6B8A;&#x65B9;&#x6CD5;&#x7684;&#x5BF9;&#x8C61;&#x90FD;&#x88AB;&#x5F53;&#x4F5C;&#x662F;&#x51FD;&#x6570;&#x3002;</p>
+<p>eg&#xFF1A;</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">SampleMore</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__call__</span><span class="params">(self, a)</span>:</span></div><div class="line">        <span class="keyword">return</span> a + <span class="number">5</span></div><div class="line"></div><div class="line">add = SampleMore()     <span class="comment"># add&#x4E3A;SampleMore&#x7C7B;&#x7684;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;</span></div><div class="line">print(add(<span class="number">2</span>))          <span class="comment"># &#x5F53;&#x88AB;&#x8C03;&#x7528;&#x65F6;&#xFF0C;add&#x6267;&#x884C;&#x52A0;5&#x7684;&#x64CD;&#x4F5C; </span></div><div class="line">map(add, [<span class="number">2</span>, <span class="number">4</span>, <span class="number">5</span>])    <span class="comment"># add&#x4F5C;&#x4E3A;&#x51FD;&#x6570;&#x5BF9;&#x8C61;&#xFF0C;&#x88AB;&#x4F20;&#x9012;&#x7ED9;map()&#x51FD;&#x6570;</span></div></pre></td></tr></table></figure>
+<h2 id="&#x4E0A;&#x4E0B;&#x6587;&#x7BA1;&#x7406;&#x5668;"><a href="#&#x4E0A;&#x4E0B;&#x6587;&#x7BA1;&#x7406;&#x5668;" class="headerlink" title="&#x4E0A;&#x4E0B;&#x6587;&#x7BA1;&#x7406;&#x5668;"></a><strong>&#x4E0A;&#x4E0B;&#x6587;&#x7BA1;&#x7406;&#x5668;</strong></h2><p>&#x7528;&#x4E8E;&#x89C4;&#x5B9A;&#x67D0;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x4F7F;&#x7528;&#x8303;&#x56F4;&#x3002;&#x4E00;&#x65E6;&#x8FDB;&#x5165;&#x6216;&#x8005;&#x79BB;&#x5F00;&#x8BE5;&#x4F7F;&#x7528;&#x8303;&#x56F4;&#xFF0C;&#x4F1A;&#x6709;&#x7279;&#x6B8A;&#x64CD;&#x4F5C;&#x88AB;&#x8C03;&#x7528; (&#x6BD4;&#x5982;&#x4E3A;&#x5BF9;&#x8C61;&#x5206;&#x914D;&#x6216;&#x8005;&#x91CA;&#x653E;&#x5185;&#x5B58;)&#x3002;<br>&#x8BED;&#x6CD5;&#x5F62;&#x5F0F;&#x662F;with&#x2026;as&#x2026;</p>
+<h3 id="1&#x3001;&#x5173;&#x95ED;&#x6587;&#x4EF6;"><a href="#1&#x3001;&#x5173;&#x95ED;&#x6587;&#x4EF6;" class="headerlink" title="1&#x3001;&#x5173;&#x95ED;&#x6587;&#x4EF6;"></a><strong>1&#x3001;&#x5173;&#x95ED;&#x6587;&#x4EF6;</strong></h3><p>&#x4E0A;&#x4E0B;&#x6587;&#x7BA1;&#x7406;&#x5668;&#x53EF;&#x4EE5;&#x5728;&#x4E0D;&#x9700;&#x8981;&#x6587;&#x4EF6;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x81EA;&#x52A8;&#x5173;&#x95ED;&#x6587;&#x4EF6;&#x3002;</p>
+<p>eg1&#xFF1A;</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># without context manager</span></div><div class="line">f = open(<span class="string">&quot;new.txt&quot;</span>, <span class="string">&quot;w&quot;</span>)</div><div class="line">print(f.closed)               <span class="comment"># whether the file is open</span></div><div class="line">f.write(<span class="string">&quot;Hello World!&quot;</span>)</div><div class="line">f.close()</div><div class="line">print(f.closed)</div></pre></td></tr></table></figure>
+<p>eg2&#xFF1A;</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># with context manager</span></div><div class="line"><span class="keyword">with</span> open(<span class="string">&quot;new.txt&quot;</span>, <span class="string">&quot;w&quot;</span>) <span class="keyword">as</span> f:</div><div class="line">    print(f.closed)</div><div class="line">    f.write(<span class="string">&quot;Hello World!&quot;</span>)</div><div class="line">print(f.closed)</div></pre></td></tr></table></figure>
+<p>eg2&#x4F7F;&#x7528;&#x4E86;&#x4E0A;&#x4E0B;&#x6587;&#x7BA1;&#x7406;&#x5668; (with&#x2026;as&#x2026;)&#x3002;<br>&#x4E0A;&#x4E0B;&#x6587;&#x7BA1;&#x7406;&#x5668;&#x6709;&#x96B6;&#x5C5E;&#x4E8E;&#x5B83;&#x7684;&#x7A0B;&#x5E8F;&#x5757;&#x3002;&#x5F53;&#x96B6;&#x5C5E;&#x7684;&#x7A0B;&#x5E8F;&#x5757;&#x6267;&#x884C;&#x7ED3;&#x675F;&#x7684;&#x65F6;&#x5019;(&#x4E5F;&#x5C31;&#x662F;&#x4E0D;&#x518D;&#x7F29;&#x8FDB;)&#xFF0C;&#x4E0A;&#x4E0B;&#x6587;&#x7BA1;&#x7406;&#x5668;&#x81EA;&#x52A8;&#x5173;&#x95ED;&#x4E86;&#x6587;&#x4EF6; (&#x6211;&#x4EEC;&#x901A;&#x8FC7;f.closed&#x6765;&#x67E5;&#x8BE2;&#x6587;&#x4EF6;&#x662F;&#x5426;&#x5173;&#x95ED;)&#x3002;&#x6211;&#x4EEC;<strong>&#x4F7F;&#x7528;&#x7F29;&#x8FDB;&#x89C4;&#x5B9A;&#x4E86;&#x6587;&#x4EF6;&#x5BF9;&#x8C61;f&#x7684;&#x4F7F;&#x7528;&#x8303;&#x56F4;</strong>&#x3002;<br>&#x4E0A;&#x9762;&#x7684;&#x4E0A;&#x4E0B;&#x6587;&#x7BA1;&#x7406;&#x5668;&#x57FA;&#x4E8E;f&#x5BF9;&#x8C61;&#x7684;<strong>exit</strong>()&#x7279;&#x6B8A;&#x65B9;&#x6CD5;</p>
+<h2 id="2&#x3001;&#x81EA;&#x5B9A;&#x4E49;"><a href="#2&#x3001;&#x81EA;&#x5B9A;&#x4E49;" class="headerlink" title="2&#x3001;&#x81EA;&#x5B9A;&#x4E49;"></a><strong>2&#x3001;&#x81EA;&#x5B9A;&#x4E49;</strong></h2><p>&#x4EFB;&#x4F55;&#x5B9A;&#x4E49;&#x4E86;<strong>enter</strong>()&#x548C;<strong>exit</strong>()&#x65B9;&#x6CD5;&#x7684;&#x5BF9;&#x8C61;&#x90FD;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x4E0A;&#x4E0B;&#x6587;&#x7BA1;&#x7406;&#x5668;&#x3002;<br>&#x4E0B;&#x9762;&#xFF0C;&#x6211;&#x4EEC;&#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x4E8E;&#x4E0A;&#x4E0B;&#x6587;&#x7BA1;&#x7406;&#x5668;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x5C31;&#x662F;&#x4E0B;&#x9762;&#x7684;myvow&#xFF1A;</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">VOW</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,text)</span>:</span></div><div class="line">        self.text = text</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__enter__</span><span class="params">(self)</span>:</span></div><div class="line">        self.text = <span class="string">&quot;I say: &quot;</span> + self.text      <span class="comment"># add prefix</span></div><div class="line">        <span class="keyword">return</span> self                                  <span class="comment"># note: return an object</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__exit__</span><span class="params">(self,exc_type,exc_value,traceback)</span>:</span></div><div class="line">        self.text = self.text + <span class="string">&quot;!&quot;</span>              <span class="comment"># add suffix</span></div><div class="line"></div><div class="line"><span class="keyword">with</span> VOW(<span class="string">&quot;I&apos;m fine&quot;</span>) <span class="keyword">as</span> myvow:</div><div class="line">    print(myvow.text)</div><div class="line"></div><div class="line">print(myvow.text)</div></pre></td></tr></table></figure>
+<p>&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#x5982;&#x4E0B;&#xFF1A;</p>
+<blockquote>
+<p>I say: I&#x2019;m fine<br>I say: I&#x2019;m fine!    </p>
+</blockquote>
+<p>&#x5728;&#x8FDB;&#x5165;&#x4E0A;&#x4E0B;&#x6587;&#x548C;&#x79BB;&#x5F00;&#x4E0A;&#x4E0B;&#x6587;&#x65F6;&#xFF0C;&#x5BF9;&#x8C61;&#x7684;text&#x5C5E;&#x6027;&#x53D1;&#x751F;&#x4E86;&#x6539;&#x53D8;(&#x6700;&#x521D;&#x7684;text&#x5C5E;&#x6027;&#x662F;&#x201D;I&#x2019;m fine&#x201D;)&#x3002;<br><strong>enter</strong>()&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x3002;&#x4E0A;&#x4E0B;&#x6587;&#x7BA1;&#x7406;&#x5668;&#x4F1A;&#x4F7F;&#x7528;&#x8FD9;&#x4E00;&#x5BF9;&#x8C61;&#x4F5C;&#x4E3A;as&#x6240;&#x6307;&#x7684;&#x53D8;&#x91CF;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;myvow&#x3002;&#x5728;<strong>enter</strong>()&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x4E3A;myvow.text&#x589E;&#x52A0;&#x4E86;&#x524D;&#x7F00; (&#x201C;I say: &#x201C;)&#x3002;&#x5728;<strong>exit</strong>()&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x4E3A;myvow.text&#x589E;&#x52A0;&#x4E86;&#x540E;&#x7F00;(&#x201C;!&#x201D;)&#x3002;</p>
+<h2 id="&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;"><a href="#&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;" class="headerlink" title="&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;"></a><strong>&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;</strong></h2><h3 id="1&#x3001;&#x5C5E;&#x6027;&#x7684;dict&#x7CFB;&#x7EDF;"><a href="#1&#x3001;&#x5C5E;&#x6027;&#x7684;dict&#x7CFB;&#x7EDF;" class="headerlink" title="1&#x3001;&#x5C5E;&#x6027;&#x7684;dict&#x7CFB;&#x7EDF;"></a><strong>1&#x3001;&#x5C5E;&#x6027;&#x7684;<strong>dict</strong>&#x7CFB;&#x7EDF;</strong></h3><p>&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;&#x50A8;&#x5B58;&#x5728;&#x5BF9;&#x8C61;&#x7684;<strong>dict</strong>&#x5C5E;&#x6027;&#x4E2D;&#x3002;<strong>dict</strong>&#x4E3A;&#x4E00;&#x4E2A;&#x8BCD;&#x5178;&#xFF0C;&#x952E;&#x4E3A;&#x5C5E;&#x6027;&#x540D;&#xFF0C;&#x5BF9;&#x5E94;&#x7684;&#x503C;&#x4E3A;&#x5C5E;&#x6027;&#x672C;&#x8EAB;&#x3002;</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">bird</span><span class="params">(object)</span>:</span></div><div class="line">    feather = <span class="keyword">True</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">chicken</span><span class="params">(bird)</span>:</span></div><div class="line">    fly = <span class="keyword">False</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, age)</span>:</span></div><div class="line">        self.age = age</div><div class="line"></div><div class="line">summer = chicken(<span class="number">2</span>)</div><div class="line"></div><div class="line">print(bird.__dict__)</div><div class="line">print(chicken.__dict__)</div><div class="line">print(summer.__dict__)</div></pre></td></tr></table></figure>
+<p>&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#xFF1A;</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">{<span class="string">&apos;__dict__&apos;</span>: &lt;attribute <span class="string">&apos;__dict__&apos;</span> of <span class="string">&apos;bird&apos;</span> objects&gt;, <span class="string">&apos;__module__&apos;</span>: <span class="string">&apos;__main__&apos;</span>, <span class="string">&apos;__weakref__&apos;</span>: &lt;attribute <span class="string">&apos;__weakref__&apos;</span> of <span class="string">&apos;bird&apos;</span> objects&gt;, <span class="string">&apos;feather&apos;</span>: <span class="keyword">True</span>, <span class="string">&apos;__doc__&apos;</span>: <span class="keyword">None</span>}</div><div class="line"></div><div class="line">{<span class="string">&apos;fly&apos;</span>: <span class="keyword">False</span>, <span class="string">&apos;__module__&apos;</span>: <span class="string">&apos;__main__&apos;</span>, <span class="string">&apos;__doc__&apos;</span>: <span class="keyword">None</span>, <span class="string">&apos;__init__&apos;</span>: &lt;function __init__ at <span class="number">0x2b91db476d70</span>&gt;}</div><div class="line"></div><div class="line">{<span class="string">&apos;age&apos;</span>: <span class="number">2</span>}</div></pre></td></tr></table></figure>
+<h3 id="2&#x3001;&#x7279;&#x6027;"><a href="#2&#x3001;&#x7279;&#x6027;" class="headerlink" title="2&#x3001;&#x7279;&#x6027;"></a><strong>2&#x3001;&#x7279;&#x6027;</strong></h3><p>&#x7279;&#x6027;&#x662F;&#x7279;&#x6B8A;&#x7684;&#x5C5E;&#x6027;&#x3002;<br>&#x6BD4;&#x5982;&#x6211;&#x4EEC;&#x4E3A;chicken&#x7C7B;&#x589E;&#x52A0;&#x4E00;&#x4E2A;&#x7279;&#x6027;adult&#x3002;&#x5F53;&#x5BF9;&#x8C61;&#x7684;age&#x8D85;&#x8FC7;1&#x65F6;&#xFF0C;adult&#x4E3A;True&#xFF1B;&#x5426;&#x5219;&#x4E3A;False&#xFF1A;</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">bird</span><span class="params">(object)</span>:</span></div><div class="line">    feather = <span class="keyword">True</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">chicken</span><span class="params">(bird)</span>:</span></div><div class="line">    fly = <span class="keyword">False</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, age)</span>:</span></div><div class="line">        self.age = age</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getAdult</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">if</span> self.age &gt; <span class="number">1.0</span>: <span class="keyword">return</span> <span class="keyword">True</span></div><div class="line">        <span class="keyword">else</span>: <span class="keyword">return</span> <span class="keyword">False</span></div><div class="line">    adult = property(getAdult)</div><div class="line"></div><div class="line">summer = chicken(<span class="number">2</span>)</div><div class="line"></div><div class="line">print(summer.adult)</div><div class="line">summer.age = <span class="number">0.5</span></div><div class="line">print(summer.adult)</div></pre></td></tr></table></figure>
+<p>&#x7279;&#x6027;&#x4F7F;&#x7528;&#x5185;&#x7F6E;&#x51FD;&#x6570;property()&#x6765;&#x521B;&#x5EFA;&#x3002;<br>property()&#x6700;&#x591A;&#x53EF;&#x4EE5;&#x52A0;&#x8F7D;&#x56DB;&#x4E2A;&#x53C2;&#x6570;&#x3002;&#x524D;&#x4E09;&#x4E2A;&#x53C2;&#x6570;&#x4E3A;&#x51FD;&#x6570;&#xFF0C;&#x5206;&#x522B;&#x7528;&#x4E8E;&#x5904;&#x7406;&#x67E5;&#x8BE2;&#x7279;&#x6027;&#x3001;&#x4FEE;&#x6539;&#x7279;&#x6027;&#x3001;&#x5220;&#x9664;&#x7279;&#x6027;&#x3002;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x4E3A;&#x7279;&#x6027;&#x7684;&#x6587;&#x6863;&#xFF0C;&#x53EF;&#x4EE5;&#x4E3A;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x8D77;&#x8BF4;&#x660E;&#x4F5C;&#x7528;&#x3002;</p>
+<p>eg&#xFF1A;</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">num</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, value)</span>:</span></div><div class="line">        self.value = value</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getNeg</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">return</span> -self.value</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">setNeg</span><span class="params">(self, value)</span>:</span></div><div class="line">        self.value = -value</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">delNeg</span><span class="params">(self)</span>:</span></div><div class="line">        print(<span class="string">&quot;value also deleted&quot;</span>)</div><div class="line">        <span class="keyword">del</span> self.value</div><div class="line">    neg = property(getNeg, setNeg, delNeg, <span class="string">&quot;I&apos;m negative&quot;</span>)</div><div class="line"></div><div class="line">x = num(<span class="number">1.1</span>)</div><div class="line">print(x.neg)</div><div class="line">x.neg = <span class="number">-22</span></div><div class="line">print(x.value)</div><div class="line">print(num.neg.__doc__)</div><div class="line"><span class="keyword">del</span> x.neg</div></pre></td></tr></table></figure>
+<p>num&#x4E3A;&#x4E00;&#x4E2A;&#x6570;&#x5B57;&#xFF0C;&#x800C;neg&#x4E3A;&#x4E00;&#x4E2A;&#x7279;&#x6027;&#xFF0C;&#x7528;&#x6765;&#x8868;&#x793A;&#x6570;&#x5B57;&#x7684;&#x8D1F;&#x6570;&#x3002;&#x5F53;&#x4E00;&#x4E2A;&#x6570;&#x5B57;&#x786E;&#x5B9A;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5B83;&#x7684;&#x8D1F;&#x6570;&#x603B;&#x662F;&#x786E;&#x5B9A;&#x7684;&#xFF1B;&#x800C;&#x5F53;&#x6211;&#x4EEC;&#x4FEE;&#x6539;&#x4E00;&#x4E2A;&#x6570;&#x7684;&#x8D1F;&#x6570;&#x65F6;&#xFF0C;&#x5B83;&#x672C;&#x8EAB;&#x7684;&#x503C;&#x4E5F;&#x5E94;&#x8BE5;&#x53D8;&#x5316;&#x3002;&#x8FD9;&#x4E24;&#x70B9;&#x7531;getNeg&#x548C;setNeg&#x6765;&#x5B9E;&#x73B0;&#x3002;&#x800C;delNeg&#x8868;&#x793A;&#x7684;&#x662F;&#xFF0C;&#x5982;&#x679C;&#x5220;&#x9664;&#x7279;&#x6027;neg&#xFF0C;&#x90A3;&#x4E48;&#x5E94;&#x8BE5;&#x6267;&#x884C;&#x7684;&#x64CD;&#x4F5C;&#x662F;&#x5220;&#x9664;&#x5C5E;&#x6027;value&#x3002;property()&#x7684;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x53C2;&#x6570;(&#x201C;I&#x2019;m negative&#x201D;)&#x4E3A;&#x7279;&#x6027;negative&#x7684;&#x8BF4;&#x660E;&#x6587;&#x6863;&#x3002;</p>
+<h3 id="3&#x3001;&#x4F7F;&#x7528;&#x7279;&#x6B8A;&#x65B9;&#x6CD5;getattr"><a href="#3&#x3001;&#x4F7F;&#x7528;&#x7279;&#x6B8A;&#x65B9;&#x6CD5;getattr" class="headerlink" title="**3&#x3001;&#x4F7F;&#x7528;&#x7279;&#x6B8A;&#x65B9;&#x6CD5;getattr"></a>**3&#x3001;&#x4F7F;&#x7528;&#x7279;&#x6B8A;&#x65B9;&#x6CD5;<strong>getattr</strong></h3><p>&#x53EF;&#x4EE5;&#x7528;<strong>getattr</strong>(self, name)&#x6765;&#x67E5;&#x8BE2;&#x5373;&#x65F6;&#x751F;&#x6210;&#x7684;&#x5C5E;&#x6027;&#x3002;&#x5F53;&#x6211;&#x4EEC;&#x67E5;&#x8BE2;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x901A;&#x8FC7;<strong>dict</strong>&#x65B9;&#x6CD5;&#x65E0;&#x6CD5;&#x627E;&#x5230;&#x8BE5;&#x5C5E;&#x6027;&#xFF0C;&#x90A3;&#x4E48;Python&#x4F1A;&#x8C03;&#x7528;&#x5BF9;&#x8C61;&#x7684;<strong>getattr</strong>&#x65B9;&#x6CD5;&#xFF0C;&#x6765;&#x5373;&#x65F6;&#x751F;&#x6210;&#x8BE5;&#x5C5E;&#x6027;&#x3002;</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">bird</span><span class="params">(object)</span>:</span></div><div class="line">    feather = <span class="keyword">True</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">chicken</span><span class="params">(bird)</span>:</span></div><div class="line">    fly = <span class="keyword">False</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, age)</span>:</span></div><div class="line">        self.age = age</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__getattr__</span><span class="params">(self, name)</span>:</span></div><div class="line">        <span class="keyword">if</span> name == <span class="string">&apos;adult&apos;</span>:</div><div class="line">            <span class="keyword">if</span> self.age &gt; <span class="number">1.0</span>: <span class="keyword">return</span> <span class="keyword">True</span></div><div class="line">            <span class="keyword">else</span>: <span class="keyword">return</span> <span class="keyword">False</span></div><div class="line">        <span class="keyword">else</span>: <span class="keyword">raise</span> AttributeError(name)</div><div class="line"></div><div class="line">summer = chicken(<span class="number">2</span>)</div><div class="line"></div><div class="line">print(summer.adult)</div><div class="line">summer.age = <span class="number">0.5</span></div><div class="line">print(summer.adult)</div><div class="line"></div><div class="line">print(summer.male)</div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag"># Python</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/01/18/Python-4/" rel="next" title="Python_4">
+                <i class="fa fa-chevron-left"></i> Python_4
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="Itachi" />
+          <p class="site-author-name" itemprop="name">Itachi</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Twilighce" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#特殊方法与多范式"><span class="nav-text">特殊方法与多范式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、运算符"><span class="nav-text">1、运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、内置函数"><span class="nav-text">2、内置函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、表（list）元素引用"><span class="nav-text">3、表（list）元素引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、函数"><span class="nav-text">4、函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#上下文管理器"><span class="nav-text">上下文管理器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、关闭文件"><span class="nav-text">1、关闭文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、自定义"><span class="nav-text">2、自定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对象的属性"><span class="nav-text">对象的属性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、属性的dict系统"><span class="nav-text">1、属性的dict系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、特性"><span class="nav-text">2、特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、使用特殊方法getattr"><span class="nav-text">**3、使用特殊方法getattr</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Itachi</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
