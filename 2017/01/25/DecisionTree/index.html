@@ -1,0 +1,737 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="machine learning,classification," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="&amp;#x6570;&amp;#x636E;&amp;#x63CF;&amp;#x8FF0;&amp;#x4F7F;&amp;#x7528;&amp;#x6CF0;&amp;#x5766;&amp;#x5C3C;&amp;#x514B;&amp;#x53F7;&amp;#x4E58;&amp;#x5BA2;&amp;#x4FE1;&amp;#x606F;&amp;#x6570;&amp;#x636E;&amp;#xFF0C;&amp;#x9884;&amp;#x6D4B;&amp;#x5176;&amp;#x751F;&amp;#x8FD8;&amp;#x60C5;&amp;#x51B5;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DecisionTree">
+<meta property="og:url" content="http://yoursite.com/2017/01/25/DecisionTree/index.html">
+<meta property="og:site_name" content="Twilighce">
+<meta property="og:description" content="&amp;#x6570;&amp;#x636E;&amp;#x63CF;&amp;#x8FF0;&amp;#x4F7F;&amp;#x7528;&amp;#x6CF0;&amp;#x5766;&amp;#x5C3C;&amp;#x514B;&amp;#x53F7;&amp;#x4E58;&amp;#x5BA2;&amp;#x4FE1;&amp;#x606F;&amp;#x6570;&amp;#x636E;&amp;#xFF0C;&amp;#x9884;&amp;#x6D4B;&amp;#x5176;&amp;#x751F;&amp;#x8FD8;&amp;#x60C5;&amp;#x51B5;">
+<meta property="og:image" content="http://oimbmvqt3.bkt.clouddn.com/lab5_1.PNG">
+<meta property="og:image" content="http://oimbmvqt3.bkt.clouddn.com/lab5_2.PNG">
+<meta property="og:image" content="http://oimbmvqt3.bkt.clouddn.com/lab5_3.PNG">
+<meta property="og:image" content="http://oimbmvqt3.bkt.clouddn.com/lab5_4.PNG">
+<meta property="og:image" content="http://oimbmvqt3.bkt.clouddn.com/lab5_5.PNG">
+<meta property="og:image" content="http://oimbmvqt3.bkt.clouddn.com/lab5_6.PNG">
+<meta property="og:updated_time" content="2017-01-25T07:26:53.709Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="DecisionTree">
+<meta name="twitter:description" content="&amp;#x6570;&amp;#x636E;&amp;#x63CF;&amp;#x8FF0;&amp;#x4F7F;&amp;#x7528;&amp;#x6CF0;&amp;#x5766;&amp;#x5C3C;&amp;#x514B;&amp;#x53F7;&amp;#x4E58;&amp;#x5BA2;&amp;#x4FE1;&amp;#x606F;&amp;#x6570;&amp;#x636E;&amp;#xFF0C;&amp;#x9884;&amp;#x6D4B;&amp;#x5176;&amp;#x751F;&amp;#x8FD8;&amp;#x60C5;&amp;#x51B5;">
+<meta name="twitter:image" content="http://oimbmvqt3.bkt.clouddn.com/lab5_1.PNG">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/01/25/DecisionTree/"/>
+
+
+
+
+
+  <title> DecisionTree | Twilighce </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Twilighce</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <p class="site-subtitle"></p>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/25/DecisionTree/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Itachi">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Twilighce">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Twilighce" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                DecisionTree
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-25T15:25:54+08:00">
+                2017-01-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/study-notes/" itemprop="url" rel="index">
+                    <span itemprop="name">study notes</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="&#x6570;&#x636E;&#x63CF;&#x8FF0;"><a href="#&#x6570;&#x636E;&#x63CF;&#x8FF0;" class="headerlink" title="&#x6570;&#x636E;&#x63CF;&#x8FF0;"></a><strong>&#x6570;&#x636E;&#x63CF;&#x8FF0;</strong></h3><p>&#x4F7F;&#x7528;&#x6CF0;&#x5766;&#x5C3C;&#x514B;&#x53F7;&#x4E58;&#x5BA2;&#x4FE1;&#x606F;&#x6570;&#x636E;&#xFF0C;&#x9884;&#x6D4B;&#x5176;&#x751F;&#x8FD8;&#x60C5;&#x51B5;</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># &#x5BFC;&#x5165; pandas &#x7528;&#x4E8E;&#x6570;&#x636E;&#x5206;&#x6790;</span></div><div class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</div><div class="line"><span class="comment"># &#x5229;&#x7528; pandas &#x7684; read_csv &#x6A21;&#x5757;&#x76F4;&#x63A5;&#x4ECE;&#x4E92;&#x8054;&#x7F51;&#x6536;&#x96C6;&#x6CF0;&#x5766;&#x5C3C;&#x514B;&#x53F7;&#x4E58;&#x5BA2;&#x6570;&#x636E;</span></div><div class="line">titanic = pd.read_csv(<span class="string">&apos;http://biostat.mc.vanderbilt.edu/wiki/pub/Main/DataSets/titanic.txt&apos;</span>)</div><div class="line"><span class="comment"># &#x89C2;&#x5BDF;&#x524D;&#x51E0;&#x884C;&#x6570;&#x636E;&#xFF0C;&#x53EF;&#x4EE5;&#x53D1;&#x73B0;&#xFF0C;&#x6570;&#x636E;&#x79CD;&#x7C7B;&#x5404;&#x5F02;&#xFF0C;&#x6570;&#x503C;&#x578B;&#x3001;&#x7C7B;&#x522B;&#x578B;&#xFF0C;&#x751A;&#x81F3;&#x8FD8;&#x6709;&#x7F3A;&#x5931;&#x6570;&#x636E;</span></div><div class="line">titanic.head()</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<p><img src="http://oimbmvqt3.bkt.clouddn.com/lab5_1.PNG" alt="&#x89C2;&#x5BDF;&#x524D;&#x51E0;&#x884C;&#x6570;&#x636E;"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># &#x4F7F;&#x7528; pandas&#xFF0C;&#x6570;&#x636E;&#x90FD;&#x8F6C;&#x5165; pandas &#x72EC;&#x6709;&#x7684; dataframe &#x683C;&#x5F0F;&#xFF08;&#x4E8C;&#x7EF4;&#x6570;&#x636E;&#x8868;&#x683C;&#xFF09;&#xFF0C;&#x76F4;&#x63A5;&#x4F7F;&#x7528; info()&#xFF0C;&#x67E5;&#x770B;&#x6570;&#x636E;&#x7684;&#x7EDF;&#x8BA1;&#x7279;&#x6027;</span></div><div class="line">titanic.info()</div></pre></td></tr></table></figure>
+<p><img src="http://oimbmvqt3.bkt.clouddn.com/lab5_2.PNG" alt="&#x8F6C;&#x683C;&#x5F0F;"></p>
+<p>&#x7531;&#x8F93;&#x51FA;&#x53EF;&#x77E5;&#xFF0C;&#x8BE5;&#x6570;&#x636E;&#x5171;&#x6709; 1313 &#x6761;&#x4E58;&#x5BA2;&#x4FE1;&#x606F;&#xFF0C;&#x5E76;&#x4E14;&#x6709;&#x4E9B;&#x7279;&#x5F81;&#x6570;&#x636E;&#x662F;&#x5B8C;&#x6574;&#x7684;&#xFF08;&#x5982;pclass&#xFF0C;name &#x7B49;&#xFF09;&#xFF0C;&#x6709;&#x4E9B;&#x5219;&#x662F;&#x7F3A;&#x5931;&#x7684;&#xFF1B;&#x6709;&#x4E9B;&#x662F;&#x6570;&#x503C;&#x7C7B;&#x578B;&#x7684;&#xFF0C;&#x6709;&#x4E9B;&#x5219;&#x662F;&#x5B57;&#x7B26;&#x4E32;&#x3002;</p>
+<h3 id="&#x7279;&#x5F81;&#x9009;&#x62E9;"><a href="#&#x7279;&#x5F81;&#x9009;&#x62E9;" class="headerlink" title="&#x7279;&#x5F81;&#x9009;&#x62E9;"></a><strong>&#x7279;&#x5F81;&#x9009;&#x62E9;</strong></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># &#x673A;&#x5668;&#x5B66;&#x4E60;&#x5341;&#x5206;&#x91CD;&#x8981;&#x7684;&#x4E00;&#x73AF;&#xFF1A;&#x7279;&#x5F81;&#x7684;&#x9009;&#x62E9;&#x3002;&#x9700;&#x8981;&#x57FA;&#x4E8E;&#x4E00;&#x4E9B;&#x80CC;&#x666F;&#x77E5;&#x8BC6;&#xFF0C;&#x6839;&#x636E;&#x6211;&#x4EEC;&#x961F;&#x8FD9;&#x573A;&#x4E8B;&#x6545;&#x7684;&#x4E86;&#x89E3;&#xFF0C;sex, age, pclass &#x8FD9;&#x4E9B;&#x7279;&#x5F81;&#x90FD;&#x5F88;&#x6709;&#x53EF;&#x80FD;&#x662F;&#x51B3;&#x5B9A;&#x5E78;&#x514D;&#x4E8E;&#x5426;&#x7684;&#x5173;&#x952E;&#x56E0;&#x7D20;&#x3002;</span></div><div class="line">X = titanic[[<span class="string">&apos;pclass&apos;</span>, <span class="string">&apos;age&apos;</span>, <span class="string">&apos;sex&apos;</span>]]</div><div class="line">y = titanic[<span class="string">&apos;survived&apos;</span>]</div><div class="line"></div><div class="line"><span class="comment"># &#x5BF9;&#x5F53;&#x524D;&#x9009;&#x62E9;&#x7684;&#x7279;&#x5F81;&#x8FDB;&#x884C;&#x63A2;&#x67E5;</span></div><div class="line">X.info()</div></pre></td></tr></table></figure>
+<p><img src="http://oimbmvqt3.bkt.clouddn.com/lab5_3.PNG" alt="&#x7279;&#x5F81;&#x9009;&#x62E9;"></p>
+<h3 id="&#x6570;&#x636E;&#x5904;&#x7406;"><a href="#&#x6570;&#x636E;&#x5904;&#x7406;" class="headerlink" title="&#x6570;&#x636E;&#x5904;&#x7406;"></a><strong>&#x6570;&#x636E;&#x5904;&#x7406;</strong></h3><p>&#x501F;&#x7531;&#x4E0A;&#x9762;&#x7684;&#x8F93;&#x51FA;&#xFF0C;&#x6211;&#x4EEC;&#x8BBE;&#x8BA1;&#x5982;&#x4E0B;&#x51E0;&#x4E2A;&#x6570;&#x636E;&#x5904;&#x7406;&#x7684;&#x4EFB;&#x52A1;&#xFF1A;</p>
+<ol>
+<li>age &#x8FD9;&#x4E2A;&#x6570;&#x636E;&#x5217;&#xFF0C;&#x53EA;&#x6709; 633&#x4E2A;&#x6570;&#x636E;&#xFF0C;&#x9700;&#x8981;&#x8865;&#x5B8C;&#xFF1B;</li>
+<li>sex &#x4E0E; pclass &#x4E24;&#x4E2A;&#x6570;&#x636E;&#x5217;&#x7684;&#x503C;&#x90FD;&#x662F;&#x7C7B;&#x522B;&#x578B;&#x7684;&#xFF0C;&#x9700;&#x8981;&#x8F6C;&#x5316;&#x4E3A;&#x6570;&#x503C;&#x7279;&#x5F81;&#xFF0C;&#x7528; 0/1 &#x4EE3;&#x66FF;&#x3002;</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># &#x9996;&#x5148;&#x6211;&#x4EEC;&#x8865;&#x5145; age &#x91CC;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x4F7F;&#x7528;&#x5E73;&#x5747;&#x6570;&#x6216;&#x8005;&#x4E2D;&#x4F4D;&#x6570;&#x90FD;&#x662F;&#x5BF9;&#x6A21;&#x578B;&#x504F;&#x79BB;&#x9020;&#x6210;&#x6700;&#x5C0F;&#x5F71;&#x54CD;&#x7684;&#x7B56;&#x7565;&#x3002;</span></div><div class="line">X[<span class="string">&apos;age&apos;</span>].fillna(X[<span class="string">&apos;age&apos;</span>].mean(), inplace=<span class="keyword">True</span>)</div><div class="line"></div><div class="line"><span class="comment"># &#x5BF9;&#x8865;&#x5B8C;&#x7684;&#x6570;&#x636E;&#x91CD;&#x65B0;&#x63A2;&#x67E5;</span></div><div class="line">X.info()</div></pre></td></tr></table></figure>
+<p><img src="http://oimbmvqt3.bkt.clouddn.com/lab5_4.PNG" alt="&#x8865;&#x5B8C;"></p>
+<p>&#x7531;&#x8F93;&#x51FA;&#x53EF;&#x77E5;&#xFF0C;age &#x7279;&#x5F81;&#x5F97;&#x5230;&#x4E86;&#x8865;&#x5B8C;&#x3002;</p>
+<h3 id="&#x51C6;&#x5907;&#x8BAD;&#x7EC3;&#x96C6;&#x3001;&#x6D4B;&#x8BD5;&#x96C6;"><a href="#&#x51C6;&#x5907;&#x8BAD;&#x7EC3;&#x96C6;&#x3001;&#x6D4B;&#x8BD5;&#x96C6;" class="headerlink" title="&#x51C6;&#x5907;&#x8BAD;&#x7EC3;&#x96C6;&#x3001;&#x6D4B;&#x8BD5;&#x96C6;"></a><strong>&#x51C6;&#x5907;&#x8BAD;&#x7EC3;&#x96C6;&#x3001;&#x6D4B;&#x8BD5;&#x96C6;</strong></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># &#x6570;&#x636E;&#x5206;&#x5272;</span></div><div class="line"><span class="keyword">from</span> sklearn.cross_validation <span class="keyword">import</span> train_test_split</div><div class="line">X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = <span class="number">0.25</span>, random_state = <span class="number">33</span>)</div></pre></td></tr></table></figure>
+<h3 id="&#x7279;&#x5F81;&#x8F6C;&#x6362;"><a href="#&#x7279;&#x5F81;&#x8F6C;&#x6362;" class="headerlink" title="&#x7279;&#x5F81;&#x8F6C;&#x6362;"></a><strong>&#x7279;&#x5F81;&#x8F6C;&#x6362;</strong></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># &#x4F7F;&#x7528; scikit-learn.feature_extraction &#x4E2D;&#x7684;&#x7279;&#x5F81;&#x8F6C;&#x6362;&#x5668;</span></div><div class="line"><span class="keyword">from</span> sklearn.feature_extraction <span class="keyword">import</span> DictVectorizer</div><div class="line">vec = DictVectorizer(sparse=<span class="keyword">False</span>)</div><div class="line"></div><div class="line"><span class="comment"># &#x8F6C;&#x6362;&#x7279;&#x5F81;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x53D1;&#x73B0;&#x51E1;&#x662F;&#x7C7B;&#x522B;&#x578B;&#x7684;&#x7279;&#x5F81;&#x90FD;&#x5355;&#x72EC;&#x5265;&#x79BB;&#x51FA;&#x6765;&#xFF0C;&#x72EC;&#x6210;&#x4E00;&#x7CFB;&#x5217;&#x7279;&#x5F81;&#xFF0C;&#x6570;&#x503C;&#x578B;&#x7684;&#x5219;&#x4FDD;&#x6301;&#x4E0D;&#x53D8;&#x3002;</span></div><div class="line">X_train = vec.fit_transform(X_train.to_dict(orient=<span class="string">&apos;record&apos;</span>))</div><div class="line"><span class="keyword">print</span> vec.feature_names_</div></pre></td></tr></table></figure>
+<p><img src="http://oimbmvqt3.bkt.clouddn.com/lab5_5.PNG" alt="&#x8F6C;&#x6362;&#x7279;&#x5F81;&#x540E;"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># &#x540C;&#x6837;&#x9700;&#x8981;&#x5BF9;&#x6D4B;&#x8BD5;&#x6570;&#x636E;&#x7684;&#x7279;&#x5F81;&#x8FDB;&#x884C;&#x8F6C;&#x6362;</span></div><div class="line">X_test = vec.transform(X_test.to_dict(orient=<span class="string">&apos;record&apos;</span>))</div></pre></td></tr></table></figure>
+<h3 id="&#x4F7F;&#x7528;&#x51B3;&#x7B56;&#x6811;&#x9884;&#x6D4B;&#x4E58;&#x5BA2;&#x662F;&#x5426;&#x751F;&#x8FD8;"><a href="#&#x4F7F;&#x7528;&#x51B3;&#x7B56;&#x6811;&#x9884;&#x6D4B;&#x4E58;&#x5BA2;&#x662F;&#x5426;&#x751F;&#x8FD8;" class="headerlink" title="&#x4F7F;&#x7528;&#x51B3;&#x7B56;&#x6811;&#x9884;&#x6D4B;&#x4E58;&#x5BA2;&#x662F;&#x5426;&#x751F;&#x8FD8;"></a><strong>&#x4F7F;&#x7528;&#x51B3;&#x7B56;&#x6811;&#x9884;&#x6D4B;&#x4E58;&#x5BA2;&#x662F;&#x5426;&#x751F;&#x8FD8;</strong></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># &#x4ECE; sklearn.tree&#x4E2D;&#x5BFC;&#x5165;&#x51B3;&#x7B56;&#x5206;&#x7C7B;&#x5668;</span></div><div class="line"><span class="keyword">from</span> sklearn.tree <span class="keyword">import</span> DecisionTreeClassifier</div><div class="line"><span class="comment"># &#x4F7F;&#x7528;&#x9ED8;&#x8BA4;&#x914D;&#x7F6E;&#x521D;&#x59CB;&#x5316;&#x51B3;&#x7B56;&#x6811;&#x5206;&#x7C7B;&#x5668;</span></div><div class="line">dtc = DecisionTreeClassifier()</div><div class="line"><span class="comment"># &#x4F7F;&#x7528;&#x5206;&#x5272;&#x5230;&#x7684;&#x8BAD;&#x7EC3;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x6A21;&#x578B;&#x5B66;&#x4E60;</span></div><div class="line">dtc.fit(X_train, y_train)</div><div class="line"><span class="comment"># &#x7528;&#x8BAD;&#x7EC3;&#x597D;&#x7684;&#x51B3;&#x7B56;&#x6811;&#x6A21;&#x578B;&#x5BF9;&#x6D4B;&#x8BD5;&#x7279;&#x5F81;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x9884;&#x6D4B;</span></div><div class="line">y_predict = dtc.predict(X_test)</div></pre></td></tr></table></figure>
+<h3 id="&#x6027;&#x80FD;&#x6D4B;&#x8BC4;"><a href="#&#x6027;&#x80FD;&#x6D4B;&#x8BC4;" class="headerlink" title="&#x6027;&#x80FD;&#x6D4B;&#x8BC4;"></a><strong>&#x6027;&#x80FD;&#x6D4B;&#x8BC4;</strong></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># &#x4ECE; sklearn.metrics &#x91CC;&#x5BFC;&#x5165; classification_report</span></div><div class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> classification_report\</div><div class="line"><span class="comment"># &#x8F93;&#x51FA;&#x9884;&#x6D4B;&#x51C6;&#x786E;&#x6027;</span></div><div class="line"><span class="keyword">print</span> dtc.score(X_test, y_test)</div><div class="line"><span class="comment"># &#x8F93;&#x51FA;&#x66F4;&#x52A0;&#x8BE6;&#x7EC6;&#x7684;&#x5206;&#x7C7B;&#x6027;&#x80FD;</span></div><div class="line"><span class="keyword">print</span> classification_report(y_predict, y_test, target_names=[<span class="string">&apos;died&apos;</span>,<span class="string">&apos;survived&apos;</span>])</div></pre></td></tr></table></figure>
+<p><img src="http://oimbmvqt3.bkt.clouddn.com/lab5_6.PNG" alt="&#x6027;&#x80FD;"></p>
+<p>&#x7531;&#x8F93;&#x51FA;&#x53EF;&#x77E5;&#xFF0C;&#x51B3;&#x7B56;&#x6811;&#x6A21;&#x578B;&#x603B;&#x4F53;&#x5728;&#x6D4B;&#x8BD5;&#x96C6;&#x4E0A;&#x7684;&#x9884;&#x6D4B;&#x51C6;&#x786E;&#x6027;&#x7EA6;&#x4E3A; 78.12%&#x3002;&#x8BE5;&#x6A21;&#x578B;&#x5728;&#x9884;&#x6D4B;&#x9047;&#x96BE;&#x8005;&#x65B9;&#x9762;&#x7684;&#x6027;&#x80FD;&#x8F83;&#x597D;&#xFF0C;&#x5728;&#x8BC6;&#x522B;&#x751F;&#x8FD8;&#x8005;&#x7684;&#x51C6;&#x786E;&#x7387;&#x65B9;&#x9762;&#x4ECD;&#x6709;&#x5F85;&#x63D0;&#x9AD8;&#x3002;</p>
+<h3 id="&#x7279;&#x70B9;&#x5206;&#x6790;"><a href="#&#x7279;&#x70B9;&#x5206;&#x6790;" class="headerlink" title="&#x7279;&#x70B9;&#x5206;&#x6790;"></a><strong>&#x7279;&#x70B9;&#x5206;&#x6790;</strong></h3><p>&#x51B3;&#x7B56;&#x6811;&#x7684;&#x63A8;&#x65AD;&#x903B;&#x8F91;&#x975E;&#x5E38;&#x76F4;&#x89C2;&#xFF0C;&#x5177;&#x6709;&#x6E05;&#x6670;&#x5730;&#x53EF;&#x89E3;&#x91CA;&#x6027;&#xFF0C;&#x4E5F;&#x65B9;&#x4FBF;&#x4E86;&#x6A21;&#x578B;&#x7684;&#x53EF;&#x89C6;&#x5316;&#x3002;&#x8FD9;&#x4E9B;&#x7279;&#x6027;&#x540C;&#x65F6;&#x4E5F;&#x4FDD;&#x8BC1;&#x5728;&#x4F7F;&#x7528;&#x51B3;&#x7B56;&#x6811;&#x6A21;&#x578B;&#x65F6;&#xFF0C;&#x662F;&#x65E0;&#x987B;&#x8003;&#x8651;&#x5BF9;&#x6570;&#x636E;&#x7684;&#x91CF;&#x5316;&#x751A;&#x81F3;&#x6807;&#x51C6;&#x5316;&#x7684;&#x3002;&#x5E76;&#x4E14;&#xFF0C;&#x4E0E;&#x524D;&#x4E00;&#x8282;K&#x8FD1;&#x90BB;&#x6A21;&#x578B;&#x4E0D;&#x540C;&#xFF0C;&#x51B3;&#x7B56;&#x6811;&#x4ECD;&#x7136;&#x5C5E;&#x4E8E;&#x6709;&#x53C2;&#x6570;&#x6A21;&#x578B;&#xFF0C;&#x9700;&#x8981;&#x82B1;&#x8D39;&#x66F4;&#x591A;&#x7684;&#x65F6;&#x95F4;&#x5728;&#x8BAD;&#x7EC3;&#x6570;&#x636E;&#x4E0A;&#x3002;</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/machine-learning/" rel="tag"># machine learning</a>
+          
+            <a href="/tags/classification/" rel="tag"># classification</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/01/24/KNeighbors/" rel="next" title="KNeighbors">
+                <i class="fa fa-chevron-left"></i> KNeighbors
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="Itachi" />
+          <p class="site-author-name" itemprop="name">Itachi</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">25</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Twilighce" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据描述"><span class="nav-text">数据描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特征选择"><span class="nav-text">特征选择</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据处理"><span class="nav-text">数据处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#准备训练集、测试集"><span class="nav-text">准备训练集、测试集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特征转换"><span class="nav-text">特征转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用决策树预测乘客是否生还"><span class="nav-text">使用决策树预测乘客是否生还</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#性能测评"><span class="nav-text">性能测评</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特点分析"><span class="nav-text">特点分析</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Itachi</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
