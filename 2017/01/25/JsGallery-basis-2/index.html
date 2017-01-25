@@ -1,0 +1,745 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="javascript," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="&amp;#x52A8;&amp;#x6001;&amp;#x521B;&amp;#x5EFA;&amp;#x6807;&amp;#x8BB0;&amp;#x3002;&amp;#x793A;&amp;#x4F8B;&amp;#x6587;&amp;#x6863;&amp;#xFF1A;
+1234567891011121314&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;&amp;lt;head&amp;gt;	&amp;lt;meta charset=&amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JsGallery-basis-2">
+<meta property="og:url" content="http://yoursite.com/2017/01/25/JsGallery-basis-2/index.html">
+<meta property="og:site_name" content="Twilighce">
+<meta property="og:description" content="&amp;#x52A8;&amp;#x6001;&amp;#x521B;&amp;#x5EFA;&amp;#x6807;&amp;#x8BB0;&amp;#x3002;&amp;#x793A;&amp;#x4F8B;&amp;#x6587;&amp;#x6863;&amp;#xFF1A;
+1234567891011121314&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;&amp;lt;head&amp;gt;	&amp;lt;meta charset=&amp;">
+<meta property="og:updated_time" content="2017-01-25T09:04:15.733Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JsGallery-basis-2">
+<meta name="twitter:description" content="&amp;#x52A8;&amp;#x6001;&amp;#x521B;&amp;#x5EFA;&amp;#x6807;&amp;#x8BB0;&amp;#x3002;&amp;#x793A;&amp;#x4F8B;&amp;#x6587;&amp;#x6863;&amp;#xFF1A;
+1234567891011121314&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;&amp;lt;head&amp;gt;	&amp;lt;meta charset=&amp;">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/01/25/JsGallery-basis-2/"/>
+
+
+
+
+
+  <title> JsGallery-basis-2 | Twilighce </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Twilighce</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <p class="site-subtitle"></p>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/25/JsGallery-basis-2/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Itachi">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Twilighce">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Twilighce" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                JsGallery-basis-2
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-25T17:02:21+08:00">
+                2017-01-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/study-notes/" itemprop="url" rel="index">
+                    <span itemprop="name">study notes</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>&#x52A8;&#x6001;&#x521B;&#x5EFA;&#x6807;&#x8BB0;&#x3002;<br>&#x793A;&#x4F8B;&#x6587;&#x6863;&#xFF1A;</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span> /&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">title</span>&gt;</span>Test<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">		<span class="built_in">document</span>.write(<span class="string">&quot;&lt;p&gt;This is inserted.&lt;/p&gt;&quot;</span>);</div><div class="line">	<span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;testdiv&quot;</span>&gt;</span>	</div><div class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h3 id="createElement-&#x65B9;&#x6CD5;"><a href="#createElement-&#x65B9;&#x6CD5;" class="headerlink" title="createElement &#x65B9;&#x6CD5;"></a><strong>createElement &#x65B9;&#x6CD5;</strong></h3><p>&#x5982;&#x679C;&#x60F3;&#x628A;&#x4E00;&#x6BB5;&#x6587;&#x672C;&#x63D2;&#x5165; testdiv &#x5143;&#x7D20;&#xFF0C;&#xFF08;&#x7528; DOM &#x8BED;&#x8A00;&#x8BF4;&#xFF0C;&#x60F3;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A; p &#x5143;&#x7D20;&#x8282;&#x70B9;&#xFF0C;&#x5E76;&#x628A;&#x8FD9;&#x4E2A;&#x8282;&#x70B9;&#x4F5C;&#x4E3A; div &#x5143;&#x7D20;&#x8282;&#x70B9;&#x7684;&#x4E00;&#x4E2A;&#x5B50;&#x8282;&#x70B9;&#xFF09;&#x3002;&#x9700;&#x8981;&#x4E24;&#x4E2A;&#x6B65;&#x9AA4;&#x5B8C;&#x6210;&#xFF1A;</p>
+<ol>
+<li>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x5143;&#x7D20;&#xFF1B;</li>
+<li>&#x628A;&#x8FD9;&#x4E2A;&#x65B0;&#x5143;&#x7D20;&#x63D2;&#x5165;&#x8282;&#x70B9;&#x6570;&#xFF1B;</li>
+</ol>
+<p>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x5143;&#x7D20;&#x4F7F;&#x7528; createElement &#x65B9;&#x6CD5;&#xFF0C;&#x8BED;&#x6CD5;&#xFF1A;</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.createElement(nodeName)</div></pre></td></tr></table></figure>
+<p>eg :</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.createElement(<span class="string">&quot;p&quot;</span>)</div></pre></td></tr></table></figure>
+<p>&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x672C;&#x8EAB;&#x5E76;&#x4E0D;&#x5F71;&#x54CD;&#x9875;&#x9762;&#x8868;&#x73B0;&#xFF0C;&#x8FD8;&#x9700;&#x8981;&#x5C06;&#x65B0;&#x521B;&#x7684;&#x5143;&#x7D20;&#x63D2;&#x5165;&#x5230;&#x6587;&#x6863;&#x4E2D;&#x53BB;&#x3002;&#x4E3A;&#x6B64;&#xFF0C;&#x9700;&#x8981;&#x6709;&#x4E2A;&#x4E1C;&#x897F;&#x6765;&#x5F15;&#x7528;&#x8FD9;&#x4E2A;&#x65B0;&#x521B;&#x7684;&#x8282;&#x70B9;&#x3002;&#xFF08;&#x4E0D;&#x8BBA;&#x4F55;&#x65F6;&#x4F55;&#x5730;&#xFF0C;&#x4F7F;&#x7528;&#x4E86; createElement &#x65B9;&#x6CD5;&#xFF0C;&#x6700;&#x597D;&#x5C06;&#x65B0;&#x521B;&#x7684;&#x5143;&#x7D20;&#x8D4B;&#x7ED9;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#xFF09;&#x3002;</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> para = <span class="built_in">document</span>.createElement(<span class="string">&quot;p&quot;</span>)</div></pre></td></tr></table></figure>
+<p>&#x8FD9;&#x4E2A;&#x65B0;&#x521B;&#x7684; p &#x5143;&#x7D20;&#x8FD8;&#x4E0D;&#x662F;&#x4EFB;&#x4F55;&#x4E00;&#x68F5; DOM &#x8282;&#x70B9;&#x6811;&#x7684;&#x7EC4;&#x6210;&#x90E8;&#x5206;&#xFF0C;&#x79F0;&#x4E3A;&#x6587;&#x6863;&#x788E;&#x7247;&#xFF08;document fragment&#xFF09;&#x3002;&#x4F46;&#x5176;&#x73B0;&#x5728;&#x5DF2;&#x7ECF;&#x6709;&#x4E86;&#x4E00;&#x4E2A; nodeType &#x548C;&#x4E00;&#x4E2A; nodeName &#x503C;&#x3002;</p>
+<h3 id="appendChild-&#x65B9;&#x6CD5;"><a href="#appendChild-&#x65B9;&#x6CD5;" class="headerlink" title="appendChild &#x65B9;&#x6CD5;"></a><strong>appendChild &#x65B9;&#x6CD5;</strong></h3><p>&#x5C06;&#x65B0;&#x521B;&#x7684;&#x8282;&#x70B9;&#x63D2;&#x5165;&#x5230;&#x67D0;&#x4E2A;&#x6587;&#x6863;&#x7684;&#x8282;&#x70B9;&#x6811;&#x7684;&#x6700;&#x7B80;&#x5355;&#x7684;&#x529E;&#x6CD5;&#x662F;&#xFF0C;&#x8BA9;&#x5B83;&#x6210;&#x4E3A;&#x8FD9;&#x4E2A;&#x6587;&#x6863;&#x67D0;&#x4E2A;&#x73B0;&#x6709;&#x8282;&#x70B9;&#x7684;&#x4E00;&#x4E2A;&#x5B50;&#x8282;&#x70B9;&#x3002;<br>appendChild &#x8BED;&#x6CD5;&#xFF1A;</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">parent.appendChild(child)</div></pre></td></tr></table></figure>
+<p>eg &#xFF1A;</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">var testdiv = document.getElementById(&quot;testdiv&quot;);</div><div class="line"># &#x53D8;&#x91CF;testdiv &#x73B0;&#x5728;&#x5305;&#x542B;&#x7740;&#x4E00;&#x4E2A;&#x6307;&#x5411;&#x90A3;&#x4E2A; id &#x7B49;&#x4E8E; testdiv &#x7684;&#x5143;&#x7D20;&#x7684;&#x5F15;&#x7528;</div><div class="line"></div><div class="line">var para = document.createElement(&quot;p&quot;);</div><div class="line"># &#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A; para &#x53D8;&#x91CF;&#xFF0C;&#x5B83;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x6307;&#x5411;&#x521A;&#x521B;&#x5EFA;&#x7684;&#x90A3;&#x4E2A; p &#x5143;&#x7D20;&#x7684;&#x5F15;&#x7528;</div><div class="line"></div><div class="line">testdiv.appendChild(para);</div><div class="line"># &#x628A;&#x53D8;&#x91CF; para &#x63D2;&#x5165;&#x53D8;&#x91CF; testdiv</div></pre></td></tr></table></figure>
+<h3 id="createTextNode&#x65B9;&#x6CD5;"><a href="#createTextNode&#x65B9;&#x6CD5;" class="headerlink" title="createTextNode&#x65B9;&#x6CD5;"></a><strong>createTextNode&#x65B9;&#x6CD5;</strong></h3><p>&#x73B0;&#x5728;&#x5DF2;&#x7ECF;&#x521B;&#x5EFA;&#x51FA;&#x4E86;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x8282;&#x70B9;&#x5E76;&#x5C06;&#x5176;&#x63D2;&#x5165;&#x4E86;&#x6587;&#x6863;&#x7684;&#x8282;&#x70B9;&#x6811;&#xFF0C;&#x8FD9;&#x4E2A;&#x8282;&#x70B9;&#x662F;&#x4E00;&#x4E2A;&#x7A7A;&#x767D;&#x7684; p &#x5143;&#x7D20;&#x3002;&#x5982;&#x679C;&#x60F3;&#x628A;&#x4E00;&#x4E9B;&#x6587;&#x672C;&#x653E;&#x5165;&#x8FD9;&#x4E2A; p &#x5143;&#x7D20;&#xFF0C;&#x9700;&#x8981;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6587;&#x672C;&#x8282;&#x70B9;&#x3002;<br>createTextNode &#x8BED;&#x6CD5;&#xFF1A;</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.createTextNode(text)</div></pre></td></tr></table></figure>
+<p>eg &#xFF1A;</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> txt = <span class="built_in">document</span>.creataTextNode(<span class="string">&quot;Hello World&quot;</span>)&#xFF1B;</div><div class="line">para.appendChild(txt);</div></pre></td></tr></table></figure>
+<p>&#x53EF;&#x5C06;&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#x5199;&#x5165; example.js &#x6587;&#x4EF6;&#xFF0C;&#x91CD;&#x65B0;&#x52A0;&#x8F7D; test.html &#x6587;&#x4EF6;</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> para = <span class="built_in">document</span>.creataElement(<span class="string">&quot;p&quot;</span>);</div><div class="line"><span class="keyword">var</span> testdiv = getElementById(<span class="string">&quot;testdiv&quot;</span>);</div><div class="line">testdiv.appendChild(para);</div><div class="line"><span class="keyword">var</span> txt = <span class="built_in">document</span>.createTextNode(<span class="string">&quot;Hello World&quot;</span>);</div><div class="line">para.appendChild(txt);</div></pre></td></tr></table></figure>
+<h3 id="&#x5FAE;&#x5C0F;&#x7684;&#x603B;&#x7ED3;"><a href="#&#x5FAE;&#x5C0F;&#x7684;&#x603B;&#x7ED3;" class="headerlink" title="&#x5FAE;&#x5C0F;&#x7684;&#x603B;&#x7ED3;"></a><strong>&#x5FAE;&#x5C0F;&#x7684;&#x603B;&#x7ED3;</strong></h3><p>&#x4E0A;&#x8FF0;&#x4F8B;&#x5B50;&#x662F;&#x6309;&#x7167;&#x5982;&#x4E0B;&#x987A;&#x5E8F;&#x6765;&#x521B;&#x5EFA;&#x548C;&#x63D2;&#x5165;&#x8282;&#x70B9;&#x7684;&#xFF1A;</p>
+<ol>
+<li>&#x521B;&#x5EFA;&#x4E00;&#x4E2A; p &#x8282;&#x70B9;&#xFF1B;</li>
+<li>&#x628A;&#x8FD9;&#x4E2A; p &#x8282;&#x70B9;&#x8FFD;&#x52A0;&#x5230; test.html &#x6587;&#x6863;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x8282;&#x70B9;&#x4E0A;&#xFF1B;</li>
+<li>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6587;&#x672C;&#x8282;&#x70B9;&#xFF1B;</li>
+<li>&#x628A;&#x8FD9;&#x4E2A;&#x6587;&#x672C;&#x8282;&#x70B9;&#x8FFD;&#x52A0;&#x5230;&#x521A;&#x624D;&#x521B;&#x5EFA;&#x7684;&#x90A3;&#x4E2A; p &#x5143;&#x7D20;&#x8282;&#x70B9;&#x4E0A;&#x3002;</li>
+</ol>
+<p>appendChild &#x65B9;&#x6CD5;&#x8FD8;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x8FDE;&#x63A5;&#x90A3;&#x4E9B;&#x5C1A;&#x672A;&#x6210;&#x4E3A;&#x6587;&#x6863;&#x6811;&#x4E00;&#x90E8;&#x5206;&#x7684;&#x8282;&#x70B9;&#xFF0C;&#x5373;&#x4E5F;&#x53EF;&#x4EE5;&#x6309;&#x5982;&#x4E0B;&#x987A;&#x5E8F;&#xFF1A;</p>
+<ol>
+<li>&#x521B;&#x5EFA;&#x4E00;&#x4E2A; p &#x5143;&#x7D20;&#x8282;&#x70B9;&#xFF1B;</li>
+<li>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6587;&#x672C;&#x8282;&#x70B9;&#xFF1B;</li>
+<li>&#x628A;&#x8FD9;&#x4E2A;&#x6587;&#x672C;&#x8282;&#x70B9;&#x8FFD;&#x52A0;&#x5230;&#x7B2C;1&#x6B65;&#x521B;&#x5EFA;&#x7684; p &#x5143;&#x7D20;&#x8282;&#x70B9;&#x4E0A;&#xFF1B;</li>
+<li>&#x628A;&#x8FD9;&#x4E2A; p &#x5143;&#x7D20;&#x8282;&#x70B9;&#x8FFD;&#x52A0;&#x5230; test.html &#x6587;&#x6863;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x8282;&#x70B9;&#x4E0A;&#x3002;</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> para = <span class="built_in">document</span>.creataElement(<span class="string">&quot;p&quot;</span>);</div><div class="line"><span class="keyword">var</span> txt = <span class="built_in">document</span>.creataTextNode(<span class="string">&quot;Hello World&quot;</span>);</div><div class="line">para.append(txt);</div><div class="line"><span class="keyword">var</span> testdiv = <span class="built_in">document</span>.getElementById(<span class="string">&quot;testdiv&quot;</span>);</div><div class="line">testdiv.appendChild(para);</div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/javascript/" rel="tag"># javascript</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/01/25/DecisionTree/" rel="next" title="DecisionTree">
+                <i class="fa fa-chevron-left"></i> DecisionTree
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="Itachi" />
+          <p class="site-author-name" itemprop="name">Itachi</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">26</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Twilighce" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#createElement-方法"><span class="nav-text">createElement 方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#appendChild-方法"><span class="nav-text">appendChild 方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#createTextNode方法"><span class="nav-text">createTextNode方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#微小的总结"><span class="nav-text">微小的总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Itachi</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
