@@ -1,0 +1,760 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="algorithm," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="&amp;#x201C;&amp;#x5F53;&amp;#x65F6;&amp;#x6211;&amp;#x7ACB;&amp;#x523B;&amp;#x60F3;&amp;#x5230;&amp;#x4E86;&amp;#x4E00;&amp;#x6837;&amp;#x4E1C;&amp;#x897F;&amp;#xFF1A;&amp;#x4F60;&amp;#x542C;&amp;#x8BF4;&amp;#x8FC7;&amp;#x2019;&amp;#x8499;&amp;#x7279;&amp;#x5361;&amp;#x6D1B;&amp;#x6CD5;&amp;#x2019">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MonteCarlo-method">
+<meta property="og:url" content="http://yoursite.com/2017/01/28/MonteCarlo-method/index.html">
+<meta property="og:site_name" content="Twilighce">
+<meta property="og:description" content="&amp;#x201C;&amp;#x5F53;&amp;#x65F6;&amp;#x6211;&amp;#x7ACB;&amp;#x523B;&amp;#x60F3;&amp;#x5230;&amp;#x4E86;&amp;#x4E00;&amp;#x6837;&amp;#x4E1C;&amp;#x897F;&amp;#xFF1A;&amp;#x4F60;&amp;#x542C;&amp;#x8BF4;&amp;#x8FC7;&amp;#x2019;&amp;#x8499;&amp;#x7279;&amp;#x5361;&amp;#x6D1B;&amp;#x6CD5;&amp;#x2019">
+<meta property="og:image" content="http://oimbmvqt3.bkt.clouddn.com/1111.jpg">
+<meta property="og:image" content="http://oimbmvqt3.bkt.clouddn.com/2222.png">
+<meta property="og:image" content="http://oimbmvqt3.bkt.clouddn.com/3333.png">
+<meta property="og:updated_time" content="2017-01-28T13:03:17.097Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MonteCarlo-method">
+<meta name="twitter:description" content="&amp;#x201C;&amp;#x5F53;&amp;#x65F6;&amp;#x6211;&amp;#x7ACB;&amp;#x523B;&amp;#x60F3;&amp;#x5230;&amp;#x4E86;&amp;#x4E00;&amp;#x6837;&amp;#x4E1C;&amp;#x897F;&amp;#xFF1A;&amp;#x4F60;&amp;#x542C;&amp;#x8BF4;&amp;#x8FC7;&amp;#x2019;&amp;#x8499;&amp;#x7279;&amp;#x5361;&amp;#x6D1B;&amp;#x6CD5;&amp;#x2019">
+<meta name="twitter:image" content="http://oimbmvqt3.bkt.clouddn.com/1111.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/01/28/MonteCarlo-method/"/>
+
+
+
+
+
+  <title> MonteCarlo-method | Twilighce </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Twilighce</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <p class="site-subtitle"></p>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/28/MonteCarlo-method/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Itachi">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Twilighce">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Twilighce" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                MonteCarlo-method
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-28T21:01:53+08:00">
+                2017-01-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/study-notes/" itemprop="url" rel="index">
+                    <span itemprop="name">study notes</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>&#x201C;&#x5F53;&#x65F6;&#x6211;&#x7ACB;&#x523B;&#x60F3;&#x5230;&#x4E86;&#x4E00;&#x6837;&#x4E1C;&#x897F;&#xFF1A;<strong>&#x4F60;&#x542C;&#x8BF4;&#x8FC7;&#x2019;&#x8499;&#x7279;&#x5361;&#x6D1B;&#x6CD5;&#x2019;&#x5417;&#xFF1F;&#x54E6;&#xFF0C;&#x90A3;&#x662F;&#x4E00;&#x79CD;&#x8BA1;&#x7B97;&#x4E0D;&#x89C4;&#x5219;&#x56FE;&#x5F62;&#x9762;&#x79EF;&#x7684;&#x8BA1;&#x7B97;&#x673A;&#x7A0B;&#x5E8F;&#x7B97;&#x6CD5;</strong>&#xFF0C;&#x5177;&#x4F53;&#x505A;&#x6CD5;&#x662F;&#x5728;&#x8F6F;&#x4EF6;&#x4E2D;&#x7528;&#x5927;&#x91CF;&#x7684;&#x5C0F;&#x7403;&#x968F;&#x673A;&#x51FB;&#x6253;&#x90A3;&#x5757;&#x4E0D;&#x89C4;&#x5219;&#x56FE;&#x5F62;&#xFF0C;&#x88AB;&#x51FB;&#x4E2D;&#x7684;&#x5730;&#x65B9;&#x4E0D;&#x518D;&#x91CD;&#x590D;&#x6253;&#x51FB;&#xFF0C;&#x8FD9;&#x6837;&#xFF0C;&#x8FBE;&#x5230;&#x4E00;&#x5B9A;&#x7684;&#x6570;&#x91CF;&#x540E;&#xFF0C;&#x56FE;&#x5F62;&#x7684;&#x6240;&#x6709;&#x90E8;&#x5206;&#x5C31;&#x4F1A;&#x90FD;&#x88AB;&#x51FB;&#x4E2D;&#x4E00;&#x6B21;&#xFF0C;&#x8FD9;&#x65F6;&#x7EDF;&#x8BA1;&#x56FE;&#x5F62;&#x533A;&#x57DF;&#x5185;&#x5C0F;&#x7403;&#x7684;&#x6570;&#x91CF;&#xFF0C;&#x5C31;&#x5F97;&#x5230;&#x4E86;&#x56FE;&#x5F62;&#x7684;&#x9762;&#x79EF;&#xFF0C;&#x5F53;&#x7136;&#xFF0C;&#x7403;&#x8D8A;&#x5C0F;&#x7ED3;&#x679C;&#x8D8A;&#x7CBE;&#x786E;&#x3002;  </p>
+<p>&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#x867D;&#x7136;&#x7B80;&#x5355;&#xFF0C;&#x5374;&#x5C55;&#x793A;&#x4E86;&#x6570;&#x5B66;&#x4E2D;&#x7684;<strong>&#x4E00;&#x79CD;&#x7528;&#x968F;&#x673A;&#x7684;&#x86EE;&#x529B;&#x5BF9;&#x6297;&#x7CBE;&#x786E;&#x903B;&#x8F91;&#x7684;&#x601D;&#x60F3;&#x65B9;&#x6CD5;</strong>&#xFF0C;&#x4E00;&#x79CD;&#x7528;&#x6570;&#x91CF;&#x5F97;&#x5230;&#x8D28;&#x91CF;&#x7684;&#x8BA1;&#x7B97;&#x601D;&#x60F3;&#x3002;&#x8FD9;&#x5C31;&#x662F;&#x6211;&#x89E3;&#x51B3;&#x4E09;&#x4F53;&#x95EE;&#x9898;&#x7684;&#x7B56;&#x7565;&#x3002;&#x201D;</p>
+</blockquote>
+<a id="more"></a>
+<p>&#x300A;&#x4E09;&#x4F53;&#x300B;&#x4E2D;&#x8BB2;&#x5230;&#x4E86;&#x8499;&#x7279;&#x5361;&#x6D1B;&#x65B9;&#x6CD5;&#xFF0C;&#x633A;&#x6709;&#x610F;&#x601D;&#x7684;&#x3002;</p>
+<h3 id="&#x968F;&#x673A;&#x65B9;&#x6CD5;"><a href="#&#x968F;&#x673A;&#x65B9;&#x6CD5;" class="headerlink" title="&#x968F;&#x673A;&#x65B9;&#x6CD5;"></a><strong>&#x968F;&#x673A;&#x65B9;&#x6CD5;</strong></h3><p>&#x968F;&#x673A;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x5206;&#x4E3A;&#x4E24;&#x7C7B;&#xFF1A;</p>
+<ul>
+<li><p><strong>&#x8499;&#x7279;&#x5361;&#x6D1B;&#x7B97;&#x6CD5;</strong>&#xFF1A;&#x91C7;&#x6837;&#x8D8A;&#x591A;&#xFF0C;&#x8D8A;&#x8FD1;&#x4F3C;&#x6700;&#x4F18;&#x89E3;&#xFF1B;</p>
+<ul>
+<li>&#x5047;&#x5982;&#x7B50;&#x91CC;&#x6709;100&#x4E2A;&#x82F9;&#x679C;&#xFF0C;&#x8981;&#x6C42;&#x6BCF;&#x6B21;&#x95ED;&#x773C;&#x62FF;1&#x4E2A;&#xFF0C;&#x6311;&#x51FA;&#x6700;&#x5927;&#x7684;&#x3002;&#x4E8E;&#x662F;&#x5148;&#x968F;&#x673A;&#x62FF;1&#x4E2A;&#xFF0C;&#x518D;&#x968F;&#x673A;&#x62FF;1&#x4E2A;&#x8DDF;&#x5B83;&#x6BD4;&#xFF0C;&#x7559;&#x4E0B;&#x5927;&#x7684;&#xFF0C;&#x518D;&#x968F;&#x673A;&#x62FF;1&#x4E2A;&#x2026;&#x2026;&#x6BCF;&#x62FF;&#x4E00;&#x6B21;&#xFF0C;&#x7559;&#x4E0B;&#x7684;&#x82F9;&#x679C;&#x90FD;&#x81F3;&#x5C11;&#x4E0D;&#x6BD4;&#x4E0A;&#x6B21;&#x7684;&#x5C0F;&#x3002;&#x62FF;&#x7684;&#x6B21;&#x6570;&#x8D8A;&#x591A;&#xFF0C;&#x6311;&#x51FA;&#x7684;&#x82F9;&#x679C;&#x5C31;&#x8D8A;&#x5927;&#xFF0C;&#x4F46;&#x6211;&#x9664;&#x975E;&#x62FF;100&#x6B21;&#xFF0C;&#x5426;&#x5219;&#x65E0;&#x6CD5;&#x80AF;&#x5B9A;&#x6311;&#x51FA;&#x4E86;&#x6700;&#x5927;&#x7684;&#x3002;&#x8FD9;&#x4E2A;&#x6311;&#x82F9;&#x679C;&#x7684;&#x7B97;&#x6CD5;&#xFF0C;&#x5C31;&#x5C5E;&#x4E8E;&#x8499;&#x7279;&#x5361;&#x7F57;&#x7B97;&#x6CD5;&#x2014;&#x2014;<strong>&#x5C3D;&#x91CF;&#x627E;&#x597D;&#x7684;&#xFF0C;&#x4F46;&#x4E0D;&#x4FDD;&#x8BC1;&#x662F;&#x6700;&#x597D;&#x7684;&#x3002;</strong></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p><strong>&#x62C9;&#x65AF;&#x7EF4;&#x52A0;&#x65AF;&#x7B97;&#x6CD5;</strong>&#xFF1A;&#x91C7;&#x6837;&#x8D8A;&#x591A;&#xFF0C;&#x8D8A;&#x6709;&#x673A;&#x4F1A;&#x627E;&#x5230;&#x6700;&#x4F18;&#x89E3;&#xFF1B;</p>
+<ul>
+<li>&#x5047;&#x5982;&#x6709;&#x4E00;&#x628A;&#x9501;&#xFF0C;&#x7ED9;&#x6211;100&#x628A;&#x94A5;&#x5319;&#xFF0C;&#x53EA;&#x6709;1&#x628A;&#x662F;&#x5BF9;&#x7684;&#x3002;&#x4E8E;&#x662F;&#x6211;&#x6BCF;&#x6B21;&#x968F;&#x673A;&#x62FF;1&#x628A;&#x94A5;&#x5319;&#x53BB;&#x8BD5;&#xFF0C;&#x6253;&#x4E0D;&#x5F00;&#x5C31;&#x518D;&#x6362;1&#x628A;&#x3002;&#x6211;&#x8BD5;&#x7684;&#x6B21;&#x6570;&#x8D8A;&#x591A;&#xFF0C;&#x6253;&#x5F00;&#xFF08;&#x6700;&#x4F18;&#x89E3;&#xFF09;&#x7684;&#x673A;&#x4F1A;&#x5C31;&#x8D8A;&#x5927;&#xFF0C;&#x4F46;&#x5728;&#x6253;&#x5F00;&#x4E4B;&#x524D;&#xFF0C;&#x90A3;&#x4E9B;&#x9519;&#x7684;&#x94A5;&#x5319;&#x90FD;&#x662F;&#x6CA1;&#x6709;&#x7528;&#x7684;&#x3002;&#x8FD9;&#x4E2A;&#x8BD5;&#x94A5;&#x5319;&#x7684;&#x7B97;&#x6CD5;&#xFF0C;&#x5C31;&#x662F;&#x62C9;&#x65AF;&#x7EF4;&#x52A0;&#x65AF;&#x7684;&#x2014;&#x2014;<strong>&#x5C3D;&#x91CF;&#x627E;&#x6700;&#x597D;&#x7684;&#xFF0C;&#x4F46;&#x4E0D;&#x4FDD;&#x8BC1;&#x80FD;&#x627E;&#x5230;&#x3002;</strong></li>
+</ul>
+</li>
+</ul>
+<h3 id="&#x8499;&#x7279;&#x5361;&#x6D1B;&#x7B97;&#x6CD5;&#x57FA;&#x7840;"><a href="#&#x8499;&#x7279;&#x5361;&#x6D1B;&#x7B97;&#x6CD5;&#x57FA;&#x7840;" class="headerlink" title="&#x8499;&#x7279;&#x5361;&#x6D1B;&#x7B97;&#x6CD5;&#x57FA;&#x7840;"></a><strong>&#x8499;&#x7279;&#x5361;&#x6D1B;&#x7B97;&#x6CD5;&#x57FA;&#x7840;</strong></h3><h4 id="&#x6C42;&#x5706;&#x5468;&#x7387;"><a href="#&#x6C42;&#x5706;&#x5468;&#x7387;" class="headerlink" title="&#x6C42;&#x5706;&#x5468;&#x7387;"></a><strong>&#x6C42;&#x5706;&#x5468;&#x7387;</strong></h4><p>&#x6700;&#x7B80;&#x5355;&#x7684;&#x4F8B;&#x5B50;&#x662F;&#x6C42;&#x5706;&#x5468;&#x7387;&#xFF1A;</p>
+<ul>
+<li><p>&#x4E00;&#x4E2A;&#x5706;&#x534A;&#x5F84;R&#xFF0C;&#x5B83;&#x6709;&#x4E00;&#x4E2A;&#x5916;&#x5207;&#x6B63;&#x65B9;&#x5F62;&#x8FB9;&#x957F;2R&#x3002;&#x53EF;&#x77E5;&#xFF1A;</p>
+</li>
+<li><p>&#x5706;&#x9762;&#x79EF; = Pi*R^2&#xFF0C;&#x65B9;&#x5F62;&#x9762;&#x79EF; 2R x 2R=4R^2</p>
+</li>
+<li><p>&#x4ECE;&#x8FD9;&#x4E2A;&#x6B63;&#x65B9;&#x5F62;&#x5185;&#x968F;&#x673A;&#x62BD;&#x53D6;&#x4E00;&#x4E2A;&#x70B9;&#xFF0C;&#x5BF9;&#x8FD9;&#x4E2A;&#x70B9;&#x7684;&#x8981;&#x6C42;&#x662F;&#x5728;&#x6B63;&#x65B9;&#x5F62;&#x5185;&#x4EFB;&#x610F;&#x4E00;&#x70B9;&#x7684;&#x6982;&#x7387;&#x5E73;&#x5747;&#x5206;&#x5E03;&#x3002;&#x90A3;&#x4E48;&#x8FD9;&#x4E2A;&#x70B9;&#x5728;&#x5706;&#x4EE5;&#x5185;&#x7684;&#x6982;&#x7387;&#x5927;&#x6982;&#x5C31;&#x662F;pi*R^2/4R^2=pi/4</p>
+</li>
+<li><p>&#x751F;&#x6210;&#x82E5;&#x5E72;&#x4E2A;&#x8FD9;&#x6837;&#x7684;&#x70B9;&#xFF0C;&#x5229;&#x7528;&#x5E73;&#x9762;&#x4E0A;&#x4E24;&#x70B9;&#x95F4;&#x8DDD;&#x79BB;&#x516C;&#x5F0F;&#x8BA1;&#x7B97;&#x8FD9;&#x4E2A;&#x70B9;&#x5230;&#x5706;&#x5FC3;&#x7684;&#x8DDD;&#x79BB;&#x6765;&#x5224;&#x65AD;&#x662F;&#x5426;&#x5728;&#x5706;&#x5185;&#x3002;</p>
+</li>
+<li><p>&#x5F53;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x8DB3;&#x591F;&#x591A;&#x7684;&#x70B9;&#x6765;&#x8FDB;&#x884C;&#x7EDF;&#x8BA1;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x5F97;&#x5230;&#x7684;&#x6982;&#x7387;&#x503C;&#x5341;&#x5206;&#x63A5;&#x8FD1;pi/4&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x5F97;&#x5230;pi&#x503C;</p>
+</li>
+</ul>
+<p>&#x4EE3;&#x7801;&#x5B9E;&#x73B0;&#x5982;&#x4E0B;&#xFF1A;</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># -*- coding: utf-8 -*-</span></div><div class="line"><span class="keyword">import</span> random</div><div class="line"><span class="keyword">import</span> math</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></div><div class="line">    <span class="keyword">print</span> <span class="string">&apos;&#x8BF7;&#x8F93;&#x5165;&#x8FED;&#x4EE3;&#x7684;&#x6B21;&#x6570;&#xFF1A;&apos;</span></div><div class="line">    n = int(raw_input())   <span class="comment"># n&#x662F;&#x968F;&#x673A;&#x7684;&#x6B21;&#x6570;</span></div><div class="line">    total = <span class="number">0</span>     <span class="comment"># total&#x662F;&#x6240;&#x6709;&#x843D;&#x5165;&#x5706;&#x5185;&#x7684;&#x968F;&#x673A;&#x70B9;</span></div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> xrange(n):</div><div class="line">        x = random.random()</div><div class="line">        y = random.random()</div><div class="line">        <span class="keyword">if</span> math.sqrt(x**<span class="number">2</span> + y**<span class="number">2</span>) &lt; <span class="number">1.0</span>:  <span class="comment">#&#x5224;&#x65AD;&#x662F;&#x5426;&#x843D;&#x5165;&#x5706;&#x5185;</span></div><div class="line">            total += <span class="number">1</span></div><div class="line">        mypi = <span class="number">4.0</span>*total/n   <span class="comment">#&#x5F97;&#x5230;pi&#x503C;</span></div><div class="line">        <span class="keyword">print</span> <span class="string">&apos;&#x8FED;&#x4EE3;&#x6B21;&#x6570;&#x662F;&#xFF1A;&apos;</span>, n, <span class="string">&apos;Pi&#x7684;&#x503C;&#x662F;&#xFF1A;&apos;</span>, mypi</div><div class="line">        <span class="keyword">print</span> <span class="string">&apos;&#x6570;&#x5B66;pi&#x662F;&#xFF1A;&apos;</span>, math.pi</div><div class="line">        <span class="keyword">print</span> <span class="string">&apos;&#x8BEF;&#x5DEE;&#x662F;&#xFF1A;&apos;</span>, abs(math.pi-mypi)/math.pi</div><div class="line"></div><div class="line">main()</div></pre></td></tr></table></figure>
+<h3 id="&#x8499;&#x7279;&#x5361;&#x6D1B;&#x7B97;&#x6CD5;&#x5E94;&#x7528;"><a href="#&#x8499;&#x7279;&#x5361;&#x6D1B;&#x7B97;&#x6CD5;&#x5E94;&#x7528;" class="headerlink" title="&#x8499;&#x7279;&#x5361;&#x6D1B;&#x7B97;&#x6CD5;&#x5E94;&#x7528;"></a><strong>&#x8499;&#x7279;&#x5361;&#x6D1B;&#x7B97;&#x6CD5;&#x5E94;&#x7528;</strong></h3><h4 id="&#x4EA7;&#x54C1;&#x539A;&#x5EA6;"><a href="#&#x4EA7;&#x54C1;&#x539A;&#x5EA6;" class="headerlink" title="&#x4EA7;&#x54C1;&#x539A;&#x5EA6;"></a><strong>&#x4EA7;&#x54C1;&#x539A;&#x5EA6;</strong></h4><p>&#x67D0;&#x4EA7;&#x54C1;&#x7531;&#x516B;&#x4E2A;&#x96F6;&#x4EF6;&#x5806;&#x53E0;&#x7EC4;&#x6210;&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x8FD9;&#x516B;&#x4E2A;&#x96F6;&#x4EF6;&#x7684;&#x539A;&#x5EA6;&#x603B;&#x548C;&#xFF0C;&#x7B49;&#x4E8E;&#x8BE5;&#x4EA7;&#x54C1;&#x7684;&#x539A;&#x5EA6;&#x3002;</p>
+<p><img src="http://oimbmvqt3.bkt.clouddn.com/1111.jpg" alt="&#x4EA7;&#x54C1;&#x539A;&#x5EA6;"></p>
+<p>&#x5DF2;&#x77E5;&#x8BE5;&#x4EA7;&#x54C1;&#x7684;&#x539A;&#x5EA6;&#xFF0C;&#x5FC5;&#x987B;&#x63A7;&#x5236;&#x5728;27mm&#x4EE5;&#x5185;&#xFF0C;&#x4F46;&#x662F;&#x6BCF;&#x4E2A;&#x96F6;&#x4EF6;&#x6709;&#x4E00;&#x5B9A;&#x7684;&#x6982;&#x7387;&#xFF0C;&#x539A;&#x5EA6;&#x4F1A;&#x8D85;&#x51FA;&#x8BEF;&#x5DEE;&#x3002;&#x8BF7;&#x95EE;&#x6709;&#x591A;&#x5927;&#x7684;&#x6982;&#x7387;&#xFF0C;&#x4EA7;&#x54C1;&#x7684;&#x539A;&#x5EA6;&#x4F1A;&#x8D85;&#x51FA;27mm&#xFF1F;</p>
+<p><img src="http://oimbmvqt3.bkt.clouddn.com/2222.png" alt="&#x7ED3;&#x679C;&#x793A;&#x610F;"></p>
+<p>&#x53D6;100000&#x4E2A;&#x968F;&#x673A;&#x6837;&#x672C;&#xFF0C;&#x6BCF;&#x4E2A;&#x6837;&#x672C;&#x6709;8&#x4E2A;&#x503C;&#xFF0C;&#x5BF9;&#x5E94;8&#x4E2A;&#x96F6;&#x4EF6;&#x5404;&#x81EA;&#x7684;&#x539A;&#x5EA6;&#x3002;&#x8BA1;&#x7B97;&#x53D1;&#x73B0;&#xFF0C;&#x4EA7;&#x54C1;&#x7684;&#x5408;&#x683C;&#x7387;&#x4E3A;99.9979%&#xFF0C;&#x5373;&#x767E;&#x4E07;&#x5206;&#x4E4B;21&#x7684;&#x6982;&#x7387;&#xFF0C;&#x539A;&#x5EA6;&#x4F1A;&#x8D85;&#x51FA;27mm&#x3002;</p>
+<h4 id="&#x4EA4;&#x901A;&#x5835;&#x585E;"><a href="#&#x4EA4;&#x901A;&#x5835;&#x585E;" class="headerlink" title="&#x4EA4;&#x901A;&#x5835;&#x585E;"></a><strong>&#x4EA4;&#x901A;&#x5835;&#x585E;</strong></h4><p>&#x6839;&#x636E; Nagel-Schreckenberg &#x6A21;&#x578B;&#xFF0C;&#x8F66;&#x8F86;&#x7684;&#x8FD0;&#x52A8;&#x6EE1;&#x8DB3;&#x4EE5;&#x4E0B;&#x89C4;&#x5219;&#x3002;</p>
+<ul>
+<li><p>&#x5F53;&#x524D;&#x901F;&#x5EA6;&#x662F; v &#x3002;</p>
+</li>
+<li><p>&#x5982;&#x679C;&#x524D;&#x9762;&#x6CA1;&#x8F66;&#xFF0C;&#x5B83;&#x5728;&#x4E0B;&#x4E00;&#x79D2;&#x7684;&#x901F;&#x5EA6;&#x4F1A;&#x63D0;&#x9AD8;&#x5230; v + 1 &#xFF0C;&#x76F4;&#x5230;&#x8FBE;&#x5230;&#x89C4;&#x5B9A;&#x7684;&#x6700;&#x9AD8;&#x9650;&#x901F;&#x3002;</p>
+</li>
+<li><p>&#x5982;&#x679C;&#x524D;&#x9762;&#x6709;&#x8F66;&#xFF0C;&#x8DDD;&#x79BB;&#x4E3A;d&#xFF0C;&#x4E14; d &lt; v&#xFF0C;&#x90A3;&#x4E48;&#x5B83;&#x5728;&#x4E0B;&#x4E00;&#x79D2;&#x7684;&#x901F;&#x5EA6;&#x4F1A;&#x964D;&#x4F4E;&#x5230; d - 1 &#x3002;</p>
+</li>
+<li><p>&#x6B64;&#x5916;&#xFF0C;&#x53F8;&#x673A;&#x8FD8;&#x4F1A;&#x4EE5;&#x6982;&#x7387; p &#x968F;&#x673A;&#x51CF;&#x901F;&#xFF0C; &#x5C06;&#x4E0B;&#x4E00;&#x79D2;&#x7684;&#x901F;&#x5EA6;&#x964D;&#x4F4E;&#x5230; v - 1 &#x3002;</p>
+</li>
+</ul>
+<p><img src="http://oimbmvqt3.bkt.clouddn.com/3333.png" alt="&#x4EA4;&#x901A;&#x62E5;&#x585E;"></p>
+<p>&#x4E0A;&#x56FE;&#x4E2D;&#xFF0C;&#x6A2A;&#x8F74;&#x4EE3;&#x8868;&#x8DDD;&#x79BB;&#xFF08;&#x4ECE;&#x5DE6;&#x5230;&#x53F3;&#xFF09;&#xFF0C;&#x7EB5;&#x8F74;&#x4EE3;&#x8868;&#x65F6;&#x95F4;&#xFF08;&#x4ECE;&#x4E0A;&#x5230;&#x4E0B;&#xFF09;&#xFF0C;&#x56E0;&#x6B64;&#x6BCF;&#x4E00;&#x884C;&#x5C31;&#x8868;&#x793A;&#x4E0B;&#x4E00;&#x79D2;&#x7684;&#x9053;&#x8DEF;&#x60C5;&#x51B5;&#x3002;<br>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;&#x8BE5;&#x6A21;&#x578B;&#x4F1A;&#x968F;&#x673A;&#x4EA7;&#x751F;&#x4EA4;&#x901A;&#x62E5;&#x5835;&#xFF08;&#x56FE;&#x5F62;&#x4E0A;&#x9ED1;&#x8272;&#x805A;&#x96C6;&#x7684;&#x90E8;&#x5206;&#xFF09;&#x3002;&#x8FD9;&#x5C31;&#x8BC1;&#x660E;&#x4E86;&#xFF0C;&#x5355;&#x8F66;&#x9053;&#x5373;&#x4F7F;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x539F;&#x56E0;&#xFF0C;&#x4E5F;&#x4F1A;&#x4EA7;&#x751F;&#x4EA4;&#x901A;&#x5835;&#x585E;&#x3002;</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/algorithm/" rel="tag"># algorithm</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/01/26/Ajax/" rel="next" title="Ajax">
+                <i class="fa fa-chevron-left"></i> Ajax
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="Itachi" />
+          <p class="site-author-name" itemprop="name">Itachi</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Twilighce" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#随机方法"><span class="nav-text">随机方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#蒙特卡洛算法基础"><span class="nav-text">蒙特卡洛算法基础</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#求圆周率"><span class="nav-text">求圆周率</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#蒙特卡洛算法应用"><span class="nav-text">蒙特卡洛算法应用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#产品厚度"><span class="nav-text">产品厚度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#交通堵塞"><span class="nav-text">交通堵塞</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Itachi</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
