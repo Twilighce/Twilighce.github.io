@@ -92,7 +92,7 @@ DOM&amp;#x4E00;&amp;#x4EFD;&amp;#x6587;&amp;#x6863;&amp;#x5C31;&amp;#x662F;&amp;
 <meta property="og:site_name" content="Twilighce">
 <meta property="og:description" content="&amp;#x793A;&amp;#x4F8B;&amp;#x4EE3;&amp;#x7801;&amp;#x5728;&amp;#x8FD9;&amp;#x91CC;
 DOM&amp;#x4E00;&amp;#x4EFD;&amp;#x6587;&amp;#x6863;&amp;#x5C31;&amp;#x662F;&amp;#x4E00;&amp;#x68F5;&amp;#x8282;&amp;#x70B9;&amp;#x6811;&amp;#x3002;&amp;#x6BCF;&amp;#x4E2A;&amp;#x8282;&amp;#x70B9;&amp;#x90FD;&amp;#x6">
-<meta property="og:updated_time" content="2017-01-26T10:12:55.877Z">
+<meta property="og:updated_time" content="2017-01-30T07:30:14.322Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JsGallery-basis-1">
 <meta name="twitter:description" content="&amp;#x793A;&amp;#x4F8B;&amp;#x4EE3;&amp;#x7801;&amp;#x5728;&amp;#x8FD9;&amp;#x91CC;
@@ -412,9 +412,9 @@ DOM&amp;#x4E00;&amp;#x4EFD;&amp;#x6587;&amp;#x6863;&amp;#x5C31;&amp;#x662F;&amp;
 <ul>
 <li>&#x8BBF;&#x95EE;childNodes&#x6570;&#x7EC4;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x548C;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#xFF1A;</li>
 </ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">node.firstChild    # &#x4E0E;node.childNodes[0]&#x7B49;&#x4EF7;</div><div class="line"></div><div class="line">node.lastChild    #  &#x4E0E;node.childNodes[node.childNodes.length-1]&#x7B49;&#x4EF7;</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># -*- coding: utf-8 -*-</div><div class="line">node.firstChild    # &#x4E0E;node.childNodes[0]&#x7B49;&#x4EF7;</div><div class="line"></div><div class="line">node.lastChild    #  &#x4E0E;node.childNodes[node.childNodes.length-1]&#x7B49;&#x4EF7;</div></pre></td></tr></table></figure>
 <p>eg&#xFF1A;&#x5728;&#x9875;&#x9762;&#x52A0;&#x8F7D;&#x65F6;&#x663E;&#x793A; body&#x5143;&#x7D20;&#x7684;&#x5B50;&#x5143;&#x7D20;&#x7684;&#x603B;&#x4E2A;&#x6570;</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function countBodyChildren(){</div><div class="line">    var body_element = document.getElementByTagName(&quot;body&quot;)[0];</div><div class="line">    # &#x6BCF;&#x4EFD;&#x6587;&#x6863;&#x53EA;&#x6709;&#x4E00;&#x4E2A;body&#x5143;&#x7D20;&#xFF0C;&#x6545;&#x5176;&#x662F;&#x8FD4;&#x56DE;&#x6570;&#x7EC4;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#xFF08;&#x4E5F;&#x662F;&#x552F;&#x4E00;&#x4E00;&#x4E2A;&#xFF09;&#x5143;&#x7D20;&#xFF1B;</div><div class="line">    alert (body_element.childNodes.length);</div><div class="line">}</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># -*- coding: utf-8 -*-</div><div class="line">function countBodyChildren(){</div><div class="line">    var body_element = document.getElementByTagName(&quot;body&quot;)[0];</div><div class="line">    # &#x6BCF;&#x4EFD;&#x6587;&#x6863;&#x53EA;&#x6709;&#x4E00;&#x4E2A;body&#x5143;&#x7D20;&#xFF0C;&#x6545;&#x5176;&#x662F;&#x8FD4;&#x56DE;&#x6570;&#x7EC4;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#xFF08;&#x4E5F;&#x662F;&#x552F;&#x4E00;&#x4E00;&#x4E2A;&#xFF09;&#x5143;&#x7D20;&#xFF1B;</div><div class="line">    alert (body_element.childNodes.length);</div><div class="line">}</div></pre></td></tr></table></figure>
 <h3 id="nodeType&#x5C5E;&#x6027;"><a href="#nodeType&#x5C5E;&#x6027;" class="headerlink" title="nodeType&#x5C5E;&#x6027;"></a><strong>nodeType&#x5C5E;&#x6027;</strong></h3><ul>
 <li><p>&#x8FD4;&#x56DE;&#x503C;&#x662F;&#x4E00;&#x4E2A;&#x6570;&#x5B57;&#xFF1B;</p>
 <ul>
