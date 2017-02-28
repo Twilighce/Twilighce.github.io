@@ -1,0 +1,739 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="algorithm," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="&amp;#x4E00;&amp;#x4E9B;&amp;#x94FE;&amp;#x8868;&amp;#x9898;&amp;#x76EE;&amp;#x7684; java &amp;#x89E3;&amp;#x7B54;(2)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JAVA链表_2">
+<meta property="og:url" content="http://yoursite.com/2017/02/28/JAVA链表-2/index.html">
+<meta property="og:site_name" content="Twilighce">
+<meta property="og:description" content="&amp;#x4E00;&amp;#x4E9B;&amp;#x94FE;&amp;#x8868;&amp;#x9898;&amp;#x76EE;&amp;#x7684; java &amp;#x89E3;&amp;#x7B54;(2)">
+<meta property="og:updated_time" content="2017-02-28T12:55:48.334Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JAVA链表_2">
+<meta name="twitter:description" content="&amp;#x4E00;&amp;#x4E9B;&amp;#x94FE;&amp;#x8868;&amp;#x9898;&amp;#x76EE;&amp;#x7684; java &amp;#x89E3;&amp;#x7B54;(2)">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/02/28/JAVA链表-2/"/>
+
+
+
+
+
+  <title> JAVA链表_2 | Twilighce </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Twilighce</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <p class="site-subtitle"></p>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/28/JAVA链表-2/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Itachi">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Twilighce">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Twilighce" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                JAVA链表_2
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-28T20:54:02+08:00">
+                2017-02-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/study-notes/" itemprop="url" rel="index">
+                    <span itemprop="name">study notes</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>&#x4E00;&#x4E9B;&#x94FE;&#x8868;&#x9898;&#x76EE;&#x7684; java &#x89E3;&#x7B54;(2)</p>
+<a id="more"></a>
+<h4 id="13-&#x5220;&#x9664;&#x94FE;&#x8868;&#x4E2D;&#x91CD;&#x590D;&#x7684;&#x7ED3;&#x70B9;"><a href="#13-&#x5220;&#x9664;&#x94FE;&#x8868;&#x4E2D;&#x91CD;&#x590D;&#x7684;&#x7ED3;&#x70B9;" class="headerlink" title="13.&#x5220;&#x9664;&#x94FE;&#x8868;&#x4E2D;&#x91CD;&#x590D;&#x7684;&#x7ED3;&#x70B9;"></a><strong>13.&#x5220;&#x9664;&#x94FE;&#x8868;&#x4E2D;&#x91CD;&#x590D;&#x7684;&#x7ED3;&#x70B9;</strong></h4><p><strong>&#x9898;&#x76EE;&#x63CF;&#x8FF0;&#xFF1A;</strong></p>
+<blockquote>
+<p>&#x5728;&#x4E00;&#x4E2A;&#x5DF2;&#x6392;&#x5E8F;&#x7684;&#x94FE;&#x8868;&#x4E2D;&#xFF0C;&#x5982;&#x4F55;&#x5220;&#x9664;&#x91CD;&#x590D;&#x7684;&#x7ED3;&#x70B9;&#xFF1F;<br>&#x91CD;&#x590D;&#x7684;&#x7ED3;&#x70B9;&#x4E0D;&#x4FDD;&#x7559;&#xFF0C;&#x8FD4;&#x56DE;&#x94FE;&#x8868;&#x5934;&#x6307;&#x9488;&#x3002;<br>&#x4F8B;&#x5982;&#xFF0C;&#x94FE;&#x8868; &#xFF1A;1-&gt;2-&gt;3-&gt;3-&gt;4-&gt;4-&gt;5 &#xFF0C;&#x5904;&#x7406;&#x540E;&#x4E3A;&#xFF1A; 1-&gt;2-&gt;5</p>
+</blockquote>
+<p><strong>&#x89E3;&#x7B54;&#xFF1A;</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line">&#x5728;&#x4E00;&#x4E2A;&#x6392;&#x5E8F;&#x7684;&#x94FE;&#x8868;&#x4E2D;&#xFF0C;&#x5220;&#x9664;&#x94FE;&#x8868;&#x4E2D;&#x91CD;&#x590D;&#x7684;&#x7ED3;&#x70B9;&#x3002;&#x5FAA;&#x73AF;</div><div class="line"><span class="comment">/*</span></div><div class="line"> * &#x5B9A;&#x4E49;&#x56DB;&#x4E2A;&#x7ED3;&#x70B9;&#xFF0C;&#x524D;&#x7ED3;&#x70B9; pre&#xFF0C;&#x5F53;&#x524D;&#x7ED3;&#x70B9; temp&#xFF0C;&#x4E0B;&#x4E00;&#x7ED3;&#x70B9; nex&#xFF0C;&#x5220;&#x9664;&#x7ED3;&#x70B9; deleteNode;</div><div class="line"> * &#x5728;&#x9047;&#x5230;&#x5220;&#x9664;&#x7ED3;&#x70B9;&#x65F6;&#x8981;&#x4FDD;&#x8BC1; pre &#x8FDE;&#x4E0A; nex&#xFF0C;&#x9632;&#x6B62;&#x65AD;&#x88C2;</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">deleteDuplication</span><span class="params">(Node head)</span> </span>{</div><div class="line">	<span class="keyword">if</span> (head == <span class="keyword">null</span>) {</div><div class="line">		<span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">	}</div><div class="line">	<span class="keyword">if</span> (head != <span class="keyword">null</span> &amp;&amp; head.next == <span class="keyword">null</span>) {</div><div class="line">		<span class="keyword">return</span> head;</div><div class="line">	}</div><div class="line">	Node pre = <span class="keyword">null</span>;  <span class="comment">//&#x524D;&#x7ED3;&#x70B9;</span></div><div class="line">	Node temp = head; <span class="comment">//&#x5F53;&#x524D;&#x7ED3;&#x70B9;</span></div><div class="line"></div><div class="line">	<span class="keyword">while</span> (Node != <span class="keyword">null</span>) {</div><div class="line">		Node nex = temp.next;</div><div class="line">		<span class="keyword">boolean</span> needDelete = <span class="keyword">false</span>;</div><div class="line">		<span class="keyword">if</span> (nex != <span class="keyword">null</span> &amp;&amp; nex.value == temp.value) {</div><div class="line">			needDelete = <span class="keyword">true</span>;</div><div class="line">		}</div><div class="line">		<span class="keyword">if</span> (!needDelete) { <span class="comment">//&#x4E0D;&#x91CD;&#x590D;&#xFF0C;&#x5411;&#x524D;&#x79FB;&#x52A8;</span></div><div class="line">			pre = temp;</div><div class="line">			temp = temp.next;</div><div class="line">		}</div><div class="line">		<span class="keyword">else</span> {  <span class="comment">//&#x91CD;&#x590D;&#xFF0C;&#x5220;&#x9664;</span></div><div class="line">			<span class="keyword">int</span> value = temp.value;</div><div class="line">			Node toBeDel = temp;</div><div class="line">			<span class="keyword">while</span> (toBeDel != <span class="keyword">null</span> &amp;&amp; toBeDel.value == value) {</div><div class="line">				nex = toBeDel.next;</div><div class="line">				toBeDel = nex;</div><div class="line">			}</div><div class="line">			<span class="keyword">if</span> (pre == <span class="keyword">null</span>) { <span class="comment">//&#x5934;&#x7ED3;&#x70B9;&#x5220;&#x9664;&#x65F6;</span></div><div class="line">				head = nex;</div><div class="line">			}</div><div class="line">			<span class="keyword">else</span> {</div><div class="line">				pre.next = nex;	</div><div class="line">			}</div><div class="line">			temp = nex;</div><div class="line">		}</div><div class="line">		<span class="keyword">return</span> head;</div><div class="line">	}	</div><div class="line">}</div></pre></td></tr></table></figure>
+<h4 id="14-&#x590D;&#x6742;&#x94FE;&#x8868;&#x7684;&#x590D;&#x5236;"><a href="#14-&#x590D;&#x6742;&#x94FE;&#x8868;&#x7684;&#x590D;&#x5236;" class="headerlink" title="14.&#x590D;&#x6742;&#x94FE;&#x8868;&#x7684;&#x590D;&#x5236;"></a><strong>14.&#x590D;&#x6742;&#x94FE;&#x8868;&#x7684;&#x590D;&#x5236;</strong></h4><p><strong>&#x95EE;&#x9898;&#x63CF;&#x8FF0;&#xFF1A;</strong></p>
+<blockquote>
+<p>&#x5B9E;&#x73B0;&#x590D;&#x6742;&#x94FE;&#x8868;&#x7684;&#x590D;&#x5236;&#x3002;&#x5728;&#x590D;&#x6742;&#x94FE;&#x8868;&#x4E2D;&#xFF0C;&#x6BCF;&#x4E2A;&#x7ED3;&#x70B9;&#x9664;&#x4E86;&#x6709;&#x4E00;&#x4E2A; next &#x6307;&#x9488;&#x6307;&#x5411;&#x4E0B;&#x4E00;&#x4E2A;&#x7ED3;&#x70B9;&#x5916;&#xFF0C;&#x8FD8;&#x6709;&#x4E00;&#x4E2A; Sibling &#x6307;&#x5411;&#x94FE;&#x8868;&#x4E2D;&#x7684;&#x4EFB;&#x610F;&#x7ED3;&#x70B9;&#x6216;&#x8005; null&#x3002;</p>
+</blockquote>
+<p><strong>&#x601D;&#x8DEF;&#xFF1A;</strong></p>
+<ol>
+<li>&#x6839;&#x636E;&#x539F;&#x59CB;&#x94FE;&#x8868;&#x7684;&#x6BCF;&#x4E2A;&#x7ED3;&#x70B9; N&#xFF0C;&#x521B;&#x5EFA;&#x5BF9;&#x5E94;&#x7684; N&#x2019;&#x3002;&#x628A; N&#x2019; &#x94FE;&#x63A5;&#x5728; N &#x540E;&#x9762;&#xFF1B;</li>
+<li>&#x8BBE;&#x7F6E;&#x590D;&#x5236;&#x51FA;&#x6765;&#x7684;&#x7ED3;&#x70B9;&#x7684; Sibling&#xFF1B;</li>
+<li>&#x5C06;&#x7B2C;&#x4E8C;&#x6B65;&#x7684;&#x94FE;&#x8868;&#x62C6;&#x5206;&#x6210;&#x539F;&#x59CB;&#x94FE;&#x8868;&#x548C;&#x590D;&#x5236;&#x51FA;&#x6765;&#x7684;&#x94FE;&#x8868;&#x3002;</li>
+</ol>
+<p><strong>&#x4EE3;&#x7801;&#xFF1A;</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CloneComplexLinkedList</span> </span>{</div><div class="line">	<span class="comment">//&#x590D;&#x6742;&#x94FE;&#x8868;&#x7684;&#x6784;&#x9020;&#x5668;</span></div><div class="line">	<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ListNode</span> </span>{</div><div class="line">		<span class="keyword">int</span> value;</div><div class="line">		ListNode next;</div><div class="line">		ListNode sibling;</div><div class="line"></div><div class="line">		ListNode(<span class="keyword">int</span> value) {</div><div class="line">			<span class="keyword">this</span>.value = value;</div><div class="line">		}</div><div class="line">	}</div><div class="line">	<span class="comment">//&#x4E09;&#x6B65;&#x7ED3;&#x5408;</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Node <span class="title">Clone</span> <span class="params">(ListNode head)</span> </span>{</div><div class="line">		copyNodes(head);</div><div class="line">		connectSiblingNodes(head);</div><div class="line">		<span class="keyword">return</span> splitNodes(head);</div><div class="line">	}</div><div class="line"></div><div class="line">	<span class="comment">//&#x7B2C;&#x4E00;&#x6B65;&#xFF0C;&#x590D;&#x5236;&#x94FE;&#x8868;</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">copyNodes</span><span class="params">(ListNode head)</span> </span>{</div><div class="line">		ListNode temp = head;</div><div class="line">		<span class="keyword">while</span> (head != <span class="keyword">null</span>) {</div><div class="line">			ListNode cloneNode = <span class="keyword">new</span> ListNode(<span class="number">0</span>);  <span class="comment">// N&apos;</span></div><div class="line">			cloneNode.next = temp.next;</div><div class="line">			cloneNode.value = temp.value;</div><div class="line">			cloneNode.sibling = <span class="keyword">null</span>;</div><div class="line"></div><div class="line">			temp.next = cloneNode;</div><div class="line">			<span class="comment">//&#x6307;&#x9488;&#x540E;&#x79FB;</span></div><div class="line">			temp = cloneNode.next;</div><div class="line">		}</div><div class="line">	}</div><div class="line"></div><div class="line">	<span class="comment">//&#x7B2C;&#x4E8C;&#x6B65;&#xFF0C;&#x8BBE;&#x7F6E;&#x590D;&#x5236;&#x51FA;&#x6765;&#x7684;&#x7ED3;&#x70B9;&#x3001;</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">connectSiblingNodes</span><span class="params">(ListNode head)</span> </span>{</div><div class="line">		ListNode pNode = head;  <span class="comment">// N</span></div><div class="line">		<span class="keyword">while</span> (head != <span class="keyword">null</span>) {</div><div class="line">			ListNode pCloned = pNode.next;  <span class="comment">// N&apos;</span></div><div class="line">			<span class="keyword">if</span> (pNode.sibling != <span class="keyword">null</span>) {</div><div class="line">				pCloned.sibling = pNode.sibling.next;</div><div class="line">			}</div><div class="line">			<span class="comment">//&#x6307;&#x9488;&#x540E;&#x79FB;</span></div><div class="line">			pNode = pCloned.next;</div><div class="line">		}</div><div class="line">	}</div><div class="line"></div><div class="line">	<span class="comment">//&#x7B2C;&#x4E09;&#x6B65;&#xFF0C;&#x5C06;&#x7B2C;&#x4E8C;&#x6B65;&#x5F97;&#x5230;&#x7684;&#x94FE;&#x8868;&#x62C6;&#x5206;</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> ListNode <span class="title">splitNodes</span><span class="params">(ListNode head)</span> </span>{</div><div class="line">		ListNode pNode = head;</div><div class="line">		ListNode clonedHead = <span class="keyword">null</span>;</div><div class="line">		ListNode clonedNode = <span class="keyword">null</span>;</div><div class="line"></div><div class="line">		<span class="keyword">if</span> (pNode != <span class="keyword">null</span>) {</div><div class="line">			clonedHead = pNode.next;</div><div class="line">			clonedNode = pNode.next;</div><div class="line">			pNode.next = clonedNode.next;</div><div class="line">			pNode = pNode.next;</div><div class="line">		}</div><div class="line"></div><div class="line">		<span class="keyword">while</span> (pNode != <span class="keyword">null</span>) {</div><div class="line">			clonedNode.next = pNode.next;</div><div class="line">			clonedNode = clonedNode.next;</div><div class="line">			pNode.next = clonedNode.next;</div><div class="line">			pNode = pNode.next;</div><div class="line">		}</div><div class="line"></div><div class="line">		<span class="keyword">return</span> clonedHead;</div><div class="line">	}</div><div class="line">}</div></pre></td></tr></table></figure>
+<h4 id="15-&#x5728;-O-1-&#x65F6;&#x95F4;&#x5185;&#x5220;&#x9664;&#x94FE;&#x8868;&#x7ED3;&#x70B9;"><a href="#15-&#x5728;-O-1-&#x65F6;&#x95F4;&#x5185;&#x5220;&#x9664;&#x94FE;&#x8868;&#x7ED3;&#x70B9;" class="headerlink" title="15.&#x5728; O(1) &#x65F6;&#x95F4;&#x5185;&#x5220;&#x9664;&#x94FE;&#x8868;&#x7ED3;&#x70B9;"></a><strong>15.&#x5728; O(1) &#x65F6;&#x95F4;&#x5185;&#x5220;&#x9664;&#x94FE;&#x8868;&#x7ED3;&#x70B9;</strong></h4><p><strong>&#x95EE;&#x9898;&#x63CF;&#x8FF0;&#xFF1A;</strong></p>
+<blockquote>
+<p>&#x7ED9;&#x5B9A;&#x5355;&#x5411;&#x94FE;&#x8868;&#x7684;&#x5934;&#x6307;&#x9488;&#x548C;&#x4E00;&#x4E2A;&#x7ED3;&#x70B9;&#x6307;&#x9488;&#xFF0C;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x5728; O(1) &#x65F6;&#x95F4;&#x5185;&#x5220;&#x9664;&#x8BE5;&#x7ED3;&#x70B9;&#x3002;</p>
+</blockquote>
+<p><strong>&#x601D;&#x8DEF;&#xFF1A;</strong></p>
+<ol>
+<li>&#x8981;&#x5220;&#x9664;&#x7ED3;&#x70B9; i&#xFF0C;&#x628A; i &#x7684;&#x4E0B;&#x4E00;&#x4E2A;&#x7ED3;&#x70B9; j &#x7684;&#x5185;&#x5BB9;&#x590D;&#x5236;&#x5230; i&#xFF1B;</li>
+<li>&#x628A; i &#x7684;&#x6307;&#x9488;&#x6307;&#x5411;&#x7ED3;&#x70B9; j &#x7684;&#x4E0B;&#x4E00;&#x4E2A;&#x7ED3;&#x70B9;&#xFF1B;</li>
+<li>&#x5220;&#x9664;&#x7ED3;&#x70B9; j&#x3002;&#x5176;&#x6548;&#x679C;&#x521A;&#x597D;&#x662F; i &#x88AB;&#x5220;&#x9664;&#x4E86;&#x3002;</li>
+<li>&#x95EE;&#x9898;&#xFF1A;<ul>
+<li>&#x5982;&#x679C;&#x5F85;&#x5220;&#x9664;&#x7684;&#x662F;&#x94FE;&#x8868;&#x5C3E;&#x7ED3;&#x70B9;&#xFF0C;&#x5B83;&#x6CA1;&#x6709;&#x4E0B;&#x4E00;&#x4E2A;&#x7ED3;&#x70B9;&#x3002;</li>
+<li>&#x6CE8;&#x610F;&#x94FE;&#x8868;&#x4E2D;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x7ED3;&#x70B9;&#xFF0C;&#x8981;&#x5220;&#x9664;&#x5934;&#x7ED3;&#x70B9;/&#x5C3E;&#x7ED3;&#x70B9;&#xFF0C;&#x8FD4;&#x56DE; null&#x3002;</li>
+</ul>
+</li>
+</ol>
+<p><strong>&#x4EE3;&#x7801;&#xFF1A;</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">deleteNode</span><span class="params">(Node head, Node toBeDeleted)</span> </span>{</div><div class="line">	<span class="keyword">if</span> (head == <span class="keyword">null</span> || toBeDeleted == <span class="keyword">null</span>) {</div><div class="line">		<span class="keyword">return</span>;</div><div class="line">	}</div><div class="line">	<span class="comment">//&#x8981;&#x5220;&#x9664;&#x7684;&#x4E0D;&#x662F;&#x5C3E;&#x7ED3;&#x70B9;</span></div><div class="line">	<span class="keyword">if</span> (toBeDeleted.next != <span class="keyword">null</span>) {</div><div class="line">		Node nex = toBeDeleted.next;</div><div class="line">		<span class="comment">// &#x628A; i &#x7684;&#x4E0B;&#x4E00;&#x4E2A;&#x7ED3;&#x70B9; j &#x7684;&#x5185;&#x5BB9;&#x590D;&#x5236;&#x5230; i</span></div><div class="line">		toBeDeleted.value = nex.value;</div><div class="line">		<span class="comment">// &#x628A; i &#x7684;&#x6307;&#x9488;&#x6307;&#x5411;&#x7ED3;&#x70B9; j &#x7684;&#x4E0B;&#x4E00;&#x4E2A;&#x7ED3;&#x70B9;</span></div><div class="line">		toBeDeleted.next = nex.next;</div><div class="line">	}</div><div class="line">	<span class="comment">//&#x94FE;&#x8868;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x7ED3;&#x70B9;&#xFF0C;&#x5220;&#x9664;&#x5934;&#x7ED3;&#x70B9;</span></div><div class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (head == toBeDeleted) {</div><div class="line">		toBeDeleted = <span class="keyword">null</span>;</div><div class="line">		head = <span class="keyword">null</span>;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">	}</div><div class="line">	<span class="comment">//&#x94FE;&#x8868;&#x6709;&#x591A;&#x4E2A;&#x7ED3;&#x70B9;&#xFF0C;&#x5F85;&#x5220;&#x7684;&#x662F;&#x5C3E;&#x7ED3;&#x70B9;</span></div><div class="line">	<span class="keyword">else</span> {</div><div class="line">		Node node = head;</div><div class="line">		<span class="keyword">while</span> (node.next != toBeDeleted) {</div><div class="line">			node = node.next;</div><div class="line">		}</div><div class="line">		node.next = <span class="keyword">null</span>;</div><div class="line">		toBeDeleted = <span class="keyword">null</span>;</div><div class="line">	}</div><div class="line">	<span class="keyword">return</span> head;</div><div class="line">}</div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/algorithm/" rel="tag"># algorithm</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/02/24/JAVA链表/" rel="next" title="JAVA链表">
+                <i class="fa fa-chevron-left"></i> JAVA链表
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="Itachi" />
+          <p class="site-author-name" itemprop="name">Itachi</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">37</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Twilighce" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#13-删除链表中重复的结点"><span class="nav-text">13.删除链表中重复的结点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#14-复杂链表的复制"><span class="nav-text">14.复杂链表的复制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#15-在-O-1-时间内删除链表结点"><span class="nav-text">15.在 O(1) 时间内删除链表结点</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Itachi</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
