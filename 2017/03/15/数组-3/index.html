@@ -1,0 +1,775 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="data structure,algorithm," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="7. &amp;#x6570;&amp;#x7EC4;&amp;#x4E2D;&amp;#x53EA;&amp;#x51FA;&amp;#x73B0;&amp;#x4E00;&amp;#x6B21;&amp;#x7684;&amp;#x6570;&amp;#x5B57;&amp;#x95EE;&amp;#x9898;&amp;#x63CF;&amp;#x8FF0;&amp;#xFF1A;
+
+&amp;#x4E00;&amp;#x4E2A;&amp;#x6574;&amp;#x578B;&amp;#x6570;&amp;#x7EC4;&amp;#x91CC;&amp;#x9664;&amp;#x">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数组_3">
+<meta property="og:url" content="http://yoursite.com/2017/03/15/数组-3/index.html">
+<meta property="og:site_name" content="Twilighce">
+<meta property="og:description" content="7. &amp;#x6570;&amp;#x7EC4;&amp;#x4E2D;&amp;#x53EA;&amp;#x51FA;&amp;#x73B0;&amp;#x4E00;&amp;#x6B21;&amp;#x7684;&amp;#x6570;&amp;#x5B57;&amp;#x95EE;&amp;#x9898;&amp;#x63CF;&amp;#x8FF0;&amp;#xFF1A;
+
+&amp;#x4E00;&amp;#x4E2A;&amp;#x6574;&amp;#x578B;&amp;#x6570;&amp;#x7EC4;&amp;#x91CC;&amp;#x9664;&amp;#x">
+<meta property="og:updated_time" content="2017-03-15T08:52:11.098Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数组_3">
+<meta name="twitter:description" content="7. &amp;#x6570;&amp;#x7EC4;&amp;#x4E2D;&amp;#x53EA;&amp;#x51FA;&amp;#x73B0;&amp;#x4E00;&amp;#x6B21;&amp;#x7684;&amp;#x6570;&amp;#x5B57;&amp;#x95EE;&amp;#x9898;&amp;#x63CF;&amp;#x8FF0;&amp;#xFF1A;
+
+&amp;#x4E00;&amp;#x4E2A;&amp;#x6574;&amp;#x578B;&amp;#x6570;&amp;#x7EC4;&amp;#x91CC;&amp;#x9664;&amp;#x">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/03/15/数组-3/"/>
+
+
+
+
+
+  <title> 数组_3 | Twilighce </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Twilighce</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <p class="site-subtitle"></p>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/15/数组-3/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Itachi">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Twilighce">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Twilighce" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                数组_3
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-15T16:50:35+08:00">
+                2017-03-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/exercise/" itemprop="url" rel="index">
+                    <span itemprop="name">exercise</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="7-&#x6570;&#x7EC4;&#x4E2D;&#x53EA;&#x51FA;&#x73B0;&#x4E00;&#x6B21;&#x7684;&#x6570;&#x5B57;"><a href="#7-&#x6570;&#x7EC4;&#x4E2D;&#x53EA;&#x51FA;&#x73B0;&#x4E00;&#x6B21;&#x7684;&#x6570;&#x5B57;" class="headerlink" title="7. &#x6570;&#x7EC4;&#x4E2D;&#x53EA;&#x51FA;&#x73B0;&#x4E00;&#x6B21;&#x7684;&#x6570;&#x5B57;"></a><strong>7. &#x6570;&#x7EC4;&#x4E2D;&#x53EA;&#x51FA;&#x73B0;&#x4E00;&#x6B21;&#x7684;&#x6570;&#x5B57;</strong></h3><p><strong>&#x95EE;&#x9898;&#x63CF;&#x8FF0;&#xFF1A;</strong></p>
+<blockquote>
+<p>&#x4E00;&#x4E2A;&#x6574;&#x578B;&#x6570;&#x7EC4;&#x91CC;&#x9664;&#x4E86;&#x4E24;&#x4E2A;&#x6570;&#x5B57;&#x4E4B;&#x5916;&#xFF0C;&#x5176;&#x4ED6;&#x7684;&#x6570;&#x5B57;&#x90FD;&#x51FA;&#x73B0;&#x4E86;&#x4E24;&#x6B21;&#x3002;&#x8BF7;&#x5199;&#x7A0B;&#x5E8F;&#x627E;&#x51FA;&#x8FD9;&#x4E24;&#x4E2A;&#x53EA;&#x51FA;&#x73B0;&#x4E86;&#x4E00;&#x6B21;&#x7684;&#x6570;&#x5B57;&#x3002;&#x8981;&#x6C42;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x662F; O(n)&#x3002;&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x662F; O(1)&#x3002;<br>&#x4F8B;&#x5982;&#xFF1A;<br>&#x8F93;&#x5165;&#x6570;&#x7EC4; {2&#xFF0C; 4&#xFF0C; 3&#xFF0C; 6&#xFF0C; 3&#xFF0C; 2&#xFF0C; 5&#xFF0C; 5}&#xFF0C;<br>&#x8F93;&#x51FA; 4 &#x548C; 6</p>
+</blockquote>
+<a id="more"></a>
+<p><strong>&#x601D;&#x8DEF;&#xFF1A;</strong></p>
+<ul>
+<li>&#x7528;&#x4F4D;&#x8FD0;&#x7B97;&#x5B9E;&#x73B0;&#x3002;&#x4EFB;&#x4F55;&#x4E00;&#x4E2A;&#x6570;&#x5B57;&#x5F02;&#x6216;&#x5B83;&#x81EA;&#x5DF1;&#x90FD;&#x7B49;&#x4E8E;&#x96F6;&#x3002;&#x5982;&#x679C;&#x5C06;&#x6240;&#x6709;&#x6570;&#x5B57;&#x76F8;&#x5F02;&#x6216;&#xFF0C;&#x5219;&#x6700;&#x540E;&#x7684;&#x7ED3;&#x679C;&#x80AF;&#x5B9A;&#x662F;&#xFF0C;&#x90A3;&#x4E24;&#x4E2A;&#x53EA;&#x51FA;&#x73B0;&#x4E00;&#x6B21;&#x7684;&#x6570;&#x5B57;&#x5F02;&#x6216;&#x7684;&#x7ED3;&#x679C;&#x3002;</li>
+</ul>
+<p>&#x6240;&#x4EE5;&#xFF1A;</p>
+<ul>
+<li><p>&#x6839;&#x636E;&#x5F02;&#x6216;&#x7684;&#x7ED3;&#x679C;1&#x6240;&#x5728;&#x7684;&#x6700;&#x4F4E;&#x4F4D;&#xFF0C;&#x628A;&#x6570;&#x5B57;&#x5206;&#x6210;&#x4E24;&#x534A;&#xFF0C;&#x6BCF;&#x4E00;&#x534A;&#x91CC;&#x90FD;&#x8FD8;&#x6709;&#x53EA;&#x51FA;&#x73B0;&#x4E00;&#x6B21;&#x7684;&#x6570;&#x636E;&#x548C;&#x6210;&#x5BF9;&#x51FA;&#x73B0;&#x7684;&#x6570;&#x636E;&#x3002;</p>
+</li>
+<li><p>&#x8FD9;&#x6837;&#x7EE7;&#x7EED;&#x5BF9;&#x6BCF;&#x4E00;&#x534A;&#x76F8;&#x5F02;&#x6216;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x5206;&#x522B;&#x6C42;&#x51FA;&#x4E24;&#x4E2A;&#x53EA;&#x51FA;&#x73B0;&#x4E00;&#x6B21;&#x7684;&#x6570;&#x5B57;&#x3002;</p>
+</li>
+</ul>
+<p>&#x4F8B;&#x5982;&#xFF1A;</p>
+<ul>
+<li><p>&#x8F93;&#x5165;&#x6570;&#x7EC4; {2&#xFF0C; 4&#xFF0C; 3&#xFF0C; 6&#xFF0C; 3&#xFF0C; 2&#xFF0C; 5&#xFF0C; 5}&#x3002;&#x5F53;&#x4F9D;&#x6B21;&#x5BF9;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x6570;&#x5B57;&#x505A;&#x5F02;&#x6216;&#x8FD0;&#x7B97;&#x4E4B;&#x540E;&#xFF0C;&#x5F97;&#x5230;&#x7684;&#x7ED3;&#x679C;&#x7528;&#x4E8C;&#x8FDB;&#x5236;&#x8868;&#x793A;&#x662F; 0010&#x3002;</p>
+</li>
+<li><p>&#x5F02;&#x6216;&#x5F97;&#x5230;&#x7684;&#x7ED3;&#x679C;&#x4E2D;&#xFF0C;1 &#x6240;&#x5728;&#x7684;&#x6700;&#x4F4E;&#x4F4D;&#x662F;&#x5012;&#x6570;&#x7B2C;&#x4E8C;&#x4F4D;&#x3002;&#x4E8E;&#x662F;&#x6839;&#x636E;&#x5012;&#x6570;&#x7B2C;&#x4E8C;&#x4F4D;&#x662F;&#x4E0D;&#x662F; 1&#xFF0C;&#x5206;&#x4E3A;&#x4E24;&#x4E2A;&#x6570;&#x7EC4;&#x3002;</p>
+</li>
+<li><p>&#x63A5;&#x4E0B;&#x6765;&#x5206;&#x522B;&#x5BF9;&#x8FD9;&#x4E24;&#x4E2A;&#x5B50;&#x6570;&#x7EC4;&#x6C42;&#x5F02;&#x6216;&#x3002;</p>
+</li>
+</ul>
+<p><strong>&#x4EE3;&#x7801;&#xFF1A;</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line"> * num1,num2&#x5206;&#x522B;&#x4E3A;&#x957F;&#x5EA6;&#x4E3A;1&#x7684;&#x6570;&#x7EC4;&#x3002;&#x4F20;&#x51FA;&#x53C2;&#x6570;</div><div class="line"> * &#x5C06;num1[0],num2[0]&#x8BBE;&#x7F6E;&#x4E3A;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FindNumsAppearOnce</span> </span>{</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">findNumsAppearOnce</span> <span class="params">(<span class="keyword">int</span> [] array, <span class="keyword">int</span> num1[], <span class="keyword">int</span> num2[])</span> </span>{</div><div class="line">		<span class="keyword">if</span> (array == <span class="keyword">null</span> || array.length &lt; <span class="number">2</span>)</div><div class="line">			<span class="keyword">return</span>;</div><div class="line"></div><div class="line">		<span class="comment">//&#x5BF9;&#x8F93;&#x5165;&#x6570;&#x7EC4;&#x4F9D;&#x6B21;&#x5F02;&#x6216;</span></div><div class="line">		<span class="keyword">int</span> resultExclusiveOR = <span class="number">0</span>;</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; array.length; i++)</div><div class="line">			resultExclusiveOR ^= array[i];</div><div class="line"></div><div class="line">		<span class="comment">//&#x627E;&#x51FA;1&#x6240;&#x5728;&#x7684;&#x6700;&#x4F4E;&#x4F4D;</span></div><div class="line">		<span class="keyword">int</span> indexOf1 = findFirstBitIs1(resultExclusiveOR);</div><div class="line"></div><div class="line">		<span class="comment">//&#x6839;&#x636E; indexOf1 &#x4F4D;&#x662F;&#x5426;&#x4E3A;1&#xFF0C;&#x5C06;&#x539F;&#x59CB;&#x6570;&#x7EC4;&#x5206;&#x4E3A;&#x4E24;&#x4E2A;&#x5B50;&#x6570;&#x7EC4;</span></div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; array.length; i++)</div><div class="line">		{</div><div class="line">			<span class="keyword">if</span> (isBit1(array[i], indexOf1))</div><div class="line">				num1[<span class="number">0</span>] ^= array[i];</div><div class="line">			<span class="keyword">else</span></div><div class="line">				num2[<span class="number">0</span>] ^= array[i];</div><div class="line">		}</div><div class="line">	}</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findFirstBitIs1</span><span class="params">(<span class="keyword">int</span> num)</span> </span>{</div><div class="line">		<span class="keyword">int</span> indexBit = <span class="number">0</span>;</div><div class="line">		<span class="keyword">while</span> (((num &amp; <span class="number">1</span>) == <span class="number">0</span>) &amp;&amp; ((indexBit) &lt; <span class="number">8</span> * <span class="number">4</span>))</div><div class="line">		{</div><div class="line">			num = num &gt;&gt; <span class="number">1</span>;</div><div class="line">			++ indexBit;</div><div class="line">		}</div><div class="line">		<span class="keyword">return</span> indexBit;</div><div class="line">	}</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isBit1</span><span class="params">(<span class="keyword">int</span> num, <span class="keyword">int</span> indexBit)</span> </span>{</div><div class="line">		num = num &gt;&gt; indexBit;</div><div class="line">		<span class="keyword">return</span> (num &amp; <span class="number">1</span>)==<span class="number">1</span>;</div><div class="line">	}</div><div class="line">}</div></pre></td></tr></table></figure>
+<h3 id="8-&#x6570;&#x7EC4;&#x4E2D;&#x91CD;&#x590D;&#x7684;&#x6570;&#x5B57;"><a href="#8-&#x6570;&#x7EC4;&#x4E2D;&#x91CD;&#x590D;&#x7684;&#x6570;&#x5B57;" class="headerlink" title="8. &#x6570;&#x7EC4;&#x4E2D;&#x91CD;&#x590D;&#x7684;&#x6570;&#x5B57;"></a><strong>8. &#x6570;&#x7EC4;&#x4E2D;&#x91CD;&#x590D;&#x7684;&#x6570;&#x5B57;</strong></h3><p><strong>&#x95EE;&#x9898;&#x63CF;&#x8FF0;&#xFF1A;</strong></p>
+<blockquote>
+<p>&#x5728;&#x4E00;&#x4E2A;&#x957F;&#x5EA6;&#x4E3A; n &#x7684;&#x6570;&#x7EC4;&#x91CC;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x6570;&#x5B57;&#x90FD;&#x5728; 0 &#x5230; n-1 &#x7684;&#x8303;&#x56F4;&#x5185;&#x3002;&#x6570;&#x7EC4;&#x4E2D;&#x67D0;&#x4E9B;&#x6570;&#x5B57;&#x662F;&#x91CD;&#x590D;&#x7684;&#xFF0C;&#x4F46;&#x4E0D;&#x77E5;&#x9053;&#x6709;&#x51E0;&#x4E2A;&#x6570;&#x5B57;&#x91CD;&#x590D;&#x4E86;&#xFF0C;&#x4E5F;&#x4E0D;&#x503C;&#x5F97;&#x6BCF;&#x4E2A;&#x6570;&#x5B57;&#x91CD;&#x590D;&#x4E86;&#x591A;&#x5C11;&#x6B21;&#x3002;<br>&#x8BF7;&#x627E;&#x51FA;&#x6570;&#x7EC4;&#x4E2D;&#x4EFB;&#x610F;&#x4E00;&#x4E2A;&#x91CD;&#x590D;&#x7684;&#x6570;&#x5B57;&#x3002;</p>
+<p>&#x4F8B;&#x5982;&#xFF1A;&#x5982;&#x679C;&#x8F93;&#x5165;&#x957F;&#x5EA6;&#x4E3A; 7 &#x7684;&#x6570;&#x7EC4; {2&#xFF0C; 3&#xFF0C; 1&#xFF0C; 0&#xFF0C; 2&#xFF0C; 5&#xFF0C; 3}<br>&#x90A3;&#x4E48;&#x5BF9;&#x5E94;&#x7684;&#x8F93;&#x51FA;&#x662F;&#x91CD;&#x590D;&#x7684;&#x6570;&#x5B57; 2 &#x6216;&#x8005; 3&#x3002;</p>
+</blockquote>
+<p><strong>&#x601D;&#x8DEF;&#xFF1A;</strong></p>
+<p>&#x6CE8;&#x610F;&#x5230;&#xFF0C;&#x6570;&#x7EC4;&#x957F;&#x5EA6;&#x4E3A; n&#xFF0C;&#x6570;&#x7EC4;&#x4E2D;&#x6570;&#x5B57;&#x90FD;&#x5728; 0 &#x5230; n-1 &#x8303;&#x56F4;&#x5185;&#x3002;</p>
+<ol>
+<li><p>&#x91CD;&#x6392;&#x8FD9;&#x4E2A;&#x6570;&#x7EC4; array&#xFF0C;&#x4ECE;&#x5934;&#x5230;&#x5C3E;&#x4F9D;&#x6B21;&#x626B;&#x63CF;&#x3002;</p>
+</li>
+<li><p>&#x5F53;&#x626B;&#x63CF;&#x5230;&#x7B2C; i &#x4F4D;&#x65F6;&#xFF0C; &#x6BD4;&#x8F83; array[i] &#x662F;&#x5426;&#x7B49;&#x4E8E; i&#xFF1B;</p>
+</li>
+<li><p>&#x5982;&#x679C;&#x76F8;&#x7B49;&#xFF0C;&#x63A5;&#x7740;&#x626B;&#x63CF;&#x4E0B;&#x4E00;&#x4E2A;&#x6570;&#x5B57;&#xFF1B;</p>
+</li>
+<li><p>&#x5982;&#x679C;&#x4E0D;&#x7B49;&#xFF0C;&#x5C06; array[i] &#x4E0E; &#x7B2C; array[i] &#x4E2A;&#x6570;&#x5B57;&#x6BD4;&#x8F83;&#x3002;&#x5982;&#x679C;&#x76F8;&#x7B49;&#xFF0C;&#x5C31;&#x627E;&#x5230;&#x4E86;&#x4E00;&#x4E2A;&#x91CD;&#x590D;&#x7684;&#x6570;&#x5B57;&#x3002;&#x5982;&#x679C;&#x4E0D;&#x7B49;&#xFF0C;&#x5C06; array[i] &#x4E0E; &#x7B2C; array[i] &#x4E2A;&#x6570;&#x5B57;&#x4E92;&#x6362;&#x4F4D;&#x7F6E;&#xFF1B;</p>
+</li>
+<li><p>&#x8FD9;&#x6837; array[i] &#x5C31;&#x5230;&#x4E86;&#x5C5E;&#x4E8E;&#x5B83;&#x7684;&#x4F4D;&#x7F6E;&#xFF08;&#x503C;&#x4E0E;&#x4E0B;&#x6807;&#x76F8;&#x7B49;&#xFF09;&#x3002;&#x7136;&#x540E;&#x91CD;&#x590D;&#x8FD9;&#x4E2A;&#x6BD4;&#x8F83;&#x3001;&#x4EA4;&#x6362;&#x7684;&#x8FC7;&#x7A0B;&#x3002;</p>
+</li>
+</ol>
+<p><strong>&#x4EE3;&#x7801;&#xFF1A;</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line"> * duplication: (Output) the duplicated number in the array number,length of duplication array is 1,so using duplication[0] = ? in implementation;</div><div class="line"> * Here duplication like pointor in C/C++, duplication[0] equal *duplication in C/C++</div><div class="line"> * &#x8FD9;&#x91CC;&#x8981;&#x7279;&#x522B;&#x6CE8;&#x610F;~&#x8FD4;&#x56DE;&#x4EFB;&#x610F;&#x91CD;&#x590D;&#x7684;&#x4E00;&#x4E2A;&#xFF0C;&#x8D4B;&#x503C;duplication[0]</div><div class="line"> * Return value:       true if the input is valid, and there are some duplications in the array number</div><div class="line"> * otherwise, false</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Duplicata</span> </span>{</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">duplicata</span> <span class="params">(<span class="keyword">int</span> numbers[], <span class="keyword">int</span> length, <span class="keyword">int</span> [] duplication)</span> </span>{</div><div class="line">		<span class="keyword">if</span> (numbers == <span class="keyword">null</span> || length &lt;= <span class="number">0</span>)</div><div class="line">			<span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line"></div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; length; i++)</div><div class="line">		{</div><div class="line">			<span class="keyword">if</span> (numbers[i] &lt; <span class="number">0</span> || numbers[i] &gt; length - <span class="number">1</span>)</div><div class="line">				<span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">		}</div><div class="line"></div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; length; i++)</div><div class="line">		{</div><div class="line">			<span class="keyword">while</span> (numbers[i] != i)</div><div class="line">			{</div><div class="line">				<span class="keyword">if</span> (numbers[i] == numbers[numbers[i]])</div><div class="line">				{</div><div class="line">					duplication[<span class="number">0</span>] = numbers[i];</div><div class="line">					<span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">				}</div><div class="line">				<span class="keyword">else</span></div><div class="line">				{</div><div class="line">					<span class="keyword">int</span> temp = numbers[i];</div><div class="line">					numbers[i] = numbers[temp];</div><div class="line">					numbers[temp] = temp;</div><div class="line">				}</div><div class="line">			}</div><div class="line">		}</div><div class="line"></div><div class="line">		<span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">	}</div><div class="line">}</div></pre></td></tr></table></figure>
+<p><strong>&#x5206;&#x6790;&#xFF1A;</strong></p>
+<ul>
+<li><p>&#x4EE3;&#x7801;&#x4E2D;&#x5C3D;&#x7BA1;&#x6709;&#x4E00;&#x4E2A;&#x4E24;&#x91CD;&#x5FAA;&#x73AF;&#xFF0C;&#x4F46;&#x6BCF;&#x4E2A;&#x6570;&#x5B57;&#x6700;&#x591A;&#x53EA;&#x8981;&#x4EA4;&#x6362;&#x4E24;&#x6B21;&#x5C31;&#x80FD;&#x627E;&#x5230;&#x5C5E;&#x4E8E;&#x5B83;&#x81EA;&#x5DF1;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x56E0;&#x6B64;&#x603B;&#x7684;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x662F; O(n)&#x3002;</p>
+</li>
+<li><p>&#x6240;&#x6709;&#x7684;&#x64CD;&#x4F5C;&#x6B65;&#x9AA4;&#x90FD;&#x662F;&#x5728;&#x8F93;&#x5165;&#x6570;&#x7EC4;&#x4E2D;&#x8FDB;&#x884C;&#x7684;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x989D;&#x5916;&#x5206;&#x914D;&#x5185;&#x5B58;&#xFF0C;&#x56E0;&#x6B64;&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x662F; O(1)&#x3002;</p>
+</li>
+</ul>
+<h3 id="9-&#x6784;&#x5EFA;&#x4E58;&#x79EF;&#x6570;&#x7EC4;"><a href="#9-&#x6784;&#x5EFA;&#x4E58;&#x79EF;&#x6570;&#x7EC4;" class="headerlink" title="9. &#x6784;&#x5EFA;&#x4E58;&#x79EF;&#x6570;&#x7EC4;"></a><strong>9. &#x6784;&#x5EFA;&#x4E58;&#x79EF;&#x6570;&#x7EC4;</strong></h3><p><strong>&#x95EE;&#x9898;&#x63CF;&#x8FF0;&#xFF1A;</strong></p>
+<blockquote>
+<p>&#x7ED9;&#x5B9A;&#x4E00;&#x4E2A;&#x6570;&#x7EC4; A[0&#xFF0C;1&#xFF0C;&#x2026;&#xFF0C;n-1]&#xFF0C;&#x8BF7;&#x6784;&#x5EFA;&#x4E00;&#x4E2A;&#x6570;&#x7EC4; B[0&#xFF0C;1&#xFF0C;&#x2026;&#xFF0C;n-1]&#xFF0C;&#x5176;&#x4E2D; B &#x4E2D;&#x7684;&#x5143;&#x7D20; B[i] = A[0] <em> A[1] </em> &#x2026; <em> A[i-1] </em> A[i+1] <em> &#x2026; </em> A[n-1]&#x3002;<br>&#x4E0D;&#x80FD;&#x4F7F;&#x7528;&#x9664;&#x6CD5;&#x3002;</p>
+</blockquote>
+<p><strong>&#x601D;&#x8DEF;&#xFF1A;</strong></p>
+<ol>
+<li>&#x8BA1;&#x7B97;&#x6570;&#x7EC4; A &#x4E2D;&#xFF0C;&#x524D; i-1 &#x4E2A;&#x5143;&#x7D20;&#x7684;&#x4E58;&#x79EF;&#xFF0C;&#x53CA;&#x540E; n-i &#x4E2A;&#x5143;&#x7D20;&#x7684;&#x4E58;&#x79EF;&#x3002;&#x8FD9;&#x53EF;&#x4EE5;&#x7528;&#x52A8;&#x6001;&#x89C4;&#x5212;&#x5B9E;&#x73B0;&#xFF1B;</li>
+<li>&#x8BA1;&#x7B97; B[i] &#x7684;&#x503C;&#x3002;</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.util.ArrayList;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Multiply</span> </span>{</div><div class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] multiply(<span class="keyword">int</span>[] A) {</div><div class="line">        </div><div class="line">		<span class="keyword">int</span> n = A.length;</div><div class="line">		<span class="keyword">int</span>[] forward = <span class="keyword">new</span> <span class="keyword">int</span>[n];</div><div class="line">		<span class="keyword">int</span>[] backward = <span class="keyword">new</span> <span class="keyword">int</span>[n];</div><div class="line">		<span class="keyword">int</span>[] B = <span class="keyword">new</span> <span class="keyword">int</span>[n];</div><div class="line"></div><div class="line">		forward[<span class="number">0</span>] = <span class="number">1</span>;</div><div class="line">		backward[<span class="number">0</span>] = <span class="number">1</span>;</div><div class="line"></div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++)</div><div class="line">		{</div><div class="line">			forward[i] = A[i - <span class="number">1</span>] * forward[i - <span class="number">1</span>];</div><div class="line">			backward[i] = A[n - i] * backward[i - <span class="number">1</span>];</div><div class="line">		}</div><div class="line"></div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</div><div class="line">		{</div><div class="line">			B[i] = forward[i] * backward[n - <span class="number">1</span> - i];</div><div class="line">		}</div><div class="line"></div><div class="line">		<span class="keyword">return</span> B;</div><div class="line">	}</div><div class="line">}</div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/data-structure/" rel="tag"># data structure</a>
+          
+            <a href="/tags/algorithm/" rel="tag"># algorithm</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/14/Less/" rel="next" title="Less">
+                <i class="fa fa-chevron-left"></i> Less
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="Itachi" />
+          <p class="site-author-name" itemprop="name">Itachi</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">44</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Twilighce" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#7-数组中只出现一次的数字"><span class="nav-text">7. 数组中只出现一次的数字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-数组中重复的数字"><span class="nav-text">8. 数组中重复的数字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-构建乘积数组"><span class="nav-text">9. 构建乘积数组</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Itachi</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
