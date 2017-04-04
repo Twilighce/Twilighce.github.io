@@ -1,0 +1,727 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Java," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="&amp;#x6B7B;&amp;#x9501;&amp;#x662F;&amp;#x8FD9;&amp;#x6837;&amp;#x4E00;&amp;#x79CD;&amp;#x60C5;&amp;#x5F62;&amp;#xFF1A;
+
+&amp;#x591A;&amp;#x4E2A;&amp;#x7EBF;&amp;#x7A0B;&amp;#x540C;&amp;#x65F6;&amp;#x88AB;&amp;#x963B;&amp;#x585E;&amp;#xFF0C;&amp;#x5B83;&amp;#x4EEC;&amp;#x4E2D;&amp;#x7684;&amp;#x4E0">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JAVA死锁例子">
+<meta property="og:url" content="http://yoursite.com/2017/04/04/JAVA死锁例子/index.html">
+<meta property="og:site_name" content="Twilighce">
+<meta property="og:description" content="&amp;#x6B7B;&amp;#x9501;&amp;#x662F;&amp;#x8FD9;&amp;#x6837;&amp;#x4E00;&amp;#x79CD;&amp;#x60C5;&amp;#x5F62;&amp;#xFF1A;
+
+&amp;#x591A;&amp;#x4E2A;&amp;#x7EBF;&amp;#x7A0B;&amp;#x540C;&amp;#x65F6;&amp;#x88AB;&amp;#x963B;&amp;#x585E;&amp;#xFF0C;&amp;#x5B83;&amp;#x4EEC;&amp;#x4E2D;&amp;#x7684;&amp;#x4E0">
+<meta property="og:updated_time" content="2017-04-04T01:43:49.221Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JAVA死锁例子">
+<meta name="twitter:description" content="&amp;#x6B7B;&amp;#x9501;&amp;#x662F;&amp;#x8FD9;&amp;#x6837;&amp;#x4E00;&amp;#x79CD;&amp;#x60C5;&amp;#x5F62;&amp;#xFF1A;
+
+&amp;#x591A;&amp;#x4E2A;&amp;#x7EBF;&amp;#x7A0B;&amp;#x540C;&amp;#x65F6;&amp;#x88AB;&amp;#x963B;&amp;#x585E;&amp;#xFF0C;&amp;#x5B83;&amp;#x4EEC;&amp;#x4E2D;&amp;#x7684;&amp;#x4E0">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/04/04/JAVA死锁例子/"/>
+
+
+
+
+
+  <title> JAVA死锁例子 | Twilighce </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Twilighce</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <p class="site-subtitle"></p>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/04/JAVA死锁例子/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Itachi">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Twilighce">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Twilighce" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                JAVA死锁例子
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-04T09:42:16+08:00">
+                2017-04-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/study-notes/" itemprop="url" rel="index">
+                    <span itemprop="name">study notes</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>&#x6B7B;&#x9501;&#x662F;&#x8FD9;&#x6837;&#x4E00;&#x79CD;&#x60C5;&#x5F62;&#xFF1A;</p>
+<blockquote>
+<p>&#x591A;&#x4E2A;&#x7EBF;&#x7A0B;&#x540C;&#x65F6;&#x88AB;&#x963B;&#x585E;&#xFF0C;&#x5B83;&#x4EEC;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x6216;&#x8005;&#x5168;&#x90E8;&#x90FD;&#x5728;&#x7B49;&#x5F85;&#x67D0;&#x4E2A;&#x8D44;&#x6E90;&#x88AB;&#x91CA;&#x653E;&#x3002;&#x7531;&#x4E8E;&#x7EBF;&#x7A0B;&#x88AB;&#x65E0;&#x9650;&#x671F;&#x5730;&#x963B;&#x585E;&#xFF0C;&#x56E0;&#x6B64;&#x7A0B;&#x5E8F;&#x4E0D;&#x53EF;&#x80FD;&#x6B63;&#x5E38;&#x7EC8;&#x6B62;&#x3002;</p>
+</blockquote>
+<a id="more"></a>
+<p>java &#x6B7B;&#x9501;&#x4EA7;&#x751F;&#x7684;&#x56DB;&#x4E2A;&#x5FC5;&#x8981;&#x6761;&#x4EF6;&#xFF1A;</p>
+<ol>
+<li><p>&#x4E92;&#x65A5;&#x4F7F;&#x7528;&#xFF0C;&#x5373;&#x5F53;&#x8D44;&#x6E90;&#x88AB;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x4F7F;&#x7528;(&#x5360;&#x6709;)&#x65F6;&#xFF0C;&#x522B;&#x7684;&#x7EBF;&#x7A0B;&#x4E0D;&#x80FD;&#x4F7F;&#x7528;;  </p>
+</li>
+<li><p>&#x4E0D;&#x53EF;&#x62A2;&#x5360;&#xFF0C;&#x8D44;&#x6E90;&#x8BF7;&#x6C42;&#x8005;&#x4E0D;&#x80FD;&#x5F3A;&#x5236;&#x4ECE;&#x8D44;&#x6E90;&#x5360;&#x6709;&#x8005;&#x624B;&#x4E2D;&#x593A;&#x53D6;&#x8D44;&#x6E90;&#xFF0C;&#x8D44;&#x6E90;&#x53EA;&#x80FD;&#x7531;&#x8D44;&#x6E90;&#x5360;&#x6709;&#x8005;&#x4E3B;&#x52A8;&#x91CA;&#x653E;&#x3002;  </p>
+</li>
+<li><p>&#x8BF7;&#x6C42;&#x548C;&#x4FDD;&#x6301;&#xFF0C;&#x5373;&#x5F53;&#x8D44;&#x6E90;&#x8BF7;&#x6C42;&#x8005;&#x5728;&#x8BF7;&#x6C42;&#x5176;&#x4ED6;&#x7684;&#x8D44;&#x6E90;&#x7684;&#x540C;&#x65F6;&#x4FDD;&#x6301;&#x5BF9;&#x539F;&#x6709;&#x8D44;&#x6E90;&#x7684;&#x5360;&#x6709;  </p>
+</li>
+<li><p>&#x5FAA;&#x73AF;&#x7B49;&#x5F85;&#xFF0C;&#x5373;&#x5B58;&#x5728;&#x4E00;&#x4E2A;&#x7B49;&#x5F85;&#x961F;&#x5217;&#xFF1A;P1&#x5360;&#x6709;P2&#x7684;&#x8D44;&#x6E90;&#xFF0C;P2&#x5360;&#x6709;P3&#x7684;&#x8D44;&#x6E90;&#xFF0C;P3&#x5360;&#x6709;P1&#x7684;&#x8D44;&#x6E90;&#x3002;&#x8FD9;&#x6837;&#x5C31;&#x5F62;&#x6210;&#x4E86;&#x4E00;&#x4E2A;&#x7B49;&#x5F85;&#x73AF;&#x8DEF;&#x3002;  </p>
+</li>
+</ol>
+<p>&#x5F53;&#x4E0A;&#x8FF0;&#x56DB;&#x4E2A;&#x6761;&#x4EF6;&#x90FD;&#x6210;&#x7ACB;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4FBF;&#x5F62;&#x6210;&#x6B7B;&#x9501;&#x3002;&#x5F53;&#x7136;&#xFF0C;&#x6B7B;&#x9501;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x5982;&#x679C;&#x6253;&#x7834;&#x4E0A;&#x8FF0;&#x4EFB;&#x4F55;&#x4E00;&#x4E2A;&#x6761;&#x4EF6;&#xFF0C;&#x4FBF;&#x53EF;&#x8BA9;&#x6B7B;&#x9501;&#x6D88;&#x5931;&#x3002;&#x4E0B;&#x9762;&#x7528;java&#x4EE3;&#x7801;&#x6765;&#x6A21;&#x62DF;&#x4E00;&#x4E0B;&#x6B7B;&#x9501;&#x7684;&#x4EA7;&#x751F;&#x3002;</p>
+<hr>
+<p><strong>eg1&#xFF1A;</strong></p>
+<blockquote>
+<p>&#x5F53; &#x7EBF;&#x7A0B; td1 &#x7684; flag == 1&#xFF0C;&#x5148;&#x9501;&#x5B9A;o1&#xFF0C;&#x7761;&#x7720; 500 &#x6BEB;&#x79D2;<br>&#x800C; td1 &#x5728;&#x7761;&#x7720;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x7EBF;&#x7A0B; td2 &#x542F;&#x52A8;&#xFF0C;flag == 0&#xFF0C;&#x5148;&#x9501;&#x5B9A; o2&#xFF0C;&#x7761;&#x7720; 500 &#x6BEB;&#x79D2;<br>td1 &#x7761;&#x7720;&#x7ED3;&#x675F;&#x540E;&#xFF0C;&#x9700;&#x8981;&#x9501;&#x5B9A; o2 &#x624D;&#x80FD;&#x7EE7;&#x7EED;&#x6267;&#x884C;&#xFF0C;&#x800C;&#x6B64;&#x65F6; o2 &#x5DF2;&#x88AB; td2 &#x9501;&#x5B9A;&#xFF1B;<br>td2 &#x7761;&#x7720;&#x7ED3;&#x675F;&#x540E;&#xFF0C;&#x9700;&#x8981;&#x9501;&#x5B9A;o1&#x624D;&#x80FD;&#x7EE7;&#x7EED;&#x6267;&#x884C;&#xFF0C;&#x800C;&#x6B64;&#x65F6; o1 &#x5DF2;&#x88AB; td1 &#x9501;&#x5B9A;&#xFF1B;<br>td1&#x3001;td2 &#x76F8;&#x4E92;&#x7B49;&#x5F85;&#xFF0C;&#x90FD;&#x9700;&#x8981;&#x5F97;&#x5230;&#x5BF9;&#x65B9;&#x9501;&#x5B9A;&#x7684;&#x8D44;&#x6E90;&#x624D;&#x80FD;&#x7EE7;&#x7EED;&#x6267;&#x884C;&#xFF0C;&#x4ECE;&#x800C;&#x6B7B;&#x9501;</p>
+</blockquote>
+<p>&#x5982;&#x4E0B;&#xFF1A;</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DeadLock</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>{  </div><div class="line">    <span class="keyword">public</span> <span class="keyword">int</span> flag = <span class="number">1</span>;  </div><div class="line">    <span class="comment">// &#x9759;&#x6001;&#x5BF9;&#x8C61;&#x662F;&#x7C7B;&#x7684;&#x6240;&#x6709;&#x5BF9;&#x8C61;&#x5171;&#x4EAB;&#x7684;  </span></div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Object o1 = <span class="keyword">new</span> Object()&#xFF1B;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Object o2 = <span class="keyword">new</span> Object(); </div><div class="line">    <span class="comment">// &#x91CD;&#x5199; run &#x65B9;&#x6CD5; </span></div><div class="line">    <span class="meta">@Override</span>  </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>{  </div><div class="line">        System.out.println(<span class="string">&quot;flag=&quot;</span> + flag);  </div><div class="line">        <span class="keyword">if</span> (flag == <span class="number">1</span>) {  </div><div class="line">            <span class="keyword">synchronized</span> (o1) {  </div><div class="line">                <span class="keyword">try</span> {  </div><div class="line">                    Thread.sleep(<span class="number">500</span>);  </div><div class="line">                } <span class="keyword">catch</span> (Exception e) {  </div><div class="line">                    e.printStackTrace();  </div><div class="line">                }  </div><div class="line">                <span class="keyword">synchronized</span> (o2) {  </div><div class="line">                    System.out.println(<span class="string">&quot;1&quot;</span>);  </div><div class="line">                }  </div><div class="line">            }  </div><div class="line">        }  </div><div class="line">        <span class="keyword">if</span> (flag == <span class="number">0</span>) {  </div><div class="line">            <span class="keyword">synchronized</span> (o2) {  </div><div class="line">                <span class="keyword">try</span> {  </div><div class="line">                    Thread.sleep(<span class="number">500</span>);  </div><div class="line">                } <span class="keyword">catch</span> (Exception e) {  </div><div class="line">                    e.printStackTrace();  </div><div class="line">                }  </div><div class="line">                <span class="keyword">synchronized</span> (o1) {  </div><div class="line">                    System.out.println(<span class="string">&quot;0&quot;</span>);  </div><div class="line">                }  </div><div class="line">            }  </div><div class="line">        }  </div><div class="line">    }  </div><div class="line">  </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{  </div><div class="line">          </div><div class="line">        DeadLock td1 = <span class="keyword">new</span> DeadLock();  </div><div class="line">        DeadLock td2 = <span class="keyword">new</span> DeadLock();  </div><div class="line">        td1.flag = <span class="number">1</span>;  </div><div class="line">        td2.flag = <span class="number">0</span>;  </div><div class="line">        <span class="comment">//td1,td2&#x90FD;&#x5904;&#x4E8E;&#x53EF;&#x6267;&#x884C;&#x72B6;&#x6001;&#xFF0C;&#x4F46;JVM&#x7EBF;&#x7A0B;&#x8C03;&#x5EA6;&#x5148;&#x6267;&#x884C;&#x54EA;&#x4E2A;&#x7EBF;&#x7A0B;&#x662F;&#x4E0D;&#x786E;&#x5B9A;&#x7684;&#x3002;  </span></div><div class="line">        <span class="comment">//td2&#x7684;run()&#x53EF;&#x80FD;&#x5728;td1&#x7684;run()&#x4E4B;&#x524D;&#x8FD0;&#x884C;  </span></div><div class="line">        <span class="keyword">new</span> Thread(td1).start();  </div><div class="line">        <span class="keyword">new</span> Thread(td2).start();  </div><div class="line">    }  </div><div class="line">}</div></pre></td></tr></table></figure>
+<p>eg2&#xFF1A;</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.util.Date;</div><div class="line"> </div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LockTest</span> </span>{</div><div class="line">   <span class="keyword">public</span> <span class="keyword">static</span> String obj1 = <span class="string">&quot;obj1&quot;</span>;</div><div class="line">   <span class="keyword">public</span> <span class="keyword">static</span> String obj2 = <span class="string">&quot;obj2&quot;</span>;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</div><div class="line">      LockA la = <span class="keyword">new</span> LockA();</div><div class="line">      <span class="keyword">new</span> Thread(la).start();</div><div class="line">      LockB lb = <span class="keyword">new</span> LockB();</div><div class="line">      <span class="keyword">new</span> Thread(lb).start();</div><div class="line">   }</div><div class="line">}</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">LockA</span> <span class="keyword">implements</span> <span class="title">Runnable</span></span>{</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>{</div><div class="line">      <span class="keyword">try</span> {</div><div class="line">         System.out.println(<span class="keyword">new</span> Date().toString() + <span class="string">&quot; LockA &#x5F00;&#x59CB;&#x6267;&#x884C;&quot;</span>);</div><div class="line">         <span class="keyword">while</span>(<span class="keyword">true</span>){</div><div class="line">            <span class="keyword">synchronized</span> (LockTest.obj1) {</div><div class="line">               System.out.println(<span class="keyword">new</span> Date().toString() + <span class="string">&quot; LockA &#x9501;&#x4F4F; obj1&quot;</span>);</div><div class="line">               Thread.sleep(<span class="number">3000</span>); <span class="comment">// &#x6B64;&#x5904;&#x7B49;&#x5F85;&#x662F;&#x7ED9;B&#x80FD;&#x9501;&#x4F4F;&#x673A;&#x4F1A;</span></div><div class="line">               <span class="keyword">synchronized</span> (LockTest.obj2) {</div><div class="line">                  System.out.println(<span class="keyword">new</span> Date().toString() + <span class="string">&quot; LockA &#x9501;&#x4F4F; obj2&quot;</span>);</div><div class="line">                  Thread.sleep(<span class="number">60</span> * <span class="number">1000</span>); <span class="comment">// &#x4E3A;&#x6D4B;&#x8BD5;&#xFF0C;&#x5360;&#x7528;&#x4E86;&#x5C31;&#x4E0D;&#x653E;</span></div><div class="line">               }</div><div class="line">            }</div><div class="line">         }</div><div class="line">      } <span class="keyword">catch</span> (Exception e) {</div><div class="line">         e.printStackTrace();</div><div class="line">      }</div><div class="line">   }</div><div class="line">}</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">LockB</span> <span class="keyword">implements</span> <span class="title">Runnable</span></span>{</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>{</div><div class="line">      <span class="keyword">try</span> {</div><div class="line">         System.out.println(<span class="keyword">new</span> Date().toString() + <span class="string">&quot; LockB &#x5F00;&#x59CB;&#x6267;&#x884C;&quot;</span>);</div><div class="line">         <span class="keyword">while</span>(<span class="keyword">true</span>){</div><div class="line">            <span class="keyword">synchronized</span> (LockTest.obj2) {</div><div class="line">               System.out.println(<span class="keyword">new</span> Date().toString() + <span class="string">&quot; LockB &#x9501;&#x4F4F; obj2&quot;</span>);</div><div class="line">               Thread.sleep(<span class="number">3000</span>); <span class="comment">// &#x6B64;&#x5904;&#x7B49;&#x5F85;&#x662F;&#x7ED9;A&#x80FD;&#x9501;&#x4F4F;&#x673A;&#x4F1A;</span></div><div class="line">               <span class="keyword">synchronized</span> (LockTest.obj1) {</div><div class="line">                  System.out.println(<span class="keyword">new</span> Date().toString() + <span class="string">&quot; LockB &#x9501;&#x4F4F; obj1&quot;</span>);</div><div class="line">                  Thread.sleep(<span class="number">60</span> * <span class="number">1000</span>); <span class="comment">// &#x4E3A;&#x6D4B;&#x8BD5;&#xFF0C;&#x5360;&#x7528;&#x4E86;&#x5C31;&#x4E0D;&#x653E;</span></div><div class="line">               }</div><div class="line">            }</div><div class="line">         }</div><div class="line">      } <span class="keyword">catch</span> (Exception e) {</div><div class="line">         e.printStackTrace();</div><div class="line">      }</div><div class="line">   }</div><div class="line">}</div></pre></td></tr></table></figure>
+<p>&#x63A7;&#x5236;&#x53F0;&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#xFF1A;</p>
+<blockquote>
+<p>Tue Apr 04 09:35:49 CST 2017 LockB &#x5F00;&#x59CB;&#x6267;&#x884C;<br>Tue Apr 04 09:35:49 CST 2017 LockB &#x9501;&#x4F4F; obj2<br>Tue Apr 04 09:35:49 CST 2017 LockA &#x5F00;&#x59CB;&#x6267;&#x884C;<br>Tue Apr 04 09:35:49 CST 2017 LockA &#x9501;&#x4F4F; obj1</p>
+</blockquote>
+<p>&#x6B64;&#x65F6;&#x6B7B;&#x9501;&#x4EA7;&#x751F;&#x3002;</p>
+<p>&#x4E3A;&#x4E86;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x6211;&#x4EEC;&#x4E0D;&#x4F7F;&#x7528;&#x663E;&#x793A;&#x7684;&#x53BB;&#x9501;&#xFF0C;&#x6211;&#x4EEC;&#x7528;&#x4FE1;&#x53F7;&#x91CF;&#x53BB;&#x63A7;&#x5236;&#x3002;</p>
+<ul>
+<li><p>&#x4FE1;&#x53F7;&#x91CF;&#x53EF;&#x4EE5;&#x63A7;&#x5236;&#x8D44;&#x6E90;&#x80FD;&#x88AB;&#x591A;&#x5C11;&#x7EBF;&#x7A0B;&#x8BBF;&#x95EE;&#xFF0C;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x6307;&#x5B9A;&#x53EA;&#x80FD;&#x88AB;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x8BBF;&#x95EE;&#xFF0C;&#x5C31;&#x505A;&#x5230;&#x4E86;&#x7C7B;&#x4F3C;&#x9501;&#x4F4F;&#x3002;&#x800C;&#x4FE1;&#x53F7;&#x91CF;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x53BB;&#x83B7;&#x53D6;&#x7684;&#x8D85;&#x65F6;&#x65F6;&#x95F4;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x8FD9;&#x4E2A;&#x8D85;&#x65F6;&#x65F6;&#x95F4;&#xFF0C;&#x53BB;&#x505A;&#x4E00;&#x4E2A;&#x989D;&#x5916;&#x5904;&#x7406;&#x3002;  </p>
+</li>
+<li><p>&#x5BF9;&#x4E8E;&#x65E0;&#x6CD5;&#x6210;&#x529F;&#x83B7;&#x53D6;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x4E00;&#x822C;&#x5C31;&#x662F;&#x91CD;&#x590D;&#x5C1D;&#x8BD5;&#xFF0C;&#x6216;&#x6307;&#x5B9A;&#x5C1D;&#x8BD5;&#x7684;&#x6B21;&#x6570;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x9A6C;&#x4E0A;&#x9000;&#x51FA;&#x3002;</p>
+</li>
+</ul>
+<p>&#x6765;&#x770B;&#x4E0B;&#x5982;&#x4E0B;&#x4EE3;&#x7801;&#xFF1A;</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.util.Date;</div><div class="line"><span class="keyword">import</span> java.util.concurrent.Semaphore;</div><div class="line"><span class="keyword">import</span> java.util.concurrent.TimeUnit;</div><div class="line"> </div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UnLockTest</span> </span>{</div><div class="line">   <span class="keyword">public</span> <span class="keyword">static</span> String obj1 = <span class="string">&quot;obj1&quot;</span>;</div><div class="line">   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Semaphore a1 = <span class="keyword">new</span> Semaphore(<span class="number">1</span>);</div><div class="line">   <span class="keyword">public</span> <span class="keyword">static</span> String obj2 = <span class="string">&quot;obj2&quot;</span>;</div><div class="line">   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Semaphore a2 = <span class="keyword">new</span> Semaphore(<span class="number">1</span>);</div><div class="line"> </div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</div><div class="line">      LockAa la = <span class="keyword">new</span> LockAa();</div><div class="line">      <span class="keyword">new</span> Thread(la).start();</div><div class="line">      LockBb lb = <span class="keyword">new</span> LockBb();</div><div class="line">      <span class="keyword">new</span> Thread(lb).start();</div><div class="line">   }</div><div class="line">}</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">LockAa</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>{</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>{</div><div class="line">      <span class="keyword">try</span> {</div><div class="line">         System.out.println(<span class="keyword">new</span> Date().toString() + <span class="string">&quot; LockA &#x5F00;&#x59CB;&#x6267;&#x884C;&quot;</span>);</div><div class="line">         <span class="keyword">while</span> (<span class="keyword">true</span>) {</div><div class="line">            <span class="keyword">if</span> (UnLockTest.a1.tryAcquire(<span class="number">1</span>, TimeUnit.SECONDS)) {</div><div class="line">               System.out.println(<span class="keyword">new</span> Date().toString() + <span class="string">&quot; LockA &#x9501;&#x4F4F; obj1&quot;</span>);</div><div class="line">               <span class="keyword">if</span> (UnLockTest.a2.tryAcquire(<span class="number">1</span>, TimeUnit.SECONDS)) {</div><div class="line">                  System.out.println(<span class="keyword">new</span> Date().toString() + <span class="string">&quot; LockA &#x9501;&#x4F4F; obj2&quot;</span>);</div><div class="line">                  Thread.sleep(<span class="number">60</span> * <span class="number">1000</span>); <span class="comment">// do something</span></div><div class="line">               }<span class="keyword">else</span>{</div><div class="line">                  System.out.println(<span class="keyword">new</span> Date().toString() + <span class="string">&quot;LockA &#x9501; obj2 &#x5931;&#x8D25;&quot;</span>);</div><div class="line">               }</div><div class="line">            }<span class="keyword">else</span>{</div><div class="line">               System.out.println(<span class="keyword">new</span> Date().toString() + <span class="string">&quot;LockA &#x9501; obj1 &#x5931;&#x8D25;&quot;</span>);</div><div class="line">            }</div><div class="line">            UnLockTest.a1.release(); <span class="comment">// &#x91CA;&#x653E;</span></div><div class="line">            UnLockTest.a2.release();</div><div class="line">            Thread.sleep(<span class="number">1000</span>); <span class="comment">// &#x9A6C;&#x4E0A;&#x8FDB;&#x884C;&#x5C1D;&#x8BD5;&#xFF0C;&#x73B0;&#x5B9E;&#x60C5;&#x51B5;&#x4E0B;do something&#x662F;&#x4E0D;&#x786E;&#x5B9A;&#x7684;</span></div><div class="line">         }</div><div class="line">      } <span class="keyword">catch</span> (Exception e) {</div><div class="line">         e.printStackTrace();</div><div class="line">      }</div><div class="line">   }</div><div class="line">}</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">LockBb</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>{</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>{</div><div class="line">      <span class="keyword">try</span> {</div><div class="line">         System.out.println(<span class="keyword">new</span> Date().toString() + <span class="string">&quot; LockB &#x5F00;&#x59CB;&#x6267;&#x884C;&quot;</span>);</div><div class="line">         <span class="keyword">while</span> (<span class="keyword">true</span>) {</div><div class="line">            <span class="keyword">if</span> (UnLockTest.a2.tryAcquire(<span class="number">1</span>, TimeUnit.SECONDS)) {</div><div class="line">               System.out.println(<span class="keyword">new</span> Date().toString() + <span class="string">&quot; LockB &#x9501;&#x4F4F; obj2&quot;</span>);</div><div class="line">               <span class="keyword">if</span> (UnLockTest.a1.tryAcquire(<span class="number">1</span>, TimeUnit.SECONDS)) {</div><div class="line">                  System.out.println(<span class="keyword">new</span> Date().toString() + <span class="string">&quot; LockB &#x9501;&#x4F4F; obj1&quot;</span>);</div><div class="line">                  Thread.sleep(<span class="number">60</span> * <span class="number">1000</span>); <span class="comment">// do something</span></div><div class="line">               }<span class="keyword">else</span>{</div><div class="line">                  System.out.println(<span class="keyword">new</span> Date().toString() + <span class="string">&quot;LockB &#x9501; obj1 &#x5931;&#x8D25;&quot;</span>);</div><div class="line">               }</div><div class="line">            }<span class="keyword">else</span>{</div><div class="line">               System.out.println(<span class="keyword">new</span> Date().toString() + <span class="string">&quot;LockB &#x9501; obj2 &#x5931;&#x8D25;&quot;</span>);</div><div class="line">            }</div><div class="line">            UnLockTest.a1.release(); <span class="comment">// &#x91CA;&#x653E;</span></div><div class="line">            UnLockTest.a2.release();</div><div class="line">            Thread.sleep(<span class="number">10</span> * <span class="number">1000</span>); <span class="comment">// &#x8FD9;&#x91CC;&#x53EA;&#x662F;&#x4E3A;&#x4E86;&#x6F14;&#x793A;&#xFF0C;&#x6240;&#x4EE5;tryAcquire&#x53EA;&#x7528;1&#x79D2;&#xFF0C;&#x800C;&#x4E14;B&#x8981;&#x7ED9;A&#x8BA9;&#x51FA;&#x80FD;&#x6267;&#x884C;&#x7684;&#x65F6;&#x95F4;&#xFF0C;&#x5426;&#x5219;&#x4E24;&#x4E2A;&#x6C38;&#x8FDC;&#x662F;&#x6B7B;&#x9501;</span></div><div class="line">         }</div><div class="line">      } <span class="keyword">catch</span> (Exception e) {</div><div class="line">         e.printStackTrace();</div><div class="line">      }</div><div class="line">   }</div><div class="line">}</div></pre></td></tr></table></figure>
+<p>&#x63A7;&#x5236;&#x53F0;&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#xFF1A;</p>
+<blockquote>
+<p>Tue Apr 04 09:40:03 CST 2017 LockA &#x5F00;&#x59CB;&#x6267;&#x884C;<br>Tue Apr 04 09:40:03 CST 2017 LockB &#x5F00;&#x59CB;&#x6267;&#x884C;<br>Tue Apr 04 09:40:03 CST 2017 LockB &#x9501;&#x4F4F; obj2<br>Tue Apr 04 09:40:03 CST 2017 LockA &#x9501;&#x4F4F; obj1<br>Tue Apr 04 09:40:04 CST 2017LockB &#x9501; obj1 &#x5931;&#x8D25;<br>Tue Apr 04 09:40:04 CST 2017LockA &#x9501; obj2 &#x5931;&#x8D25;<br>Tue Apr 04 09:40:05 CST 2017 LockA &#x9501;&#x4F4F; obj1<br>Tue Apr 04 09:40:05 CST 2017 LockA &#x9501;&#x4F4F; obj2</p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/17/二叉树/" rel="next" title="二叉树">
+                <i class="fa fa-chevron-left"></i> 二叉树
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="Itachi" />
+          <p class="site-author-name" itemprop="name">Itachi</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">46</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Twilighce" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Itachi</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
