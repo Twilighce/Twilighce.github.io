@@ -259,6 +259,165 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/12/cmd查看、杀死进程/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Itachi">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Twilighce">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Twilighce" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/09/12/cmd查看、杀死进程/" itemprop="url">
+                  cmd查看、杀死进程
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-12T20:35:05+08:00">
+                2017-09-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/study-notes/" itemprop="url" rel="index">
+                    <span itemprop="name">study notes</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="&#x67E5;&#x770B;&#x5360;&#x7528;&#x6307;&#x5B9A;&#x7AEF;&#x53E3;&#x7684;&#x7A0B;&#x5E8F;"><a href="#&#x67E5;&#x770B;&#x5360;&#x7528;&#x6307;&#x5B9A;&#x7AEF;&#x53E3;&#x7684;&#x7A0B;&#x5E8F;" class="headerlink" title="&#x67E5;&#x770B;&#x5360;&#x7528;&#x6307;&#x5B9A;&#x7AEF;&#x53E3;&#x7684;&#x7A0B;&#x5E8F;"></a><strong>&#x67E5;&#x770B;&#x5360;&#x7528;&#x6307;&#x5B9A;&#x7AEF;&#x53E3;&#x7684;&#x7A0B;&#x5E8F;</strong></h3><ul>
+<li><p>netstat &#x2013;ano|findstr &#x201C;&#x6307;&#x5B9A;&#x7AEF;&#x53E3;&#x53F7;&#x201D;&#xFF1B;  </p>
+<ul>
+<li>&#x5982;&#xFF1A;&#x67E5;&#x8BE2;&#x5360;&#x7528;&#x4E86;8080&#x7AEF;&#x53E3;&#x7684;&#x8FDB;&#x7A0B;&#xFF1A;netstat -ano|findstr &#x201C;8080&#x201D;</li>
+</ul>
+</li>
+</ul>
+<h3 id="&#x901A;&#x8FC7;&#x4EFB;&#x52A1;&#x7BA1;&#x7406;&#x5668;&#x6740;&#x6B7B;&#x76F8;&#x5173;&#x7684;&#x8FDB;&#x7A0B;&#xFF1A;"><a href="#&#x901A;&#x8FC7;&#x4EFB;&#x52A1;&#x7BA1;&#x7406;&#x5668;&#x6740;&#x6B7B;&#x76F8;&#x5173;&#x7684;&#x8FDB;&#x7A0B;&#xFF1A;" class="headerlink" title="&#x901A;&#x8FC7;&#x4EFB;&#x52A1;&#x7BA1;&#x7406;&#x5668;&#x6740;&#x6B7B;&#x76F8;&#x5173;&#x7684;&#x8FDB;&#x7A0B;&#xFF1A;"></a><strong>&#x901A;&#x8FC7;&#x4EFB;&#x52A1;&#x7BA1;&#x7406;&#x5668;&#x6740;&#x6B7B;&#x76F8;&#x5173;&#x7684;&#x8FDB;&#x7A0B;&#xFF1A;</strong></h3><ul>
+<li><p>&#x9996;&#x5148;&#x627E;&#x5230;&#x8FDB;&#x7A0B;&#x53F7;&#x5BF9;&#x5E94;&#x7684;&#x8FDB;&#x7A0B;&#x540D;&#x79F0;&#xFF1A;asklist|findstr &#x8FDB;&#x7A0B;&#x53F7;&#xFF1B;</p>
+<ul>
+<li>&#x5982;&#xFF1A;tasklist|findstr 3112&#xFF1B;  </li>
+</ul>
+</li>
+<li><p>&#x7136;&#x540E;&#x6839;&#x636E;&#x8FDB;&#x7A0B;&#x540D;&#x79F0;&#x6740;&#x6B7B;&#x8FDB;&#x7A0B;&#xFF1A;taskkill /f /t /im &#x8FDB;&#x7A0B;&#x540D;&#x79F0;&#xFF1B;</p>
+<ul>
+<li>&#x5982;&#xFF1A;taskkill /f /t /im /javaw.exe</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/18/HashMap的遍历/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1588,151 +1747,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/28/JAVA链表-2/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Itachi">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Twilighce">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="Twilighce" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/02/28/JAVA链表-2/" itemprop="url">
-                  JAVA链表_2
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-28T20:54:02+08:00">
-                2017-02-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/exercise/" itemprop="url" rel="index">
-                    <span itemprop="name">exercise</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>&#x4E00;&#x4E9B;&#x94FE;&#x8868;&#x9898;&#x76EE;&#x7684; java &#x89E3;&#x7B54;(2)</p>
-          <!--noindex-->
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2017/02/28/JAVA链表-2/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1780,7 +1794,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">46</span>
+                <span class="site-state-item-count">47</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
