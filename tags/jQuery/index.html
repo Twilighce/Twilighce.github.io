@@ -110,7 +110,7 @@
     root: '/',
     scheme: 'Pisces',
     version: '5.1.2',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
@@ -196,7 +196,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -216,7 +216,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
-            Kategorien
+            Categories
           </a>
         </li>
       
@@ -226,7 +226,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -344,7 +344,7 @@
               <a href="/archives/">
             
                 <span class="site-state-item-count">47</span>
-                <span class="site-state-item-name">Artikel</span>
+                <span class="site-state-item-name">posts</span>
               </a>
             </div>
           
@@ -355,7 +355,7 @@
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
                 <span class="site-state-item-count">4</span>
-                <span class="site-state-item-name">Kategorien</span>
+                <span class="site-state-item-name">categories</span>
               </a>
             </div>
           
@@ -366,7 +366,7 @@
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
                 <span class="site-state-item-count">15</span>
-                <span class="site-state-item-name">Tags</span>
+                <span class="site-state-item-name">tags</span>
               </a>
             </div>
           
@@ -417,7 +417,7 @@
 </div>
 
 
-  <div class="powered-by">Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
 
   <span class="post-meta-divider">|</span>
 
@@ -682,88 +682,74 @@
 
 
 
-<!-- custom analytics part create by xiamo -->
-<script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
-<script>AV.initialize("MRmUdkrxm6Eue1CWcj9t3Rvm-gzGzoHsz", "jNbXomvDbwDsLHOuRnx7mTPC");</script>
-<script>
+
+
+
+AV.initialize(`MRmUdkrxm6Eue1CWcj9t3Rvm-gzGzoHsz`, `jNbXomvDbwDsLHOuRnx7mTPC`);
+
 function showTime(Counter) {
-	var query = new AV.Query(Counter);
-	$(".leancloud_visitors").each(function() {
-		var url = $(this).attr("id").trim();
-		query.equalTo("url", url);
-		query.find({
-			success: function(results) {
-				if (results.length == 0) {
-					var content = '0 ' + $(document.getElementById(url)).text();
-					$(document.getElementById(url)).text(content);
-					return;
-				}
-				for (var i = 0; i < results.length; i++) {
-					var object = results[i];
-					var content = object.get('time') + ' ' + $(document.getElementById(url)).text();
-					$(document.getElementById(url)).text(content);
-				}
-			},
-			error: function(object, error) {
-				console.log("Error: " + error.code + " " + error.message);
-			}
-		});
+var query = new AV.Query(Counter);
+var entries = [];
+var $visitors = $(`.leancloud_visitors`);
 
-	});
+$visitors.each(function () {
+entries.push( $(this).attr(`id`).trim() );
+});
+
+query.containedIn(`url`, entries);
+query.find()
+.then(function (results) {
+var COUNT_CONTAINER_REF = `.leancloud-visitors-count`;
+
+if (results.length === 0) {
+$visitors.find(COUNT_CONTAINER_REF).text(0);
+return;
 }
 
-function addCount(Counter) {
-	var Counter = AV.Object.extend("Counter");
-	url = $(".leancloud_visitors").attr('id').trim();
-	title = $(".leancloud_visitors").attr('data-flag-title').trim();
-	var query = new AV.Query(Counter);
-	query.equalTo("url", url);
-	query.find({
-		success: function(results) {
-			if (results.length > 0) {
-				var counter = results[0];
-				counter.fetchWhenSave(true);
-				counter.increment("time");
-				counter.save(null, {
-					success: function(counter) {
-						var content =  counter.get('time') + ' ' + $(document.getElementById(url)).text();
-						$(document.getElementById(url)).text(content);
-					},
-					error: function(counter, error) {
-						console.log('Failed to save Visitor num, with error message: ' + error.message);
-					}
-				});
-			} else {
-				var newcounter = new Counter();
-				newcounter.set("title", title);
-				newcounter.set("url", url);
-				newcounter.set("time", 1);
-				newcounter.save(null, {
-					success: function(newcounter) {
-					    console.log("newcounter.get('time')="+newcounter.get('time'));
-						var content = newcounter.get('time') + ' ' + $(document.getElementById(url)).text();
-						$(document.getElementById(url)).text(content);
-					},
-					error: function(newcounter, error) {
-						console.log('Failed to create');
-					}
-				});
-			}
-		},
-		error: function(error) {
-			console.log('Error:' + error.code + " " + error.message);
-		}
-	});
+for (var i = 0; i 0) {
+var counter = results[0];
+counter.fetchWhenSave(true);
+counter.increment(`time`);
+counter.save().then(function(counter) {
+var $element = $(document.getElementById(url));
+$element.find(`.leancloud-visitors-count`).text(counter.get(`time`));
+},function(counter, error) {
+console.log(`Failed to save Visitor num, with error message: ` + error.message);
+});
+} else {
+var newcounter = new Counter();
+/* Set ACL */
+var acl = new AV.ACL();
+acl.setPublicReadAccess(true);
+acl.setPublicWriteAccess(true);
+newcounter.setACL(acl);
+/* End Set ACL */
+newcounter.set(`title`, title);
+newcounter.set(`url`, url);
+newcounter.set(`time`, 1);
+newcounter.save().then(function(newcounter) {
+var $element = $(document.getElementById(url));
+$element.find(`.leancloud-visitors-count`).text(newcounter.get(`time`));
+},function(newcounter, error) {
+console.log(`Failed to create`);
+});
 }
+},function(error) {
+console.log(`Error:` + error.code + ` ` + error.message);
+});
+}
+
 $(function() {
-	var Counter = AV.Object.extend("Counter");
-	if ($('.leancloud_visitors').length == 1) {
-		addCount(Counter);
-	} else if ($('.post-title-link').length > 1) {
-		showTime(Counter);
-	}
-}); 
-</script>
+var Counter = AV.Object.extend(`Counter`);
+if ($(`.leancloud_visitors`).length == 1) {
+addCount(Counter);
+} else if ($(`.post-title-link`).length > 1) {
+showTime(Counter);
+}
+});
+
+
+
 
 
 
