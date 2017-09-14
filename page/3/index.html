@@ -357,17 +357,6 @@
 
 
 
-   <span id="/2017/01/26/JsGallery-basis-3/" class="leancloud_visitors" data-flag-title="JsGallery-basis-3">
-     &nbsp; | &nbsp;
-     <span class="post-meta-item-icon">
-       <i class="fa fa-eye"></i>
-     </span>
-     <span class="post-meta-item-text">Visitors </span>
-     <span class="leancloud-visitors-count"></span>
-    </span>
-
-
-
 
 
 
@@ -541,17 +530,6 @@
 
 
 
-   <span id="/2017/01/25/JsGallery-basis-2/" class="leancloud_visitors" data-flag-title="JsGallery-basis-2">
-     &nbsp; | &nbsp;
-     <span class="post-meta-item-icon">
-       <i class="fa fa-eye"></i>
-     </span>
-     <span class="post-meta-item-text">Visitors </span>
-     <span class="leancloud-visitors-count"></span>
-    </span>
-
-
-
 
 
 
@@ -714,17 +692,6 @@
           
 
 
-
-
-
-   <span id="/2017/01/25/DecisionTree/" class="leancloud_visitors" data-flag-title="DecisionTree">
-     &nbsp; | &nbsp;
-     <span class="post-meta-item-icon">
-       <i class="fa fa-eye"></i>
-     </span>
-     <span class="post-meta-item-text">Visitors </span>
-     <span class="leancloud-visitors-count"></span>
-    </span>
 
 
 
@@ -893,17 +860,6 @@
 
 
 
-   <span id="/2017/01/24/KNeighbors/" class="leancloud_visitors" data-flag-title="KNeighbors">
-     &nbsp; | &nbsp;
-     <span class="post-meta-item-icon">
-       <i class="fa fa-eye"></i>
-     </span>
-     <span class="post-meta-item-text">Visitors </span>
-     <span class="leancloud-visitors-count"></span>
-    </span>
-
-
-
 
 
 
@@ -1066,17 +1022,6 @@
           
 
 
-
-
-
-   <span id="/2017/01/23/JsGallery-basis-1/" class="leancloud_visitors" data-flag-title="JsGallery-basis-1">
-     &nbsp; | &nbsp;
-     <span class="post-meta-item-icon">
-       <i class="fa fa-eye"></i>
-     </span>
-     <span class="post-meta-item-text">Visitors </span>
-     <span class="leancloud-visitors-count"></span>
-    </span>
 
 
 
@@ -1250,17 +1195,6 @@
 
 
 
-   <span id="/2017/01/22/Naive-Bayes/" class="leancloud_visitors" data-flag-title="Naive_Bayes">
-     &nbsp; | &nbsp;
-     <span class="post-meta-item-icon">
-       <i class="fa fa-eye"></i>
-     </span>
-     <span class="post-meta-item-text">Visitors </span>
-     <span class="leancloud-visitors-count"></span>
-    </span>
-
-
-
 
 
 
@@ -1426,17 +1360,6 @@
 
 
 
-   <span id="/2017/01/22/SVC/" class="leancloud_visitors" data-flag-title="SVC">
-     &nbsp; | &nbsp;
-     <span class="post-meta-item-icon">
-       <i class="fa fa-eye"></i>
-     </span>
-     <span class="post-meta-item-text">Visitors </span>
-     <span class="leancloud-visitors-count"></span>
-    </span>
-
-
-
 
 
 
@@ -1599,17 +1522,6 @@
           
 
 
-
-
-
-   <span id="/2017/01/22/linear-classifier/" class="leancloud_visitors" data-flag-title="linear_classifier">
-     &nbsp; | &nbsp;
-     <span class="post-meta-item-icon">
-       <i class="fa fa-eye"></i>
-     </span>
-     <span class="post-meta-item-text">Visitors </span>
-     <span class="leancloud-visitors-count"></span>
-    </span>
 
 
 
@@ -1784,17 +1696,6 @@
 
 
 
-   <span id="/2017/01/20/Requests-1/" class="leancloud_visitors" data-flag-title="Requests_1">
-     &nbsp; | &nbsp;
-     <span class="post-meta-item-icon">
-       <i class="fa fa-eye"></i>
-     </span>
-     <span class="post-meta-item-text">Visitors </span>
-     <span class="leancloud-visitors-count"></span>
-    </span>
-
-
-
 
 
 
@@ -1956,17 +1857,6 @@
           
 
 
-
-
-
-   <span id="/2017/01/20/HTTP-request-method/" class="leancloud_visitors" data-flag-title="HTTP_request_method">
-     &nbsp; | &nbsp;
-     <span class="post-meta-item-icon">
-       <i class="fa fa-eye"></i>
-     </span>
-     <span class="post-meta-item-text">Visitors </span>
-     <span class="leancloud-visitors-count"></span>
-    </span>
 
 
 
@@ -2424,107 +2314,6 @@
   
 
 
-
-
-
-
-
-  
-  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
-  <script>AV.initialize("MRmUdkrxm6Eue1CWcj9t3Rvm-gzGzoHsz", "jNbXomvDbwDsLHOuRnx7mTPC");</script>
-  <script>
-    function showTime(Counter) {
-      var query = new AV.Query(Counter);
-      var entries = [];
-      var $visitors = $(".leancloud_visitors");
-
-      $visitors.each(function () {
-        entries.push( $(this).attr("id").trim() );
-      });
-
-      query.containedIn('url', entries);
-      query.find()
-        .done(function (results) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.get('url');
-            var time = item.get('time');
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-        })
-        .fail(function (object, error) {
-          console.log("Error: " + error.code + " " + error.message);
-        });
-    }
-
-    function addCount(Counter) {
-      var $visitors = $(".leancloud_visitors");
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-      var query = new AV.Query(Counter);
-
-      query.equalTo("url", url);
-      query.find({
-        success: function(results) {
-          if (results.length > 0) {
-            var counter = results[0];
-            counter.fetchWhenSave(true);
-            counter.increment("time");
-            counter.save(null, {
-              success: function(counter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(counter.get('time'));
-              },
-              error: function(counter, error) {
-                console.log('Failed to save Visitor num, with error message: ' + error.message);
-              }
-            });
-          } else {
-            var newcounter = new Counter();
-            /* Set ACL */
-            var acl = new AV.ACL();
-            acl.setPublicReadAccess(true);
-            acl.setPublicWriteAccess(true);
-            newcounter.setACL(acl);
-            /* End Set ACL */
-            newcounter.set("title", title);
-            newcounter.set("url", url);
-            newcounter.set("time", 1);
-            newcounter.save(null, {
-              success: function(newcounter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-              },
-              error: function(newcounter, error) {
-                console.log('Failed to create');
-              }
-            });
-          }
-        },
-        error: function(error) {
-          console.log('Error:' + error.code + " " + error.message);
-        }
-      });
-    }
-
-    $(function() {
-      var Counter = AV.Object.extend("Counter");
-      if ($('.leancloud_visitors').length == 1) {
-        addCount(Counter);
-      } else if ($('.post-title-link').length > 1) {
-        showTime(Counter);
-      }
-    });
-  </script>
 
 
 
