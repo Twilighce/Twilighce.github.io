@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="algorithm,JAVA," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="&amp;#x8FD9;&amp;#x7BC7;&amp;#x8BB2; &amp;#x5206;&amp;#x9875;&amp;#x7B97;&amp;#x6CD5;&amp;#x53CA;&amp;#x5176;&amp;#x901A;&amp;#x8FC7; Java &amp;#x7684;&amp;#x7EAF;&amp;#x540E;&amp;#x7AEF;&amp;#x5B9E;&amp;#x73B0;&amp;#x3002;
+
+&amp;#x539F;&amp;#x7406;&amp;#x5E73;&amp;#x65F6;&amp;#x5728;&amp;#x4F7">
+<meta property="og:type" content="article">
+<meta property="og:title" content="paging_1">
+<meta property="og:url" content="http://yoursite.com/2017/11/19/paging-1/index.html">
+<meta property="og:site_name" content="Twilighce">
+<meta property="og:description" content="&amp;#x8FD9;&amp;#x7BC7;&amp;#x8BB2; &amp;#x5206;&amp;#x9875;&amp;#x7B97;&amp;#x6CD5;&amp;#x53CA;&amp;#x5176;&amp;#x901A;&amp;#x8FC7; Java &amp;#x7684;&amp;#x7EAF;&amp;#x540E;&amp;#x7AEF;&amp;#x5B9E;&amp;#x73B0;&amp;#x3002;
+
+&amp;#x539F;&amp;#x7406;&amp;#x5E73;&amp;#x65F6;&amp;#x5728;&amp;#x4F7">
+<meta property="og:image" content="http://oimbmvqt3.bkt.clouddn.com/google_paging_bar.png">
+<meta property="og:image" content="http://oimbmvqt3.bkt.clouddn.com/google_paging_bar2.png">
+<meta property="og:image" content="http://oimbmvqt3.bkt.clouddn.com/paging1.png">
+<meta property="og:image" content="http://oimbmvqt3.bkt.clouddn.com/paging2.png">
+<meta property="og:updated_time" content="2017-11-19T10:24:43.926Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="paging_1">
+<meta name="twitter:description" content="&amp;#x8FD9;&amp;#x7BC7;&amp;#x8BB2; &amp;#x5206;&amp;#x9875;&amp;#x7B97;&amp;#x6CD5;&amp;#x53CA;&amp;#x5176;&amp;#x901A;&amp;#x8FC7; Java &amp;#x7684;&amp;#x7EAF;&amp;#x540E;&amp;#x7AEF;&amp;#x5B9E;&amp;#x73B0;&amp;#x3002;
+
+&amp;#x539F;&amp;#x7406;&amp;#x5E73;&amp;#x65F6;&amp;#x5728;&amp;#x4F7">
+<meta name="twitter:image" content="http://oimbmvqt3.bkt.clouddn.com/google_paging_bar.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '小水'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/11/19/paging-1/"/>
+
+
+
+
+
+  <title>paging_1 | Twilighce</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Twilighce</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/19/paging-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Itachi">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://oimbmvqt3.bkt.clouddn.com/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Twilighce">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">paging_1</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-19T18:21:00+08:00">
+                2017-11-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/work-notes/" itemprop="url" rel="index">
+                    <span itemprop="name">work notes</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/11/19/paging-1/" class="leancloud_visitors" data-flag-title="paging_1">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+
+
+
+
+
+
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>&#x8FD9;&#x7BC7;&#x8BB2; &#x5206;&#x9875;&#x7B97;&#x6CD5;&#x53CA;&#x5176;&#x901A;&#x8FC7; Java &#x7684;&#x7EAF;&#x540E;&#x7AEF;&#x5B9E;&#x73B0;&#x3002;</p>
+</blockquote>
+<h2 id="&#x539F;&#x7406;"><a href="#&#x539F;&#x7406;" class="headerlink" title="&#x539F;&#x7406;"></a><strong>&#x539F;&#x7406;</strong></h2><p>&#x5E73;&#x65F6;&#x5728;&#x4F7F;&#x7528;Google&#x641C;&#x7D22;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x6CE8;&#x610F;&#x5230;&#x9875;&#x5E95;&#x7684;&#x5206;&#x9875;&#x6761;&#xFF1A;</p>
+<p><img src="http://oimbmvqt3.bkt.clouddn.com/google_paging_bar.png" alt="google_paging_bar"></p>
+<a id="more"></a> 
+<p>&#x5B83;&#x4F1A;&#x6839;&#x636E; <strong><code>&#x641C;&#x7D22;&#x7ED3;&#x679C;&#x7684;&#x603B;&#x6570;&#x636E;&#x6761;&#x6570;</code></strong>&#xFF0C;&#x548C; <strong><code>&#x6BCF;&#x9875;&#x8981;&#x663E;&#x793A;&#x7684;&#x6570;&#x636E;&#x6761;&#x6570;</code></strong>&#xFF0C;&#x81EA;&#x52A8;&#x8BA1;&#x7B97; <strong><code>&#x603B;&#x9875;&#x6570;</code></strong>&#x3002;&#x4E14; <strong><code>&#x5F53;&#x524D;&#x9875;&#x7801;</code></strong> &#x9AD8;&#x4EAE;&#x3002;<br>&#x5728;MySQL&#x6570;&#x636E;&#x5E93;&#x5E95;&#x5C42;&#x8FDB;&#x884C;&#x5206;&#x9875;&#x67E5;&#x8BE2;&#x65F6;&#xFF0C;&#x4F7F;&#x7528;&#x7684;&#x662F;limit&#xFF0C;&#x90A3;&#x5FC5;&#x987B;&#x5C01;&#x88C5;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x8868;&#x793A; <strong><code>&#x5F53;&#x524D;&#x9875;&#x7B2C;&#x4E00;&#x6761;&#x5B9E;&#x4F53;&#x6570;&#x636E;&#x5728;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7684;&#x4F4D;&#x7F6E;</code></strong>&#x3002;</p>
+<p>&#x5F53;&#x6211;&#x4EEC;&#x5411;&#x540E;&#x7FFB;&#x9875;&#x65F6;&#xFF0C;&#x6839;&#x636E; <strong><code>&#x5206;&#x9875;&#x6761;&#x7684;&#x5BBD;&#x5EA6;</code></strong>&#xFF0C;&#x968F;&#x7740;&#x5F53;&#x524D;&#x9875;&#x9762;&#x7684;&#x53D8;&#x5316;&#xFF0C;&#x5206;&#x9875;&#x6761;&#x4F1A;&#x6709;&#x201C;&#x6EDA;&#x52A8;&#x201D;&#x4E00;&#x6837;&#x7684;&#x53D8;&#x5316;&#xFF1A;</p>
+<p><img src="http://oimbmvqt3.bkt.clouddn.com/google_paging_bar2.png" alt="google_paging_bar2"></p>
+<p>&#x8FD9;&#x91CC;&#x9700;&#x8981;&#x5C01;&#x88C5; <strong><code>&#x5206;&#x9875;&#x6761;&#x8D77;&#x59CB;&#x9875;&#x7801;</code></strong> &#x548C; <strong><code>&#x5206;&#x9875;&#x6761;&#x7ED3;&#x675F;&#x9875;&#x7801;</code></strong> &#x6765;&#x8FDB;&#x884C;&#x8BA1;&#x7B97;&#x3002;</p>
+<p>&#x7EFC;&#x4E0A;&#x6240;&#x8FF0;&#xFF0C;&#x8981;&#x5B9E;&#x73B0;&#x5206;&#x9875;&#x529F;&#x80FD;&#xFF0C;&#x9700;&#x8981;&#x4EE5;&#x4E0B;&#x51E0;&#x4E2A;&#x6570;&#x636E;&#xFF1A;</p>
+<ul>
+<li><strong>&#x5F53;&#x524D;&#x9875;&#x7684;&#x5B9E;&#x4F53;&#x6570;&#x636E;&#x5217;&#x8868;&#xFF1A;list</strong> </li>
+<li><strong>&#x5B9E;&#x4F53;&#x6570;&#x636E;&#x603B;&#x8BB0;&#x5F55;&#x6570;&#xFF1A;recordCount</strong></li>
+<li><strong>&#x5F53;&#x524D;&#x9875;&#x9875;&#x7801;&#xFF1A;currentPage</strong></li>
+<li><strong>&#x6BCF;&#x9875;&#x5B9E;&#x4F53;&#x6570;&#x636E;&#x4E2A;&#x6570;&#xFF1A;pageSize</strong></li>
+<li><strong>&#x5206;&#x9875;&#x6761;&#x5BBD;&#x5EA6;&#xFF1A;width</strong></li>
+<li><strong>&#x5F53;&#x524D;&#x9875;&#x5728;&#x6570;&#x636E;&#x5E93;&#x8868;&#x4E2D;&#x7684;&#x8D77;&#x59CB;&#x4F4D;&#x7F6E;&#xFF1A;offset</strong></li>
+<li><strong>&#x603B;&#x9875;&#x6570;&#xFF1A;pageCount</strong></li>
+<li><strong>&#x5206;&#x9875;&#x6761;&#x8D77;&#x59CB;&#x9875;&#x7801;&#xFF1A;begin</strong></li>
+<li><strong>&#x5206;&#x9875;&#x6761;&#x7ED3;&#x675F;&#x9875;&#x7801;&#xFF1A;end</strong></li>
+</ul>
+<p>&#x5176;&#x4E2D;&#xFF1A;</p>
+<ul>
+<li>list&#x3001;recordCount&#x3001;currentPage &#x662F;&#x5916;&#x754C;&#x4F20;&#x9012;&#x8FDB;&#x6765;&#x7684;&#xFF0C;list &#x548C; recordCount &#x662F;&#x6570;&#x636E;&#x5E93;&#x67E5;&#x8BE2;&#x51FA;&#x6765;&#x7684;&#xFF0C;&#x800C; currentPage &#x662F;&#x7528;&#x6237;&#x9009;&#x62E9;&#x800C;&#x6765;&#x7684;&#xFF1B;</li>
+<li>pageSize&#x3001;width &#x662F;&#x4E00;&#x5F00;&#x59CB;&#x5C31;&#x7ED9;&#x5B9A;&#x9ED8;&#x8BA4;&#x503C;&#x7684;&#xFF1B;</li>
+<li>offset&#x3001;pageCount&#x3001;begin&#x3001;end &#x9700;&#x8981;&#x901A;&#x8FC7;&#x8BA1;&#x7B97;&#x5F97;&#x51FA;&#x3002;</li>
+</ul>
+<h2 id="&#x63A8;&#x6F14;"><a href="#&#x63A8;&#x6F14;" class="headerlink" title="&#x63A8;&#x6F14;"></a><strong>&#x63A8;&#x6F14;</strong></h2><h3 id="1-&#x8BA1;&#x7B97;&#x5F53;&#x524D;&#x9875;&#x5728;&#x6570;&#x636E;&#x5E93;&#x8868;&#x4E2D;&#x7684;&#x8D77;&#x59CB;&#x4F4D;&#x7F6E;&#xFF08;offset&#xFF09;"><a href="#1-&#x8BA1;&#x7B97;&#x5F53;&#x524D;&#x9875;&#x5728;&#x6570;&#x636E;&#x5E93;&#x8868;&#x4E2D;&#x7684;&#x8D77;&#x59CB;&#x4F4D;&#x7F6E;&#xFF08;offset&#xFF09;" class="headerlink" title="1.&#x8BA1;&#x7B97;&#x5F53;&#x524D;&#x9875;&#x5728;&#x6570;&#x636E;&#x5E93;&#x8868;&#x4E2D;&#x7684;&#x8D77;&#x59CB;&#x4F4D;&#x7F6E;&#xFF08;offset&#xFF09;"></a><strong>1.&#x8BA1;&#x7B97;&#x5F53;&#x524D;&#x9875;&#x5728;&#x6570;&#x636E;&#x5E93;&#x8868;&#x4E2D;&#x7684;&#x8D77;&#x59CB;&#x4F4D;&#x7F6E;&#xFF08;offset&#xFF09;</strong></h3><p>&#x6570;&#x636E;&#x5E93;&#x6807;&#x793A;&#x6570;&#x636E;&#x8BB0;&#x5F55;&#x7684;&#x7D22;&#x5F15;&#x662F;&#x4ECE;0&#x5F00;&#x59CB;&#xFF0C;<br>&#x6240;&#x4EE5;&#xFF0C;&#x5047;&#x8BBE;&#x6BCF;&#x9875;&#x5B9E;&#x4F53;&#x6570;&#x636E;&#x4E2A;&#x6570;&#x662F;3&#xFF0C;&#x90A3;&#x4E48;&#xFF0C;&#x7B2C;1&#x9875;&#x7684;&#x8D77;&#x59CB;&#x4F4D;&#x7F6E;&#x662F;0&#xFF0C;&#x7B2C;2&#x9875;&#x7684;&#x8D77;&#x59CB;&#x4F4D;&#x7F6E;&#x5219;&#x662F;3&#xFF0C;&#x7B2C;3&#x9875;&#x7684;&#x8D77;&#x59CB;&#x4F4D;&#x7F6E;&#x5219;&#x662F;6&#xFF0C;&#x5176;&#x4ED6;&#x7684;&#x5982;&#x6B64;&#x7C7B;&#x63A8;&#x4E0B;&#x53BB;&#x3002;</p>
+<p>&#x5F53;&#x6709;&#x4E86; <strong><code>&#x5F53;&#x524D;&#x9875;&#x9875;&#x7801;&#xFF08;currentpage&#xFF09;</code></strong>&#x548C; <strong><code>&#x6BCF;&#x9875;&#x5B9E;&#x4F53;&#x6570;&#x636E;&#x4E2A;&#x6570;&#xFF08;pageSize&#xFF09;</code></strong>&#x8FD9;&#x4E24;&#x4E2A;&#x503C;&#x65F6;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x8BA1;&#x7B97;&#x8FD9;&#x4E2A;&#x6570;&#x636E;&#x53D8;&#x91CF;&#x4E86;&#x3002;</p>
+<p>&#x8BA1;&#x7B97;&#x516C;&#x5F0F;&#xFF1A;$offset = (currentPage - 1) * pageSize$ </p>
+<h3 id="2-&#x8BA1;&#x7B97;&#x603B;&#x9875;&#x6570;&#xFF08;pageCount&#xFF09;"><a href="#2-&#x8BA1;&#x7B97;&#x603B;&#x9875;&#x6570;&#xFF08;pageCount&#xFF09;" class="headerlink" title="2.&#x8BA1;&#x7B97;&#x603B;&#x9875;&#x6570;&#xFF08;pageCount&#xFF09;"></a><strong>2.&#x8BA1;&#x7B97;&#x603B;&#x9875;&#x6570;&#xFF08;pageCount&#xFF09;</strong></h3><p>&#x5F53;&#x6709;&#x4E86;&#x5B9E;&#x4F53;&#x6570;&#x636E;&#x603B;&#x8BB0;&#x5F55;&#x6570;(recordCount)&#x548C;&#x6BCF;&#x9875;&#x5B9E;&#x4F53;&#x6570;&#x636E;&#x4E2A;&#x6570;&#xFF08;pageSize&#xFF09;&#x8FD9;&#x4E24;&#x4E2A;&#x6570;&#x503C;&#xFF0C;&#x90A3;&#x5C31;&#x53EF;&#x4EE5;&#x8BA1;&#x7B97;&#x603B;&#x9875;&#x6570;&#xFF08;pageCount&#xFF09;&#x4E86;&#x3002;</p>
+<p>&#x8BA1;&#x7B97;&#x516C;&#x5F0F;&#xFF1A;$pageCount = recordCount / pageSize + (recordCount % pageSize == 0 ? 0 : 1)$</p>
+<h3 id="3-&#x8BA1;&#x7B97;&#x8D77;&#x59CB;&#x9875;&#x7801;&#xFF08;begin&#xFF09;&#x4E0E;&#x7ED3;&#x675F;&#x9875;&#x7801;&#xFF08;end&#xFF09;"><a href="#3-&#x8BA1;&#x7B97;&#x8D77;&#x59CB;&#x9875;&#x7801;&#xFF08;begin&#xFF09;&#x4E0E;&#x7ED3;&#x675F;&#x9875;&#x7801;&#xFF08;end&#xFF09;" class="headerlink" title="3.&#x8BA1;&#x7B97;&#x8D77;&#x59CB;&#x9875;&#x7801;&#xFF08;begin&#xFF09;&#x4E0E;&#x7ED3;&#x675F;&#x9875;&#x7801;&#xFF08;end&#xFF09;"></a><strong>3.&#x8BA1;&#x7B97;&#x8D77;&#x59CB;&#x9875;&#x7801;&#xFF08;begin&#xFF09;&#x4E0E;&#x7ED3;&#x675F;&#x9875;&#x7801;&#xFF08;end&#xFF09;</strong></h3><p>&#x9996;&#x5148;&#x8981;&#x660E;&#x786E;&#x7684;&#x662F;&#xFF0C;&#x8D77;&#x59CB;&#x9875;&#x7801;&#x548C;&#x7ED3;&#x675F;&#x9875;&#x7801;&#x7684;&#x53D8;&#x5316;&#x4E0E; <strong><code>&#x5F53;&#x524D;&#x9875;&#x9875;&#x7801;</code></strong>&#x3001;<strong><code>&#x603B;&#x9875;&#x6570;</code></strong>&#x3001;<strong><code>&#x5206;&#x9875;&#x6761;&#x5BBD;&#x5EA6;</code></strong> &#x8FD9;3&#x4E2A;&#x6570;&#x636E;&#x53D8;&#x91CF;&#x6709;&#x5173;&#x3002;</p>
+<p>&#x5206;&#x9875;&#x6761;&#x7684;&#x53D8;&#x5316;&#xFF0C;&#x5927;&#x4F53;&#x5206;&#x4E3A;2&#x79CD;&#x60C5;&#x51B5;&#xFF1A;</p>
+<ol>
+<li><p>&#x5B9E;&#x4F53;&#x6570;&#x636E;&#x4E0D;&#x591A;&#xFF0C;&#x603B;&#x9875;&#x6570;&#x5C11;&#x4E8E;&#x7B49;&#x4E8E;&#x5206;&#x9875;&#x6761;&#x5BBD;&#x5EA6;&#x3002;&#x90A3;&#x4E48;&#x5206;&#x9875;&#x6761;&#x7684;&#x8D77;&#x59CB;&#x9875;&#x7801;&#x5C31;&#x662F;1&#xFF0C;&#x800C;&#x7ED3;&#x675F;&#x9875;&#x7801;&#x5C31;&#x662F;&#x603B;&#x9875;&#x6570;&#x3002;    </p>
+</li>
+<li><p>&#x603B;&#x9875;&#x6570;&#x5927;&#x4E8E;&#x5206;&#x9875;&#x6761;&#x5BBD;&#x5EA6;&#x3002;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x91CC;&#x9762;&#x53C8;&#x7EC6;&#x5206;&#x4E86;&#x51E0;&#x79CD;&#x60C5;&#x51B5;&#xFF0C;&#x4E8B;&#x60C5;&#x5C31;&#x53D8;&#x5F97;&#x590D;&#x6742;&#x8BB8;&#x591A;&#x4E86;&#x3002;</p>
+</li>
+</ol>
+<p>&#x4E0B;&#x9762;&#x5177;&#x4F53;&#x5206;&#x6790;&#x7B2C;&#x4E8C;&#x79CD;&#x60C5;&#x51B5;&#x3002;</p>
+<p>&#x5148;&#x7ED9;&#x5B9A;&#x603B;&#x9875;&#x6570;&#x4E3A;15&#xFF0C;&#x5206;&#x9875;&#x6761;&#x5BBD;&#x5EA6;&#x4E3A; 10&#xFF0C;&#x4F5C;&#x56FE;&#x5206;&#x6790;&#xFF1A;</p>
+<p><img src="http://oimbmvqt3.bkt.clouddn.com/paging1.png" alt="paing_1"></p>
+<p>&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF0C;&#x5206;&#x9875;&#x6761;&#x7684;&#x53D8;&#x5316;&#x5206;&#x4E3A;3&#x79CD;&#x60C5;&#x51B5;&#xFF1A;</p>
+<ol>
+<li><strong>&#x5F53;&#x524D;&#x9875;&#x9875;&#x7801;&#x5C0F;&#x4E8E;&#x7B49;&#x4E8E;&#x5206;&#x9875;&#x6761;&#x5BBD;&#x5EA6;&#x4E00;&#x534A;</strong>&#xFF1B;</li>
+<li><strong>&#x5F53;&#x524D;&#x9875;&#x9875;&#x7801;&#x5927;&#x4E8E;&#x603B;&#x9875;&#x6570;&#x51CF;&#x53BB;&#x5206;&#x9875;&#x6761;&#x5BBD;&#x5EA6;&#x4E00;&#x534A;</strong>&#xFF1B;</li>
+<li><strong>&#x5F53;&#x524D;&#x9875;&#x9875;&#x7801;&#x5927;&#x4E8E;&#x5206;&#x9875;&#x6761;&#x5BBD;&#x5EA6;&#x4E00;&#x534A;&#x5E76;&#x4E14;&#x5C0F;&#x4E8E;&#x7B49;&#x4E8E;&#x603B;&#x9875;&#x6570;&#x51CF;&#x53BB;&#x5206;&#x9875;&#x6761;&#x5BBD;&#x5EA6;&#x4E00;&#x534A;</strong>&#xFF1B;</li>
+</ol>
+<p>&#x518D;&#x7ED9;&#x5B9A;&#x5206;&#x9875;&#x6761;&#x5BBD;&#x5EA6;&#x4E3A; 5&#xFF0C;&#x5219;&#x5206;&#x9875;&#x6761;&#x5BBD;&#x5EA6;&#x4E3A;&#x5947;&#x6570;&#x65F6;&#xFF0C;&#x5206;&#x6790;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p><img src="http://oimbmvqt3.bkt.clouddn.com/paging2.png" alt="paging_2"></p>
+<h2 id="&#x5B9E;&#x73B0;"><a href="#&#x5B9E;&#x73B0;" class="headerlink" title="&#x5B9E;&#x73B0;"></a><strong>&#x5B9E;&#x73B0;</strong></h2><p>&#x4ECE;&#x5E95;&#x5C42;&#x5F00;&#x59CB;&#x5F00;&#x53D1;&#xFF0C;&#x5148;&#x628A;&#x6570;&#x636E;&#x5E93;&#x4EE5;&#x53CA;&#x5BF9;&#x5E94;&#x7684;&#x8868;&#x6784;&#x5EFA;&#x8D77;&#x6765;&#xFF1A;</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">CREATE DATABASE paging</div><div class="line">CHARACTER SET utf8</div><div class="line">COLLATE utf8_general_ci;</div><div class="line">USE paging;</div><div class="line"><span class="function">CREATE TABLE <span class="title">book</span><span class="params">(</span></span></div><div class="line">	id VARCHAR(<span class="number">255</span>) PRIMARY KEY,</div><div class="line">	name <span class="title">VARCHAR</span><span class="params">(<span class="number">60</span>)</span> NOT NULL UNIQUE,</div><div class="line">	author <span class="title">VARCHAR</span><span class="params">(<span class="number">20</span>)</span> NOT NULL,</div><div class="line">	price <span class="title">DECIMAL</span><span class="params">(<span class="number">8</span>, <span class="number">2</span>)</span>,</div><div class="line">	publisher <span class="title">VARCHAR</span><span class="params">(<span class="number">255</span>)</span>,</div><div class="line">	type <span class="title">VARCHAR</span><span class="params">(<span class="number">30</span>)</span></div><div class="line">);</div></pre></td></tr></table></figure>
+<p>&#x7136;&#x540E;&#xFF0C;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x8868;&#x6765;&#x521B;&#x5EFA;&#x5BF9;&#x5E94;&#x7684;&#x7C7B;&#xFF1A;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">public class Book {</div><div class="line">	private String id;</div><div class="line">	private String name;</div><div class="line">	private String author;</div><div class="line">	private double price;</div><div class="line">	private String publisher;</div><div class="line">	private String type;</div><div class="line">	</div><div class="line">	public Book() {</div><div class="line">		</div><div class="line">	}</div><div class="line">	public Book(String id, String name, String author, double price,</div><div class="line">			String publisher, String type) {</div><div class="line">		this.id = id;</div><div class="line">		this.name = name;</div><div class="line">		this.author = author;</div><div class="line">		this.price = price;</div><div class="line">		this.publisher = publisher;</div><div class="line">		this.type = type;</div><div class="line">	}</div><div class="line">	@Override</div><div class="line">	public String toString() {</div><div class="line">		return &quot;Book [id=&quot; + id + &quot;, name=&quot; + name + &quot;, author=&quot; + author</div><div class="line">				+ &quot;, price=&quot; + price + &quot;, publisher=&quot; + publisher + &quot;, type=&quot;</div><div class="line">				+ type + &quot;]&quot;;</div><div class="line">	}</div><div class="line">	// &#x7701;&#x7565;get/set&#x65B9;&#x6CD5;</div><div class="line">}</div></pre></td></tr></table></figure>
+<p>&#x63A5;&#x7740;&#xFF0C;&#x5219;&#x8981;&#x6765;&#x6784;&#x5EFA;&#x5E76;&#x5B9E;&#x73B0;&#x5C01;&#x88C5;&#x5206;&#x9875;&#x6570;&#x636E;&#x7684;&#x5206;&#x9875;&#x7C7B;&#xFF0C;&#x5B83;&#x662F;&#x6574;&#x4E2A;&#x5206;&#x9875;&#x529F;&#x80FD;&#x6700;&#x6838;&#x5FC3;&#x7684;&#x654C;&#x65B9;&#x3002;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div></pre></td><td class="code"><pre><div class="line">public class Page&lt;T&gt; {</div><div class="line">	// &#x4E00;&#x9875;&#x7684;&#x6570;&#x636E;</div><div class="line">	private List&lt;T&gt; list = null;</div><div class="line">	// &#x4E00;&#x9875;&#x6570;&#x636E;&#x7684;&#x8D77;&#x59CB;&#x4F4D;&#x7F6E;</div><div class="line">	private int offset = 0;</div><div class="line">	// &#x4E00;&#x9875;&#x6570;&#x636E;&#x7684;&#x5927;&#x5C0F;</div><div class="line">	private int pageSize = 2;</div><div class="line">	// &#x603B;&#x8BB0;&#x5F55;&#x6570;</div><div class="line">	private int recordCount = 0;</div><div class="line">	// &#x603B;&#x9875;&#x6570;</div><div class="line">	private int pageCount = 0;</div><div class="line">	//&#x5F53;&#x524D;&#x9875;&#x7D22;&#x5F15;</div><div class="line">	private int currentPage = 0;</div><div class="line">	</div><div class="line">	// &#x5206;&#x9875;&#x6761;&#x5BBD;&#x5EA6;</div><div class="line">	private int width = 10;</div><div class="line">	// &#x5206;&#x9875;&#x6761;&#x8D77;&#x59CB;&#x4F4D;&#x7F6E;</div><div class="line">	private int begin;</div><div class="line">	// &#x5206;&#x9875;&#x6761;&#x7ED3;&#x675F;&#x4F4D;&#x7F6E;</div><div class="line">	private int end;</div><div class="line">	</div><div class="line">	public Page(int rCount, int currPage) {</div><div class="line">		recordCount = rCount;</div><div class="line">		currentPage = currPage;</div><div class="line">		</div><div class="line">		pageCount = recordCount / pageSize + (recordCount % pageSize == 0 ? 0 : 1);</div><div class="line">		</div><div class="line">		offset = (currentPage - 1) * pageSize;</div><div class="line">		</div><div class="line">		// &#x8BA1;&#x7B97;&#x5206;&#x9875;&#x6761;&#x8D77;&#x59CB;&#x548C;&#x7ED3;&#x675F;&#x7684;&#x4F4D;&#x7F6E;</div><div class="line">		// &#x5177;&#x4F53;&#x5206;&#x4E3A;&#x4E24;&#x79CD;&#x60C5;&#x51B5;:</div><div class="line">		//   1.&#x603B;&#x9875;&#x6570;&#x5C0F;&#x4E8E;&#x7B49;&#x4E8E;&#x5206;&#x9875;&#x6761;&#x5BBD;&#x5EA6;</div><div class="line">		//   2.&#x603B;&#x9875;&#x6570;&#x5927;&#x4E8E;&#x5206;&#x9875;&#x6761;&#x5BBD;&#x5EA6;</div><div class="line">		if (pageCount &lt;= width) {</div><div class="line">			begin = 1;</div><div class="line">			end = pageCount;</div><div class="line">		} else {</div><div class="line">			// &#x5F53;&#x603B;&#x9875;&#x6570;&#x591A;&#x4E8E;&#x5206;&#x9875;&#x6761;&#x5BBD;&#x5EA6;&#x65F6;, &#x53C8;&#x5206;3&#x79CD;&#x60C5;&#x51B5;</div><div class="line">			//   1.&#x5F53;&#x524D;&#x9875;&#x7D22;&#x5F15;&#x5C0F;&#x4E8E;&#x7B49;&#x4E8E;&#x5206;&#x9875;&#x6761;&#x4E00;&#x534A;&#x5BBD;&#x5EA6;</div><div class="line">			//   2.&#x5F53;&#x524D;&#x9875;&#x7D22;&#x5F15;&#x5927;&#x4E8E;(&#x603B;&#x9875;&#x6570;-&#x5206;&#x9875;&#x6761;&#x4E00;&#x534A;&#x5BBD;&#x5EA6;)</div><div class="line">			//   3.&#x5F53;&#x524D;&#x9875;&#x7D22;&#x5F15;&#x4ECB;&#x4E8E;&#x6761;&#x4EF6;1, 2&#x4E4B;&#x95F4;</div><div class="line">			int pivot = width / 2;</div><div class="line">			if (currentPage &lt;= pivot) {</div><div class="line">				begin = 1;</div><div class="line">				end = width;</div><div class="line">			} else if (currentPage &gt; pageCount - pivot) {</div><div class="line">				begin = pageCount - width + 1;</div><div class="line">				end = pageCount;</div><div class="line">			} else {</div><div class="line">				begin = currentPage - pivot;</div><div class="line">				// width &amp; 0x1 ^ 0x1&#x7684;&#x4F5C;&#x7528;&#x76F8;&#x5F53;&#x4E8E;width % 2 == 0 : 1 : 0 </div><div class="line">				end = currentPage + pivot - (width &amp; 0x1 ^ 0x1);</div><div class="line">			}</div><div class="line">		}</div><div class="line">	}</div><div class="line">	public List&lt;T&gt; getList() {</div><div class="line">		return list;</div><div class="line">	}</div><div class="line">	</div><div class="line">	public void setList(List&lt;T&gt; list) {</div><div class="line">		this.list = list;</div><div class="line">	}</div><div class="line">	public int getOffset() {</div><div class="line">		return offset;</div><div class="line">	}</div><div class="line">	public int getPageSize() {</div><div class="line">		return pageSize;</div><div class="line">	}</div><div class="line">	</div><div class="line">	public void setPageSize(int pageSize) {</div><div class="line">		this.pageSize = pageSize;</div><div class="line">	}</div><div class="line">	public int getRecordCount() {</div><div class="line">		return recordCount;</div><div class="line">	}</div><div class="line">	</div><div class="line">	public void setRecordCount(int recordCount) {</div><div class="line">		this.recordCount = recordCount;</div><div class="line">	}</div><div class="line">	</div><div class="line">	public int getPageCount() {</div><div class="line">		return pageCount;</div><div class="line">	}</div><div class="line">	public void setPageCount(int pageCount) {</div><div class="line">		this.pageCount = pageCount;</div><div class="line">	}</div><div class="line">	public int getCurrentPage() {</div><div class="line">		return currentPage;</div><div class="line">	}</div><div class="line">	public void setCurrentPage(int currentPage) {</div><div class="line">		this.currentPage = currentPage;</div><div class="line">	}</div><div class="line">	public int getWidth() {</div><div class="line">		return width;</div><div class="line">	}</div><div class="line">	public void setWidth(int width) {</div><div class="line">		this.width = width;</div><div class="line">	}</div><div class="line">	public int getBegin() {</div><div class="line">		return begin;</div><div class="line">	}</div><div class="line">	public void setBegin(int begin) {</div><div class="line">		this.begin = begin;</div><div class="line">	}</div><div class="line">	public int getEnd() {</div><div class="line">		return end;</div><div class="line">	}</div><div class="line">	public void setEnd(int end) {</div><div class="line">		this.end = end;</div><div class="line">	}</div><div class="line">}</div></pre></td></tr></table></figure>
+<p>&#x5728;Page&#x7C7B;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#x91CC;&#x8FD0;&#x7528;&#x4E86;&#x4E4B;&#x524D;&#x63A8;&#x5BFC;&#x7684;&#x8BA1;&#x7B97;&#x516C;&#x5F0F;&#xFF0C;&#x5C06;&#x6BCF;&#x4E2A;&#x5206;&#x9875;&#x8981;&#x7528;&#x5230;&#x7684;&#x6570;&#x636E;&#x53D8;&#x91CF;&#x90FD;&#x8BA1;&#x7B97;&#x51FA;&#x6765;&#x3002;</p>
+<p>&#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x8981;&#x5F80;&#x6570;&#x636E;&#x5E93;&#x8868;&#x91CC;&#x9762;&#x63D2;&#x5165;&#x4E00;&#x4E9B;&#x6570;&#x636E;&#xFF0C;&#x5728;&#x67E5;&#x8BE2;&#x51FA;&#x6765;&#x663E;&#x793A;&#x5230;&#x9875;&#x9762;&#x4E0A;&#x5373;&#x53EF;&#x3002;</p>
+<p>&#x64CD;&#x4F5C;&#x56FE;&#x4E66;&#x6570;&#x636E;&#x7684;Dao&#x7C7B;&#xFF1A;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div></pre></td><td class="code"><pre><div class="line">public class BookDao {</div><div class="line">	/**</div><div class="line">	 * &#x83B7;&#x53D6;&#x4E00;&#x9875;&#x56FE;&#x4E66;&#x6570;&#x636E;</div><div class="line">	 * </div><div class="line">	 * @param offset</div><div class="line">	 * @param size</div><div class="line">	 * @return</div><div class="line">	 */</div><div class="line">	public List&lt;Book&gt; getPageData(int offset, int size) {</div><div class="line">		List&lt;Book&gt; list = new ArrayList&lt;Book&gt;();</div><div class="line">		</div><div class="line">		Connection con = null;</div><div class="line">		PreparedStatement pStmt = null;</div><div class="line">		ResultSet rs = null;</div><div class="line">		</div><div class="line">		try {</div><div class="line">			con = DBUtils.getConnection();</div><div class="line">			String sql = &quot;select * from book limit ?, ?&quot;;</div><div class="line">			pStmt = con.prepareStatement(sql);</div><div class="line">			</div><div class="line">			// &#x8BBE;&#x7F6E;&#x53C2;&#x6570;</div><div class="line">			pStmt.setInt(1, offset);</div><div class="line">			pStmt.setInt(2, size);</div><div class="line">			// &#x6267;&#x884C;&#x67E5;&#x8BE2;</div><div class="line">			rs = pStmt.executeQuery();</div><div class="line">			while (rs.next()) {</div><div class="line">				String id = rs.getString(1);</div><div class="line">				String name = rs.getString(2);</div><div class="line">				String author = rs.getString(3);</div><div class="line">				double price = rs.getDouble(4);</div><div class="line">				String publisher = rs.getString(5);</div><div class="line">				String type = rs.getString(6);</div><div class="line">				</div><div class="line">				Book book = new Book(id, name, author, price, publisher, type);</div><div class="line">				list.add(book);</div><div class="line">			}</div><div class="line">		} catch (Exception e) {</div><div class="line">			e.printStackTrace();</div><div class="line">		} finally {</div><div class="line">			DBUtils.release(con, pStmt, rs);</div><div class="line">		}</div><div class="line">		return list;</div><div class="line">	}</div><div class="line">	</div><div class="line">	/**</div><div class="line">	 * &#x83B7;&#x53D6;&#x7EDF;&#x8BA1;&#x7684;&#x56FE;&#x4E66;&#x8BB0;&#x5F55;&#x6570;</div><div class="line">	 * </div><div class="line">	 * @return</div><div class="line">	 */</div><div class="line">	public int getCount() {</div><div class="line">		int count = 0;</div><div class="line">		</div><div class="line">		Connection con = null;</div><div class="line">		Statement stmt = null;</div><div class="line">		ResultSet rs = null;</div><div class="line">		</div><div class="line">		try {</div><div class="line">			con = DBUtils.getConnection();</div><div class="line">			stmt = con.createStatement();</div><div class="line">			String sql = &quot;select count(*) from book&quot;;</div><div class="line">			rs = stmt.executeQuery(sql);</div><div class="line">			rs.next();</div><div class="line">			count = rs.getInt(1);</div><div class="line">		} catch (Exception e) {</div><div class="line">			e.printStackTrace();</div><div class="line">		} finally {</div><div class="line">			DBUtils.release(con, stmt, rs);</div><div class="line">		}</div><div class="line">		</div><div class="line">		return count;</div><div class="line">	}</div><div class="line">	</div><div class="line">	/**</div><div class="line">	 * &#x63D2;&#x5165;&#x56FE;&#x4E66;&#x6570;&#x636E;</div><div class="line">	 * </div><div class="line">	 * @param book</div><div class="line">	 */</div><div class="line">	public void insert(Book book) {</div><div class="line">		Connection con = null;</div><div class="line">		PreparedStatement pStmt = null;</div><div class="line">		</div><div class="line">		try {</div><div class="line">			con = DBUtils.getConnection();</div><div class="line">			String sql = &quot;insert into book values(?, ?, ?, ?, ?, ?)&quot;;</div><div class="line">			pStmt = con.prepareStatement(sql);</div><div class="line">			</div><div class="line">			// &#x8BBE;&#x7F6E;&#x53C2;&#x6570;</div><div class="line">			pStmt.setString(1, book.getId());</div><div class="line">			pStmt.setString(2, book.getName());</div><div class="line">			pStmt.setString(3, book.getAuthor());</div><div class="line">			pStmt.setDouble(4, book.getPrice());</div><div class="line">			pStmt.setString(5, book.getPublisher());</div><div class="line">			pStmt.setString(6, book.getType());</div><div class="line">			// &#x6267;&#x884C;</div><div class="line">			pStmt.execute();</div><div class="line">		} catch (Exception e) {</div><div class="line">			e.printStackTrace();</div><div class="line">		} finally {</div><div class="line">			DBUtils.release(con, pStmt, null);</div><div class="line">		}</div><div class="line">	}</div><div class="line">	</div><div class="line">	/**</div><div class="line">	 * &#x5220;&#x9664;&#x6240;&#x6709;&#x56FE;&#x4E66;&#x6570;&#x636E;</div><div class="line">	 */</div><div class="line">	public void deleteAll() {</div><div class="line">		Connection con = null;</div><div class="line">		Statement stmt = null;</div><div class="line">		</div><div class="line">		try {</div><div class="line">			con = DBUtils.getConnection();</div><div class="line">			stmt = con.createStatement();</div><div class="line">			String sql = &quot;delete from book&quot;;</div><div class="line">			stmt.execute(sql);</div><div class="line">		} catch (Exception e) {</div><div class="line">			e.printStackTrace();</div><div class="line">		} finally {</div><div class="line">			DBUtils.release(con, stmt, null);</div><div class="line">		}</div><div class="line">	}</div><div class="line">}</div></pre></td></tr></table></figure>
+<p>&#x5199;&#x4E00;&#x4E2A;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#xFF0C;&#x968F;&#x4FBF;&#x63D2;&#x5165;&#x4E00;&#x4E9B;&#x56FE;&#x4E66;&#x6570;&#x636E;&#xFF1A;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">@Test</div><div class="line">public void testInsert() throws Exception {</div><div class="line">	BookDao bookDao = new BookDao();</div><div class="line">	for (int i = 0; i &lt; 50; i++) {</div><div class="line">		Book book = new Book(UUID.randomUUID().toString(),</div><div class="line">				&quot;Thinking In Java&quot; + i,</div><div class="line">				&quot;makwan&quot; + i,</div><div class="line">				60.0 + i,</div><div class="line">				&quot;&#x673A;&#x68B0;&#x5DE5;&#x4E1A;&#x51FA;&#x7248;&#x793E;&quot; + i,</div><div class="line">				&quot;Java&#x7F16;&#x7A0B;&#x8BED;&#x8A00;&quot;);</div><div class="line">		bookDao.insert(book);</div><div class="line">	}</div><div class="line">}</div></pre></td></tr></table></figure>
+<p>&#x5904;&#x7406;&#x56FE;&#x4E66;&#x6570;&#x636E;&#x7684;&#x670D;&#x52A1;&#x5C42;&#xFF1A;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">public class BookService {</div><div class="line">	private static BookDao bookDao = new BookDao();</div><div class="line">	</div><div class="line">	public Page&lt;Book&gt; getPageData(String currentPage) {</div><div class="line">		Page&lt;Book&gt; page = null;</div><div class="line">		try {</div><div class="line">			// &#x83B7;&#x53D6;&#x603B;&#x8BB0;&#x5F55;&#x6570;</div><div class="line">			int count = bookDao.getCount();</div><div class="line">			if (count &gt; 0) {</div><div class="line">				int cp = StringUtils.isBlank(currentPage) ? 1 </div><div class="line">						: Integer.parseInt(currentPage);</div><div class="line">				page = new Page&lt;Book&gt;(count, cp);</div><div class="line">				// &#x83B7;&#x53D6;&#x6307;&#x5B9A;&#x9875;&#x7684;&#x6570;&#x636E;</div><div class="line">				List&lt;Book&gt; list = bookDao.getPageData(page.getOffset(), page.getPageSize());</div><div class="line">				page.setList(list);</div><div class="line">			}</div><div class="line">		} catch (Exception e) {</div><div class="line">			throw new RuntimeException(e);</div><div class="line">		}</div><div class="line">		return page;</div><div class="line">	}</div><div class="line">}</div></pre></td></tr></table></figure>
+<p>&#x7528;&#x4E8E;&#x663E;&#x793A;&#x56FE;&#x4E66;&#x5206;&#x9875;&#x6570;&#x636E;&#x7684;jsp&#x9875;&#x9762;&#xFF1A;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div></pre></td><td class="code"><pre><div class="line">&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;</div><div class="line">    pageEncoding=&quot;UTF-8&quot;%&gt;</div><div class="line">&lt;%@ taglib uri=&quot;http://java.sun.com/jsp/jstl/core&quot; prefix=&quot;c&quot; %&gt;</div><div class="line">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;http://www.w3.org/TR/html4/loose.dtd&quot;&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;</div><div class="line">&lt;title&gt;&#x56FE;&#x4E66;&#x4FE1;&#x606F;&#x5C55;&#x793A;&#x9875;&#x9762;&lt;/title&gt;</div><div class="line">&lt;style type=&quot;text/css&quot;&gt;</div><div class="line">	.pagingbar {</div><div class="line">		text-align: center;	</div><div class="line">	}</div><div class="line">	</div><div class="line">	a {</div><div class="line">		text-decoration: none;</div><div class="line">	}</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">	&lt;!-- &#x6570;&#x636E;&#x5217;&#x8868; --&gt;</div><div class="line">	&lt;table align=&quot;center&quot; border=&quot;1&quot;&gt;</div><div class="line">		&lt;thead&gt;</div><div class="line">			&lt;tr&gt;</div><div class="line">				&lt;th&gt;&#x7F16;&#x53F7;&lt;/th&gt;</div><div class="line">				&lt;th&gt;&#x4E66;&#x540D;&lt;/th&gt;</div><div class="line">				&lt;th&gt;&#x4F5C;&#x8005;&lt;/th&gt;</div><div class="line">				&lt;th&gt;&#x4EF7;&#x683C;&lt;/th&gt;</div><div class="line">				&lt;th&gt;&#x51FA;&#x7248;&#x793E;&lt;/th&gt;</div><div class="line">				&lt;th&gt;&#x7C7B;&#x578B;&lt;/th&gt;</div><div class="line">			&lt;/tr&gt;</div><div class="line">		&lt;/thead&gt;</div><div class="line">		&lt;tbody&gt;</div><div class="line">			&lt;c:choose&gt;</div><div class="line">				&lt;c:when test=&quot;${not empty requestScope.page}&quot;&gt;</div><div class="line">					&lt;c:forEach items=&quot;${requestScope.page.list}&quot; var=&quot;book&quot;&gt;</div><div class="line">						&lt;tr&gt;</div><div class="line">							&lt;td&gt;${book.id}&lt;/td&gt;</div><div class="line">							&lt;td&gt;${book.name}&lt;/td&gt;</div><div class="line">							&lt;td&gt;${book.author}&lt;/td&gt;</div><div class="line">							&lt;td&gt;${book.price}&lt;/td&gt;</div><div class="line">							&lt;td&gt;${book.publisher}&lt;/td&gt;</div><div class="line">							&lt;td&gt;${book.type}&lt;/td&gt;</div><div class="line">						&lt;/tr&gt;</div><div class="line">					&lt;/c:forEach&gt;</div><div class="line">				&lt;/c:when&gt;</div><div class="line">				&lt;c:otherwise&gt;</div><div class="line">					&lt;tr&gt;</div><div class="line">						&lt;td colspan=&quot;9&quot;&gt;</div><div class="line">							&lt;font color=&quot;red&quot;&gt;&#x5F53;&#x524D;&#x6CA1;&#x6709;&#x6570;&#x636E;&lt;/font&gt;</div><div class="line">						&lt;/td&gt;</div><div class="line">					&lt;/tr&gt;</div><div class="line">				&lt;/c:otherwise&gt;</div><div class="line">			&lt;/c:choose&gt;</div><div class="line">		&lt;/tbody&gt;</div><div class="line">	&lt;/table&gt;</div><div class="line">	</div><div class="line">	&lt;!-- &#x5206;&#x9875;&#x6761; --&gt;</div><div class="line">	&lt;div class=&quot;pagingbar&quot;&gt;</div><div class="line">		&lt;c:if test=&quot;${not empty requestScope.page}&quot;&gt;</div><div class="line">			&lt;c:if test=&quot;${requestScope.page.currentPage &gt; 1}&quot;&gt;</div><div class="line">				&lt;a href=&quot;${pageContext.request.contextPath}/bookservlet?method=getPageData&amp;currentPage=1&quot;&gt;&#x9996;&#x9875;&lt;/a&gt;</div><div class="line">			&lt;/c:if&gt;</div><div class="line">			&lt;c:if test=&quot;${requestScope.page.currentPage &gt; 1}&quot;&gt;</div><div class="line">				&lt;a href=&quot;${pageContext.request.contextPath}/bookservlet?method=getPageData&amp;currentPage=${requestScope.page.currentPage - 1}&quot;&gt;&#x4E0A;&#x4E00;&#x9875;&lt;/a&gt;</div><div class="line">			&lt;/c:if&gt;</div><div class="line">			&lt;c:forEach begin=&quot;${requestScope.page.begin}&quot; end=&quot;${requestScope.page.end}&quot; step=&quot;1&quot; var=&quot;pageNum&quot;&gt;</div><div class="line">				&lt;a href=&quot;${pageContext.request.contextPath}/bookservlet?method=getPageData&amp;currentPage=${pageNum}&quot;</div><div class="line">				   ${pageNum == requestScope.page.currentPage ? &quot;style=&apos;font-size:20px;color:red;&apos;&quot; : &quot;style=&apos;color:blue;&apos;&quot;}</div><div class="line">				&gt;</div><div class="line">					${pageNum}</div><div class="line">				&lt;/a&gt;</div><div class="line">			&lt;/c:forEach&gt;</div><div class="line">			&lt;c:if test=&quot;${requestScope.page.currentPage &lt; requestScope.page.pageCount}&quot;&gt;</div><div class="line">				&lt;a href=&quot;${pageContext.request.contextPath}/bookservlet?method=getPageData&amp;currentPage=${requestScope.page.currentPage + 1}&quot;&gt;&#x4E0B;&#x4E00;&#x9875;&lt;/a&gt;</div><div class="line">			&lt;/c:if&gt;</div><div class="line">			&lt;c:if test=&quot;${requestScope.page.currentPage &lt; requestScope.page.pageCount}&quot;&gt;</div><div class="line">				&lt;a href=&quot;${pageContext.request.contextPath}/bookservlet?method=getPageData&amp;currentPage=${requestScope.page.pageCount}&quot;&gt;&#x5C3E;&#x9875;&lt;/a&gt;</div><div class="line">			&lt;/c:if&gt;</div><div class="line">		&lt;/c:if&gt;</div><div class="line">		&lt;form action=&quot;${pageContext.request.contextPath}/bookservlet?method=getPageData&quot; method=&quot;post&quot; style=&quot;display: inline;&quot;&gt;</div><div class="line">			&lt;input type=&quot;text&quot; name=&quot;currentPage&quot; style=&quot;width: 20px&quot;/&gt;</div><div class="line">			&lt;input type=&quot;submit&quot; value=&quot;Go&quot;&gt;</div><div class="line">		&lt;/form&gt;</div><div class="line">		&#x5F53;&#x524D; ${requestScope.page.currentPage}&#x9875;</div><div class="line">		&#x5171;    ${requestScope.page.pageCount}&#x9875;</div><div class="line">		&#x5171;    ${requestScope.page.recordCount}&#x6761;&#x8BB0;&#x5F55;</div><div class="line">	&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/algorithm/" rel="tag"># algorithm</a>
+          
+            <a href="/tags/JAVA/" rel="tag"># JAVA</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/18/Twilighce/" rel="next" title="Twilighce">
+                <i class="fa fa-chevron-left"></i> Twilighce
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="http://oimbmvqt3.bkt.clouddn.com/avatar.jpg"
+              alt="Itachi" />
+          
+            <p class="site-author-name" itemprop="name">Itachi</p>
+            <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">47</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Twilighce" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>GitHub</a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#原理"><span class="nav-number">1.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#推演"><span class="nav-number">2.</span> <span class="nav-text">推演</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-计算当前页在数据库表中的起始位置（offset）"><span class="nav-number">2.1.</span> <span class="nav-text">1.计算当前页在数据库表中的起始位置（offset）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-计算总页数（pageCount）"><span class="nav-number">2.2.</span> <span class="nav-text">2.计算总页数（pageCount）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-计算起始页码（begin）与结束页码（end）"><span class="nav-number">2.3.</span> <span class="nav-text">3.计算起始页码（begin）与结束页码（end）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现"><span class="nav-number">3.</span> <span class="nav-text">实现</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Itachi</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.2</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("MRmUdkrxm6Eue1CWcj9t3Rvm-gzGzoHsz", "jNbXomvDbwDsLHOuRnx7mTPC");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+
+</body>
+</html>
